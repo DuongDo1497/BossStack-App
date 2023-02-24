@@ -1,0 +1,29 @@
+ion-app {
+  background-color: #d8d8d8;
+}
+
+.login {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-wrap {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .logo,
+  &-title {
+    margin-bottom: 24px;
+  }
+
+  .logo {
+    max-width: 120px;
+  }
+
+  &-title {
+    text-transform: uppercase;
+  }
+}

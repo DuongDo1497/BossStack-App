@@ -1,0 +1,7 @@
+{
+  "name": "bossstack-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
