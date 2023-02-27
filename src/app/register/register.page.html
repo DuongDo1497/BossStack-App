@@ -1,0 +1,63 @@
+<ion-content class="ion-padding" [fullscreen]="true">
+  <div class="section register">
+    <div class="register-wrap">
+      <img
+        class="logo"
+        srcset="../../assets/images/logo.png 2x"
+        alt="BossStack"
+      />
+      <h1 class="register-title">Tạo tài khoản</h1>
+      <div class="register-form">
+        <ion-list>
+          <ion-item class="ion-no-padding">
+            <ion-label position="stacked">Họ và tên</ion-label>
+            <ion-input
+              class="form-control"
+              placeholder="Nhập họ và tên"
+            ></ion-input>
+          </ion-item>
+          <ion-item-group>
+            <ion-item class="ion-no-padding">
+              <ion-label position="stacked">Ngày sinh</ion-label>
+              <ion-input
+                class="form-control"
+                type="date"
+                placeholder="Nhập họ và tên"
+              ></ion-input>
+            </ion-item>
+            <ion-item class="ion-no-padding">
+              <ion-label position="stacked">Giới tính</ion-label>
+              <ion-select interface="action-sheet" placeholder="Chọn giới tính">
+                <ion-select-option value="">Nam</ion-select-option>
+                <ion-select-option value="">Nữ</ion-select-option>
+                <ion-select-option value="">Khác</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-item-group>
+          <ion-item class="ion-no-padding">
+            <ion-label position="stacked">Địa chỉ</ion-label>
+            <ion-input
+              class="form-control"
+              placeholder="Nhập địa chỉ"
+            ></ion-input>
+          </ion-item>
+          <ion-item class="ion-no-padding">
+            <ion-label position="stacked">Điện thoại</ion-label>
+            <ion-input
+              class="form-control"
+              placeholder="Nhập số điện thoại"
+            ></ion-input>
+          </ion-item>
+          <ion-item class="ion-no-padding">
+            <ion-label position="stacked">Email</ion-label>
+            <ion-input
+              class="form-control"
+              placeholder="Nhập email"
+            ></ion-input>
+          </ion-item>
+        </ion-list>
+        <ion-button class="btn-register" expand="block">Đăng ký</ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>
