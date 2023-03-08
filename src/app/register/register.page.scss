@@ -34,6 +34,16 @@
     ion-item-group {
       display: flex;
       column-gap: 16px;
+
+      ion-item {
+        display: flex;
+        ion-select {
+          --padding-start: 8px;
+          flex-grow: 1;
+          border: 0.5px solid var(--gray-cl-4);
+          border-radius: 4px;
+        }
+      }
     }
 
     ion-item {
@@ -66,8 +76,17 @@
   }
 
   ion-button {
-    margin: 0;
+    margin: 0 0 5px 0;
     --background: #1890ff;
     --border-radius: 4px;
+  }
+
+  .have-account {
+    font-family: hr;
+    font-size: 14px;
+    color: var(--gray-cl-6);
+    text-decoration: underline;
+    display: block;
+    text-align: center;
   }
 }

@@ -57,6 +57,7 @@ ul {
 }
 
 a {
+  font-family: var(--font-body);
   display: inline-block;
   text-decoration: none;
 }
@@ -68,4 +69,8 @@ img {
 
 textarea {
   resize: none;
+}
+
+ion-list ion-item-group ion-item {
+  flex: 0 0 calc(50% - 8px);
 }
