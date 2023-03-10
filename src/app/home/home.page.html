@@ -1,7 +1,16 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Home</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content class="ion-padding" [fullscreen]="true"> </ion-content>
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="radio">
+      <ion-icon name="home-outline"></ion-icon>
+      <p>Tổng quan</p>
+    </ion-tab-button>
+    <ion-tab-button tab="library">
+      <ion-icon name="albums-outline"></ion-icon>
+      <p>Task</p>
+    </ion-tab-button>
+    <ion-tab-button tab="search">
+      <ion-icon name="settings-outline"></ion-icon>
+      <p>Cài đặt</p>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
