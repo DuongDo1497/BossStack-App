@@ -1,4 +1,8 @@
-<ion-content class="ion-padding" [fullscreen]="true">
+<ion-content
+  class="ion-padding-horizontal"
+  [fullscreen]="true"
+  scroll-y="false"
+>
   <div class="section login">
     <div class="login-wrap">
       <img
@@ -6,21 +10,42 @@
         srcset="../../assets/images/logo.png 2x"
         alt="BossStack"
       />
-      <h1 class="login-title">Đăng nhập</h1>
       <div class="login-form">
         <ion-list>
-          <ion-item class="ion-no-padding">
-            <ion-label position="stacked">Email</ion-label>
-            <ion-input class="form-control" placeholder="Email"></ion-input>
+          <ion-item class="ion-no-padding login-input">
+            <ion-input
+              class="form-control"
+              placeholder="Email đăng nhập"
+            ></ion-input>
+            <img
+              class="icon-input"
+              src="../../assets/images/icon-mail.svg"
+              alt=""
+            />
           </ion-item>
-          <ion-item class="ion-no-padding">
-            <ion-label position="stacked">Password</ion-label>
-            <ion-input class="form-control" placeholder="Password"></ion-input>
+          <ion-item class="ion-no-padding login-input">
+            <ion-input class="form-control" placeholder="Mật khẩu"></ion-input>
+            <img
+              class="icon-input"
+              src="../../assets/images/icon-lock.svg"
+              alt=""
+            />
           </ion-item>
         </ion-list>
-        <ion-button class="btn-login" expand="block">Đăng nhập</ion-button>
-        <ion-button class="btn-register" fill="outline" routerLink="/register"
-          >Tạo tài khoản</ion-button
+        <div class="login-control">
+          <ion-item>
+            <ion-checkbox slot="start"></ion-checkbox>
+            <ion-label>Ghi nhớ</ion-label>
+          </ion-item>
+          <ion-button class="forgot-password" fill="clear" routerLink=""
+            >Quên mật khẩu</ion-button
+          >
+        </div>
+        <ion-button class="btn-login" shape="round" expand="block"
+          >Đăng nhập</ion-button
+        >
+        <ion-button class="btn-register" fill="clear" routerLink="/register"
+          >Bạn chưa có tài khoản?</ion-button
         >
       </div>
     </div>

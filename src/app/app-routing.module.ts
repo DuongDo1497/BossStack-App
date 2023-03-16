@@ -2,13 +2,14 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+  // Register and Login
   {
-    path: '',
+    path: 'intro',
     loadChildren: () =>
-      import('./home/home.module').then((m) => m.HomePageModule),
+      import('./intro/intro.module').then((m) => m.IntroPageModule),
   },
   {
-    path: 'login',
+    path: '',
     loadChildren: () =>
       import('./login/login.module').then((m) => m.LoginPageModule),
   },
@@ -17,6 +18,15 @@ const routes: Routes = [
     loadChildren: () =>
       import('./register/register.module').then((m) => m.RegisterPageModule),
   },
+  // Register and Login
+
+  // Main
+  {
+    path: 'home',
+    loadChildren: () =>
+      import('./home/home.module').then((m) => m.HomePageModule),
+  },
+  // Main
 ];
 
 @NgModule({

@@ -1,3 +1,16 @@
+ion-content {
+  // --overflow: hidden;
+  --background: transparent;
+  background-image: url("../../assets/images/login-bg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  // overflow: auto;
+  // &::-webkit-scrollbar {
+  //   display: none;
+  // }
+}
+
 .register {
   height: 100%;
   display: flex;
@@ -11,82 +24,65 @@
     flex-direction: column;
   }
 
-  .logo,
-  &-title {
-    margin-bottom: 24px;
-  }
-
   .logo {
-    max-width: 120px;
-  }
-
-  &-title {
-    text-transform: uppercase;
+    margin-bottom: 67px;
   }
 
   &-form {
     width: inherit;
 
     ion-list {
-      margin-bottom: 24px;
-    }
-
-    ion-item-group {
-      display: flex;
-      column-gap: 16px;
-
-      ion-item {
-        display: flex;
-        ion-select {
-          --padding-start: 8px;
-          flex-grow: 1;
-          border: 0.5px solid var(--gray-cl-4);
-          border-radius: 4px;
-        }
-      }
+      margin-bottom: 32px;
+      background: transparent;
     }
 
     ion-item {
       --background: inherit;
       --inner-border-width: 0;
       --inner-padding-end: 0;
-      font-size: 14px;
       margin-bottom: 20px;
+      position: relative;
 
       &:last-child {
         margin-bottom: 0;
       }
 
-      ion-label {
-        font-family: hm;
-        font-size: 12px;
-        margin-top: 0;
-        margin-bottom: 8px;
+      ion-input.form-control {
+        --color: var(--text-cl-second);
+        --padding-top: 15px;
+        --padding-bottom: 15px;
+        --padding-start: 46px;
+        --padding-end: 15px;
+        border-radius: 6px;
+        font-size: var(--fz-body);
+        border: 1px solid var(--border-cl);
       }
 
-      ion-input.form-control {
-        --padding-top: 12px;
-        --padding-bottom: 12px;
-        --padding-start: 16px;
-        --padding-end: 16px;
-        border-radius: 4px;
-        border: 0.5px solid var(--gray-cl-4);
+      .icon-input {
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
       }
     }
   }
 
   ion-button {
-    margin: 0 0 5px 0;
-    --background: #1890ff;
-    --border-radius: 4px;
+    --background: #2e5ea9;
+    height: 46px;
+    margin-bottom: 18px;
   }
 
   .have-account {
-    font-family: hr;
-    font-size: 14px;
-    color: var(--gray-cl-6);
+    height: auto;
+    margin: 0;
+    font-size: var(--fz-small);
     text-decoration: underline;
     display: block;
     text-align: center;
+    --border-color: transparent;
+    --color: var(--primary-yl-cl);
+    --background: transparent;
   }
 }
