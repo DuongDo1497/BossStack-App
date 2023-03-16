@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LibraryPageRoutingModule } from './library-routing.module';
+import { ApprovePageRoutingModule } from './approve-routing.module';
 
-import { LibraryPage } from './library.page';
+import { ApprovePage } from './approve.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LibraryPageRoutingModule
+    ApprovePageRoutingModule
   ],
-  declarations: [LibraryPage]
+  declarations: [ApprovePage]
 })
-export class LibraryPageModule {}
+export class ApprovePageModule {}

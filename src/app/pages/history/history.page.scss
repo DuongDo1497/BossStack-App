@@ -1,0 +1,35 @@
+.history {
+  ion-list {
+    ion-item {
+      --padding-start: 16px;
+      --padding-end: 16px;
+      --padding-top: 12px;
+      --padding-bottom: 12px;
+      --inner-border-width: 0;
+      --inner-padding-end: 0;
+      font-size: var(--fz-small);
+
+      &:nth-child(2n + 2) {
+        --background: #f7f7f7;
+      }
+
+      ion-avatar {
+        margin-inline: 0 12px;
+      }
+
+      ion-label {
+        margin: 0 0;
+
+        .info {
+          margin-bottom: 4px;
+          color: var(--text-cl-primary);
+        }
+
+        .time {
+          font-size: 12px;
+          color: var(--text-cl-second);
+        }
+      }
+    }
+  }
+}

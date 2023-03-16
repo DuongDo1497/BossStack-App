@@ -7,52 +7,78 @@ const routes: Routes = [
     path: '',
     component: HomePage,
     children: [
+      // Page tab
       {
-        path: 'radio',
+        path: 'bs',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../pages/radio/radio.module').then(
-                (m) => m.RadioPageModule
+              import('../pages/bs/bs.module').then((m) => m.BsPageModule),
+          },
+        ],
+      },
+      {
+        path: 'task',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/task/task.module').then((m) => m.TaskPageModule),
+          },
+        ],
+      },
+      {
+        path: 'approve',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/approve/approve.module').then(
+                (m) => m.ApprovePageModule
               ),
           },
         ],
       },
       {
-        path: 'library',
+        path: 'personal',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../pages/library/library.module').then(
-                (m) => m.LibraryPageModule
+              import('../pages/personal/personal.module').then(
+                (m) => m.PersonalPageModule
               ),
           },
         ],
       },
+      // End page tab
+
+      // Page
       {
-        path: 'search',
+        path: 'history',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../pages/search/search.module').then(
-                (m) => m.SearchPageModule
+              import('../pages/history/history.module').then(
+                (m) => m.HistoryPageModule
               ),
           },
         ],
       },
+      // Page
+
       {
         path: '',
-        redirectTo: 'radio',
+        redirectTo: 'bs',
         pathMatch: 'full',
       },
     ],
   },
   {
     path: '',
-    redirectTo: 'radio',
+    redirectTo: 'bs',
     pathMatch: 'full',
   },
 ];

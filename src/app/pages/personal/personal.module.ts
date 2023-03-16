@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { RadioPageRoutingModule } from './radio-routing.module';
+import { PersonalPageRoutingModule } from './personal-routing.module';
 
-import { RadioPage } from './radio.page';
+import { PersonalPage } from './personal.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RadioPageRoutingModule
+    PersonalPageRoutingModule
   ],
-  declarations: [RadioPage]
+  declarations: [PersonalPage]
 })
-export class RadioPageModule {}
+export class PersonalPageModule {}

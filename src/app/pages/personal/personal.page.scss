@@ -1,0 +1,60 @@
+.personal {
+  &-wrap {
+    padding-top: 12px;
+  }
+
+  &-item {
+    padding: 16px;
+    border-radius: 6px;
+    background-color: var(--white-cl);
+    margin-bottom: 12px;
+  }
+
+  ion-item {
+    --padding-start: 0;
+    --inner-border-width: 0;
+    --inner-padding-end: 0;
+    font-size: var(--fz-small);
+
+    ion-avatar {
+      margin-inline: 0 12px;
+    }
+
+    ion-label {
+      margin: 0 0;
+
+      .name {
+        margin-bottom: 4px;
+        color: var(--text-cl-primary);
+      }
+
+      .mail {
+        font-size: 12px;
+        color: var(--text-cl-second);
+      }
+    }
+  }
+
+  &-menu {
+    ion-item {
+      img {
+        margin-right: 12px;
+        display: inline-block;
+      }
+
+      ion-label {
+        overflow: unset;
+        font-size: var(--fz-body);
+        color: var(--text-cl-primary);
+      }
+    }
+  }
+
+  .logout {
+    --background: var(--white-cl);
+    --color: var(--text-cl-primary);
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+  }
+}

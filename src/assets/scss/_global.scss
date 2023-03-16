@@ -48,10 +48,77 @@ textarea {
   resize: none;
 }
 
-ion-toolbar {
-  --ion-safe-area-top: 20px;
+ion-header {
+  ion-toolbar {
+    --border-width: 0;
+    --ion-safe-area-top: 20px;
+    --background: linear-gradient(90deg, #2e5ea9 0%, #367be9 100%);
+
+    ion-title {
+      font-size: var(--font-body);
+      color: var(--white-cl);
+      font-weight: 600;
+    }
+  }
+
+  ion-back-button {
+    font-size: 10px;
+  }
+}
+
+ion-content {
+  --background: var(--gray-screen-cl);
+}
+
+ion-tab-bar {
+  --background: var(--white-cl);
+  --border: 0;
+  height: 90px;
+
+  ion-tab-button {
+    p {
+      font-size: var(--fz-small);
+      margin-top: 8px;
+      color: #444444;
+    }
+
+    &.tab-selected {
+      p {
+        font-weight: 700;
+      }
+    }
+  }
 }
 
 ion-list ion-item-group ion-item {
   flex: 0 0 calc(50% - 8px);
+}
+
+.search-bar {
+  padding: 16px;
+
+  ion-item {
+    --inner-border-width: 0;
+    --inner-padding-end: 0;
+  }
+
+  .icon-input {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+
+  ion-input.form-control {
+    --background: #f0f0f0;
+    --color: var(--text-cl-second);
+    --padding-top: 15px;
+    --padding-bottom: 15px;
+    --padding-start: 42px;
+    --padding-end: 15px;
+    border-radius: 6px;
+    font-size: var(--fz-small);
+    z-index: 1;
+  }
 }

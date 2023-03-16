@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { SearchPageRoutingModule } from './search-routing.module';
+import { HistoryPageRoutingModule } from './history-routing.module';
 
-import { SearchPage } from './search.page';
+import { HistoryPage } from './history.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SearchPageRoutingModule
+    HistoryPageRoutingModule
   ],
-  declarations: [SearchPage]
+  declarations: [HistoryPage]
 })
-export class SearchPageModule {}
+export class HistoryPageModule {}
