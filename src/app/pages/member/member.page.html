@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons class="button-back" slot="start">
+      <ion-back-button defaultHref="/" text="" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title><p>Quản lý thành viên</p></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding-horizontal">
+  <div class="section member manage">
+    <div class="member-wrap">
+      <div class="member-package">
+        <ul class="member-package__info">
+          <li>
+            <span class="title">Gói đăng ký:</span>
+            <span class="package-name"> Gói Standard</span> ( 15 User )
+          </li>
+          <li><span class="title">Thời hạn:</span> 17/02/2022 - 17/02/2023</li>
+          <li><span class="title">Số user đang sử dụng:</span> 15</li>
+        </ul>
+        <div class="member-package__control">
+          <ion-button shape="round">
+            <img src="../../../assets/images/member-icon-1.svg" alt="" />
+            Liên hệ
+          </ion-button>
+        </div>
+      </div>
+
+      <div class="member-list">
+        <p class="member-list__title">
+          Danh sách thành viên <span class="count">(15 nhân viên)</span>
+        </p>
+        <div class="search-bar search-bar--btn">
+          <ion-item class="ion-no-padding login-input">
+            <img
+              class="icon-input"
+              src="../../assets/images/icon-search.svg"
+              alt=""
+            />
+            <ion-input
+              class="form-control"
+              placeholder="Tra cứu mọi thứ"
+            ></ion-input>
+          </ion-item>
+          <ion-button class="ion-button--gray">
+            <img src="../../../assets/images/icon-fillter.svg" alt="" />
+          </ion-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

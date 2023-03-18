@@ -50,9 +50,10 @@ textarea {
 
 ion-header {
   ion-toolbar {
-    --border-width: 0;
+    --border-width: 0 !important;
     --ion-safe-area-top: 20px;
-    --background: linear-gradient(90deg, #2e5ea9 0%, #367be9 100%);
+    --background: center / 100% no-repeat
+      url("../../assets/images/toolbar-header-img.jpg");
 
     ion-title {
       font-size: var(--font-body);
@@ -61,13 +62,29 @@ ion-header {
     }
   }
 
-  ion-back-button {
-    font-size: 10px;
+  .button-back {
+    ion-back-button {
+      font-size: 10px;
+    }
+  }
+
+  .button-save {
+    min-height: auto;
+
+    ion-button {
+      --color: var(--white-cl);
+      font-size: var(--fz-body);
+      font-weight: 600;
+      height: inherit;
+      margin: 0;
+    }
   }
 }
 
 ion-content {
-  --background: var(--gray-screen-cl);
+  &.--gray {
+    --background: var(--gray-screen-cl);
+  }
 }
 
 ion-tab-bar {
@@ -76,15 +93,21 @@ ion-tab-bar {
   height: 90px;
 
   ion-tab-button {
+    ion-icon,
+    p {
+      color: var(--text-cl-third);
+    }
+
     p {
       font-size: var(--fz-small);
+      font-weight: 500;
       margin-top: 8px;
-      color: #444444;
     }
 
     &.tab-selected {
+      ion-icon,
       p {
-        font-weight: 700;
+        color: var(--primary-bl-cl);
       }
     }
   }
@@ -97,9 +120,18 @@ ion-list ion-item-group ion-item {
 .search-bar {
   padding: 16px;
 
+  &.search-bar--btn {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
   ion-item {
     --inner-border-width: 0;
     --inner-padding-end: 0;
+    border-radius: 6px;
+    flex-grow: 1;
   }
 
   .icon-input {
@@ -111,14 +143,28 @@ ion-list ion-item-group ion-item {
   }
 
   ion-input.form-control {
-    --background: #f0f0f0;
+    --background: var(--gray-cl-1);
     --color: var(--text-cl-second);
     --padding-top: 15px;
     --padding-bottom: 15px;
     --padding-start: 42px;
     --padding-end: 15px;
-    border-radius: 6px;
     font-size: var(--fz-small);
     z-index: 1;
+  }
+
+  ion-button {
+    height: auto;
+    margin: 0;
+
+    &.ion-button--blue {
+      --background: #4083ff;
+      font-size: var(--fz-small);
+      font-weight: 400;
+    }
+
+    &.ion-button--gray {
+      --background: var(--gray-cl-1);
+    }
   }
 }

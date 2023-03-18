@@ -1,0 +1,139 @@
+ion-content {
+  --background: transparent;
+  background-image: url("../../../assets/images/bs-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.home {
+  height: 100%;
+
+  &-wrap {
+    height: inherit;
+    padding-top: 72px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .user-info {
+    padding: 0 16px;
+
+    ion-item {
+      --padding-start: 0;
+      --background: transparent;
+      --inner-border-width: 0;
+      font-size: var(--fz-small);
+
+      ion-avatar {
+        margin-inline: 0 7px;
+      }
+
+      ion-label {
+        margin: 0;
+
+        .name {
+          font-size: var(--fz-body);
+          font-weight: 600;
+          margin-bottom: 4px;
+          color: var(--white-cl);
+        }
+
+        .mail {
+          font-size: var(--fz-small);
+          color: var(--primary-bl-cl-3);
+        }
+      }
+    }
+  }
+
+  &-search {
+    margin-top: 35px;
+
+    .search-bar {
+      padding: 0 16px;
+    }
+
+    ion-item,
+    ion-button {
+      border-radius: 10px;
+    }
+  }
+
+  &-body {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    padding: 23px 16px 20px;
+    margin-top: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: var(--white-cl);
+    overflow-y: scroll;
+
+    .product {
+      padding: 0 16px;
+      margin-bottom: 24px;
+
+      &-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px 36px;
+      }
+
+      &-item {
+        width: calc((100% / 3) - 24px);
+        a {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        p {
+          font-size: var(--fz-small);
+          font-weight: 500;
+          color: var(--text-cl-primary);
+          text-align: center;
+        }
+      }
+    }
+
+    .control {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 24px;
+
+      p {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+        gap: 9px;
+        font-size: var(--fz-small);
+        color: var(--text-cl-third);
+      }
+
+      ion-button {
+        --padding-top: 5px;
+        --padding-start: 16px;
+        --padding-end: 16px;
+        --padding-bottom: 5px;
+        height: auto;
+        margin: 0;
+        font-size: var(--fz-small);
+
+        img {
+          margin-right: 9px;
+        }
+      }
+    }
+
+    .advertising {
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+.member {
+  padding: 12px 0;
+  &-package {
+    padding: 12px 16px;
+    margin-bottom: 24px;
+    background: center/100% no-repeat
+      url("../../../assets/images/member-pack-img.jpg");
+
+    &__info {
+      margin-bottom: 4px;
+
+      li {
+        font-size: var(--fz-small);
+        margin-bottom: 6px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      .title {
+        font-weight: 500;
+      }
+
+      .package-name {
+        font-weight: 600;
+        color: #3465d9;
+      }
+    }
+
+    &__control {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    ion-button {
+      --padding-top: 4px;
+      --padding-start: 16px;
+      --padding-end: 16px;
+      --padding-bottom: 4px;
+      height: auto;
+      margin: 0;
+      font-size: var(--fz-small);
+      font-weight: 400;
+
+      img {
+        margin-right: 4px;
+      }
+    }
+  }
+
+  &-list {
+    &__title {
+      font-weight: 600;
+      margin-bottom: 12px;
+
+      .count {
+        font-weight: 400;
+      }
+    }
+
+    .search-bar {
+      padding: 0;
+    }
+  }
+}

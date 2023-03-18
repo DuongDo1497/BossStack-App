@@ -19,6 +19,18 @@ const routes: Routes = [
         ],
       },
       {
+        path: 'approve',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/approve/approve.module').then(
+                (m) => m.ApprovePageModule
+              ),
+          },
+        ],
+      },
+      {
         path: 'task',
         children: [
           {
@@ -29,13 +41,13 @@ const routes: Routes = [
         ],
       },
       {
-        path: 'approve',
+        path: 'notification',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../pages/approve/approve.module').then(
-                (m) => m.ApprovePageModule
+              import('../pages/notification/notification.module').then(
+                (m) => m.NotificationPageModule
               ),
           },
         ],
@@ -63,6 +75,18 @@ const routes: Routes = [
             loadChildren: () =>
               import('../pages/history/history.module').then(
                 (m) => m.HistoryPageModule
+              ),
+          },
+        ],
+      },
+      {
+        path: 'member',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/member/member.module').then(
+                (m) => m.MemberPageModule
               ),
           },
         ],

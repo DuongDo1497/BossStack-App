@@ -1,14 +1,9 @@
 ion-content {
-  // --overflow: hidden;
   --background: transparent;
   background-image: url("../../assets/images/login-bg.png");
-  background-size: contain;
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position: bottom center;
-  // overflow: auto;
-  // &::-webkit-scrollbar {
-  //   display: none;
-  // }
 }
 
 .login {

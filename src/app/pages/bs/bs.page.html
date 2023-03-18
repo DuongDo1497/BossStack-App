@@ -1,9 +1,117 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>bs</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content>
+<ion-content [fullscreen]="true" scroll-y="false">
+  <div class="section home">
+    <div class="home-wrap">
+      <div class="user-info">
+        <ion-item>
+          <ion-avatar slot="start">
+            <img
+              alt="Silhouette of a person's head"
+              src="https://ionicframework.com/docs/img/demos/avatar.svg"
+            />
+          </ion-avatar>
+          <ion-label>
+            <p class="name">Nguyễn Văn Admin</p>
+            <p class="mail">admin@gmail.com</p>
+          </ion-label>
+        </ion-item>
+      </div>
 
+      <div class="home-search">
+        <div class="search-bar search-bar--btn">
+          <ion-item class="ion-no-padding login-input">
+            <img
+              class="icon-input"
+              src="../../assets/images/icon-search.svg"
+              alt=""
+            />
+            <ion-input
+              class="form-control"
+              placeholder="Tra cứu mọi thứ"
+            ></ion-input>
+          </ion-item>
+          <ion-button class="ion-button--blue">Tra cứu</ion-button>
+        </div>
+      </div>
+
+      <div class="home-body">
+        <div class="product">
+          <div class="product-list">
+            <div class="product-item">
+              <a href="#">
+                <img src="../../../assets/images/home-product-1.svg" alt="" />
+                <p>Tổng quan kinh doanh</p>
+              </a>
+            </div>
+            <div class="product-item">
+              <a href="#">
+                <img src="../../../assets/images/home-product-2.svg" alt="" />
+                <p>Kế hoạch dòng tiền</p>
+              </a>
+            </div>
+            <div class="product-item">
+              <a href="#">
+                <img src="../../../assets/images/home-product-3.svg" alt="" />
+                <p>Quản lý tiền mặt</p>
+              </a>
+            </div>
+            <div class="product-item">
+              <a href="#">
+                <img src="../../../assets/images/home-product-4.svg" alt="" />
+                <p>Lưu chuyển tiền tệ</p>
+              </a>
+            </div>
+            <div class="product-item">
+              <a href="#">
+                <img src="../../../assets/images/home-product-5.svg" alt="" />
+                <p>Hoạt động kinh doanh</p>
+              </a>
+            </div>
+            <div class="product-item">
+              <a href="#">
+                <img src="../../../assets/images/home-product-6.svg" alt="" />
+                <p>Bóc tách dòng tiền</p>
+              </a>
+            </div>
+            <div class="product-item">
+              <a href="/member">
+                <img src="../../../assets/images/home-product-7.svg" alt="" />
+                <p>Quản lý thành viên</p>
+              </a>
+            </div>
+            <div class="product-item">
+              <a href="/history">
+                <img src="../../../assets/images/home-product-8.svg" alt="" />
+                <p>Lịch sử truy cập</p>
+              </a>
+            </div>
+            <div class="product-item">
+              <a href="#">
+                <img src="../../../assets/images/home-product-9.svg" alt="" />
+                <p>Quản lý điều hành</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="control">
+          <p>
+            <img src="../../../assets/images/home-icon-1.svg" alt="" />
+            Sắp xếp hiển thị tính năng
+          </p>
+          <ion-button class="custom" shape="round">
+            <img src="../../../assets/images/home-icon-2.svg" alt="" />
+            Sắp xếp
+          </ion-button>
+        </div>
+        <div class="advertising">
+          <img src="../../../assets/images/home-img-1.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
 </ion-content>
