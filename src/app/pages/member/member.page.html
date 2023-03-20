@@ -7,7 +7,11 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding-horizontal">
+<ion-content
+  [fullscreen]="true"
+  class="ion-padding-horizontal"
+  scroll-y="false"
+>
   <div class="section member manage">
     <div class="member-wrap">
       <div class="member-package">
@@ -47,7 +51,86 @@
             <img src="../../../assets/images/icon-fillter.svg" alt="" />
           </ion-button>
         </div>
+        <div class="member-list__body">
+          <div class="member-list__item">
+            <p class="member-list__date">17/03/2023 Thứ 6</p>
+            <div class="member-list__info">
+              <div class="member-list__top">
+                <p class="member-name">Nguyễn Thị Nhân viên</p>
+                <p class="member-tag staff">
+                  <ion-icon name="bookmark"></ion-icon>
+                  Nhân viên
+                </p>
+              </div>
+              <div class="member-list__content">
+                <p class="member-position">Chức vụ: Aa</p>
+                <p class="member-department">Thuộc phòng ban: Aa</p>
+                <p class="date-start">Ngày bắt đầu: mm/dd/yy</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="member-list__item">
+            <p class="member-list__date">17/03/2023 Thứ 6</p>
+            <div class="member-list__info">
+              <div class="member-list__top">
+                <p class="member-name">Nguyễn Thị Admin</p>
+                <p class="member-tag manage">
+                  <ion-icon name="bookmark"></ion-icon>
+                  Admin
+                </p>
+              </div>
+              <div class="member-list__content">
+                <p class="member-position">Chức vụ: Aa</p>
+                <p class="member-department">Thuộc phòng ban: Aa</p>
+                <p class="date-start">Ngày bắt đầu: mm/dd/yy</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="member-list__item">
+            <p class="member-list__date">17/03/2023 Thứ 6</p>
+            <div class="member-list__info">
+              <div class="member-list__top">
+                <p class="member-name">Nguyễn Thị Nhân viên</p>
+                <p class="member-tag staff">
+                  <ion-icon name="bookmark"></ion-icon>
+                  Nhân viên
+                </p>
+              </div>
+              <div class="member-list__content">
+                <p class="member-position">Chức vụ: Aa</p>
+                <p class="member-department">Thuộc phòng ban: Aa</p>
+                <p class="date-start">Ngày bắt đầu: mm/dd/yy</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="member-list__item">
+            <p class="member-list__date">17/03/2023 Thứ 6</p>
+            <div class="member-list__info">
+              <div class="member-list__top">
+                <p class="member-name">Nguyễn Thị Nhân viên</p>
+                <p class="member-tag staff">
+                  <ion-icon name="bookmark"></ion-icon>
+                  Nhân viên
+                </p>
+              </div>
+              <div class="member-list__content">
+                <p class="member-position">Chức vụ: Aa</p>
+                <p class="member-department">Thuộc phòng ban: Aa</p>
+                <p class="date-start">Ngày bắt đầu: mm/dd/yy</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+
+    <ion-fab>
+      <ion-fab-button size="small" href="/member/add">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
   </div>
 </ion-content>

@@ -66,7 +66,7 @@ const routes: Routes = [
       },
       // End page tab
 
-      // Page
+      // History page
       {
         path: 'history',
         children: [
@@ -79,6 +79,9 @@ const routes: Routes = [
           },
         ],
       },
+      // End History page
+
+      // Member page
       {
         path: 'member',
         children: [
@@ -91,7 +94,19 @@ const routes: Routes = [
           },
         ],
       },
-      // Page
+      {
+        path: 'member/add',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/member/add/add.module').then(
+                (m) => m.AddPageModule
+              ),
+          },
+        ],
+      },
+      //End Member page
 
       {
         path: '',

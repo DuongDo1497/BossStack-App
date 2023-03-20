@@ -61,6 +61,77 @@
 
     .search-bar {
       padding: 0;
+      margin-bottom: 24px;
+    }
+
+    &__body {
+      height: 443px;
+      margin: 0 -15px;
+      overflow-y: scroll;
+    }
+
+    &__item {
+      margin-bottom: 24px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__date {
+      padding: 8px 16px;
+      font-weight: 500;
+      margin-bottom: 12px;
+      font-size: var(--fz-small);
+      color: var(--primary-bl-cl);
+      background-color: var(--primary-bl-cl-1);
+    }
+
+    &__info {
+      padding: 0 16px;
+    }
+
+    &__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px;
+
+      .member-name {
+        font-size: var(--fz-small);
+      }
+
+      .member-tag {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        color: var(--text-cl-third);
+
+        ion-icon {
+          margin-right: 4px;
+          font-size: 20px;
+        }
+
+        &.staff {
+          color: var(--primary-bl-cl-4);
+        }
+
+        &.manage {
+          color: var(--primary-yl-cl-4);
+        }
+      }
+    }
+
+    &__content {
+      p {
+        font-size: 12px;
+        color: var(--text-cl-second);
+        margin-bottom: 6px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
     }
   }
 }

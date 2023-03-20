@@ -1,0 +1,148 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons class="button-back" slot="start">
+      <ion-back-button defaultHref="/" text="" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Tạo thành viên mới</ion-title>
+    <ion-buttons class="button-save" slot="end">
+      <ion-button>Lưu</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content
+  [fullscreen]="true"
+  class="ion-padding-horizontal"
+  scroll-y="false"
+>
+  <div class="section member add">
+    <ion-list class="form-general member-form">
+      <ion-item lines="none">
+        <img
+          class="icon-input --start"
+          src="../../../../assets/images/icon-calendar.svg"
+          alt=""
+        />
+        <ion-label>Ngày lập</ion-label>
+        <p>17/03/2023 Thứ sáu</p>
+      </ion-item>
+
+      <ion-item lines="full" button detail="false">
+        <ion-label>Ngày bắt đầu</ion-label>
+        <img
+          class="icon-input --end"
+          src="../../../../assets/images/icon-calendar.svg"
+          alt=""
+        />
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-input placeholder="Họ và tên"></ion-input>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-input placeholder="Số điện thoại"></ion-input>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-input placeholder="Email"></ion-input>
+      </ion-item>
+
+      <ion-item lines="full" id="department" button detail="false">
+        <ion-label>Phòng ban</ion-label>
+        <img
+          class="icon-input --end"
+          src="../../../../assets/images/icon-right.svg"
+          alt=""
+        />
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-input placeholder="Chức vụ"></ion-input>
+      </ion-item>
+
+      <ion-item lines="full" button detail="false">
+        <ion-label>Phân quyền</ion-label>
+        <img
+          class="icon-input --end"
+          src="../../../../assets/images/icon-right.svg"
+          alt=""
+        />
+      </ion-item>
+
+      <ion-item lines="full" button detail="false">
+        <img
+          class="icon-input --start"
+          src="../../../../assets/images/icon-calendar.svg"
+          alt=""
+        />
+        <ion-label>Ghi chú</ion-label>
+        <img
+          class="icon-input --end"
+          src="../../../../assets/images/icon-plus.svg"
+          alt=""
+        />
+      </ion-item>
+
+      <ion-item lines="full" button detail="false">
+        <img
+          class="icon-input --start"
+          src="../../../../assets/images/icon-attach.svg"
+          alt=""
+        />
+        <ion-label>Tệp đính kèm</ion-label>
+        <img
+          class="icon-input --end"
+          src="../../../../assets/images/icon-plus.svg"
+          alt=""
+        />
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <ion-modal
+    trigger="department"
+    [initialBreakpoint]="0.5"
+    [breakpoints]="[0, 0.25, 0.5, 0.75]"
+    handleBehavior="cycle"
+  >
+    <ng-template>
+      <ion-content scroll-y="false">
+        <p class="title">Chọn Phòng ban</p>
+        <div class="search-bar">
+          <ion-item class="ion-no-padding login-input">
+            <img
+              class="icon-input"
+              src="../../assets/images/icon-search.svg"
+              alt=""
+            />
+            <ion-input class="form-control" placeholder="Tìm kiếm "></ion-input>
+          </ion-item>
+        </div>
+        <div class="department-list">
+          <ion-item lines="none">
+            <ion-avatar slot="start">
+              <img
+                alt=""
+                src="https://ionicframework.com/docs/img/demos/avatar.svg"
+              />
+            </ion-avatar>
+            <ion-label>Phòng ban Nhân sự</ion-label>
+            <ion-checkbox slot="end"></ion-checkbox>
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-avatar slot="start">
+              <img
+                alt=""
+                src="https://ionicframework.com/docs/img/demos/avatar.svg"
+              />
+            </ion-avatar>
+            <ion-label>Phòng ban Hành chính</ion-label>
+            <ion-checkbox slot="end"></ion-checkbox>
+          </ion-item>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>

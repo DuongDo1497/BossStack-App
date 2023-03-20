@@ -48,6 +48,12 @@ textarea {
   resize: none;
 }
 
+ion-label {
+  margin: 0;
+  font-size: var(--fz-body) !important;
+  line-height: calc(20 / 16) !important;
+}
+
 ion-header {
   ion-toolbar {
     --border-width: 0 !important;
@@ -85,6 +91,11 @@ ion-content {
   &.--gray {
     --background: var(--gray-screen-cl);
   }
+
+  .section {
+    height: 100%;
+    position: relative;
+  }
 }
 
 ion-tab-bar {
@@ -109,6 +120,40 @@ ion-tab-bar {
       p {
         color: var(--primary-bl-cl);
       }
+    }
+  }
+}
+
+ion-list {
+  &.form-general {
+    ion-item {
+      --padding-start: 0;
+      --inner-padding-end: 0;
+      --border-color: #f1f1f1;
+      margin-bottom: 16px;
+    }
+
+    ion-label {
+      color: var(--text-cl-second) !important;
+    }
+
+    ion-input {
+      --padding-top: 0;
+      --padding-end: 0;
+      --padding-bottom: 0;
+      --padding-start: 0;
+      --placeholder-color: var(--text-cl-second);
+      --placeholder-opacity: 1;
+    }
+
+    .icon-input {
+      &.--start {
+        margin-right: 4px;
+      }
+    }
+
+    p {
+      font-size: var(--fz-body);
     }
   }
 }
@@ -166,5 +211,15 @@ ion-list ion-item-group ion-item {
     &.ion-button--gray {
       --background: var(--gray-cl-1);
     }
+  }
+}
+
+ion-fab {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+
+  ion-fab-button {
+    --background: #ffc800;
   }
 }
