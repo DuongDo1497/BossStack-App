@@ -8,6 +8,7 @@
 
     ion-input {
       &.form-control {
+        --background: var(--white-cl);
         border: 0;
       }
     }

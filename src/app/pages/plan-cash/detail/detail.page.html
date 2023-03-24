@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons class="button-back" slot="start">
+      <ion-back-button
+        defaultHref="/plan-cash"
+        text=""
+        color="light"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title><p>Chi tiết dòng tiền</p></ion-title>
+    <ion-buttons slot="end">
+      <ion-button href="/plan-cash/add" fill="clear">
+        <img src="../../../assets/images/cashPlan-icon-2.svg" alt="" />
+      </ion-button>
+      <ion-button href="/plan-cash/edit" fill="clear">
+        <img src="../../../assets/images/cashPlan-icon-10.svg" alt="" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="--gray" scroll-y="false">
+  <div class="section plan-cash detail">
+    <div class="plan-cash__wrap">
+      <div class="plan-cash__detail">
+        <p class="name">Tên dòng tiền kh</p>
+        <div class="info">
+          <div class="info-item">
+            <span>Phân loại</span>
+            <span>Aa</span>
+          </div>
+          <div class="info-item">
+            <span>Kế hoạch</span>
+            <span>Aa</span>
+          </div>
+          <div class="info-item">
+            <span>Số tiền còn lại</span>
+            <span class="number">0đ</span>
+          </div>
+          <div class="info-item">
+            <span>Thời gian hoàn thành kế hoạch</span>
+            <span>0 tháng</span>
+          </div>
+          <div class="info-item">
+            <span>Tuổi hiện tại</span>
+            <span>0 tuổi</span>
+          </div>
+          <div class="info-item">
+            <span>Tuổi hoàn thành kế hoạch</span>
+            <span>0 tuổi</span>
+          </div>
+        </div>
+        <p class="status --success">Hoạt động</p>
+      </div>
+
+      <div class="plan-cash__noti">
+        <div class="plan-cash__noti-content">
+          <p class="plan-cash__noti-item">
+            Để đạt được kế hoạch tài chính: <span>0đ</span>
+          </p>
+          <p class="plan-cash__noti-item">
+            Bạn cần tích lũy: <span>0đ/tháng</span>
+          </p>
+          <p class="plan-cash__noti-item">Trong: <span>0 năm</span></p>
+          <p class="plan-cash__noti-item">
+            Số tiền tích lũy đầu kỳ: <span>0đ</span>
+          </p>
+        </div>
+        <img src="../../../../assets/images/cashPlan-img-1.png" alt="" />
+      </div>
+
+      <div class="plan-cash__info">
+        <ion-segment [(ngModel)]="segment" scrollable>
+          <ion-segment-button value="chart">
+            Biểu đồ kế hoạch
+          </ion-segment-button>
+          <ion-segment-button value="plan">
+            Kế hoạch tích lũy
+          </ion-segment-button>
+        </ion-segment>
+
+        <div [ngSwitch]="segment">
+          <ion-card *ngSwitchCase="'chart'">
+            <ion-card-header> First Content </ion-card-header>
+            <ion-card-content> First Content here </ion-card-content>
+          </ion-card>
+
+          <ion-card *ngSwitchCase="'plan'">
+            <ion-card-header> Second Header </ion-card-header>
+            <ion-card-content> Second content here </ion-card-content>
+          </ion-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

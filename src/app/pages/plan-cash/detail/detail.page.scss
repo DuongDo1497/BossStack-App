@@ -1,0 +1,87 @@
+.plan-cash {
+  padding: 0 16px;
+  overflow-y: scroll;
+
+  &__detail {
+    padding: 16px;
+    border-radius: 6px;
+    margin: 0 -15px 16px;
+    background-color: var(--white-cl);
+
+    .name {
+      font-size: var(--fz-small);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .info {
+      margin-bottom: 10px;
+
+      &-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        span {
+          font-size: var(--fz-small);
+          line-height: 18px;
+
+          &:last-child {
+            font-weight: 500;
+            text-align: right;
+          }
+        }
+      }
+    }
+
+    .status {
+      display: inline-block;
+      font-size: var(--fz-small);
+      padding: 4px 8px;
+      border-radius: 6px;
+      color: var(--white-cl);
+
+      &.--success {
+        background-color: #38d29e;
+      }
+
+      &.--danger {
+        background-color: #f04d64;
+      }
+    }
+  }
+
+  &__noti {
+    padding: 16px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    background-color: #3465d9;
+
+    p {
+      color: var(--white-cl);
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 6px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      span {
+        font-size: var(--fz-small);
+      }
+    }
+
+    img {
+      position: absolute;
+      right: 14px;
+      bottom: -20px;
+    }
+  }
+}

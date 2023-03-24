@@ -103,6 +103,30 @@ const routes: Routes = [
           },
         ],
       },
+      {
+        path: 'plan-cash/edit',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/plan-cash/edit/edit.module').then(
+                (m) => m.EditPageModule
+              ),
+          },
+        ],
+      },
+      {
+        path: 'plan-cash/detail',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/plan-cash/detail/detail.module').then(
+                (m) => m.DetailPageModule
+              ),
+          },
+        ],
+      },
       // End Cash plan page
 
       // History page
