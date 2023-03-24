@@ -10,97 +10,143 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content
-  [fullscreen]="true"
-  class="ion-padding-horizontal"
-  scroll-y="false"
->
+<ion-content [fullscreen]="true" scroll-y="false">
   <div class="section member add">
     <ion-list class="form-general member-form">
       <ion-item lines="none">
-        <img
-          class="icon-input --start"
-          src="../../../../assets/images/icon-calendar.svg"
-          alt=""
-        />
-        <ion-label>Ngày lập</ion-label>
+        <ion-label>
+          <img
+            class="icon-label"
+            src="../../../../assets/images/icon-calendar.svg"
+            alt=""
+          />
+          Ngày lập
+        </ion-label>
         <p>17/03/2023 Thứ sáu</p>
       </ion-item>
 
-      <ion-item lines="full" button detail="false">
+      <ion-item lines="full">
         <ion-label>Ngày bắt đầu</ion-label>
-        <img
-          class="icon-input --end"
-          src="../../../../assets/images/icon-calendar.svg"
-          alt=""
-        />
+        <ion-datetime-button
+          slot="end"
+          datetime="date-start"
+        ></ion-datetime-button>
       </ion-item>
 
       <ion-item lines="full">
+        <ion-label>Ngày kết thúc</ion-label>
+        <ion-datetime-button
+          slot="end"
+          datetime="date-end"
+        ></ion-datetime-button>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Họ và tên</ion-label>
         <ion-input placeholder="Họ và tên"></ion-input>
       </ion-item>
 
       <ion-item lines="full">
+        <ion-label position="floating">Số điện thoại</ion-label>
         <ion-input placeholder="Số điện thoại"></ion-input>
       </ion-item>
 
       <ion-item lines="full">
+        <ion-label position="floating">Email</ion-label>
         <ion-input placeholder="Email"></ion-input>
       </ion-item>
 
       <ion-item lines="full" id="department" button detail="false">
-        <ion-label>Phòng ban</ion-label>
-        <img
-          class="icon-input --end"
-          src="../../../../assets/images/icon-right.svg"
-          alt=""
-        />
+        <ion-label position="floating">Phòng ban</ion-label>
+        <div class="input-group">
+          <ion-input placeholder="Phòng ban"></ion-input>
+          <img
+            class="icon-input"
+            src="../../../../assets/images/icon-right.svg"
+            alt=""
+          />
+        </div>
       </ion-item>
 
       <ion-item lines="full">
+        <ion-label position="floating">Chức vụ</ion-label>
         <ion-input placeholder="Chức vụ"></ion-input>
       </ion-item>
 
-      <ion-item lines="full" button detail="false">
-        <ion-label>Phân quyền</ion-label>
-        <img
-          class="icon-input --end"
-          src="../../../../assets/images/icon-right.svg"
-          alt=""
-        />
+      <ion-item lines="full" id="role" button detail="false">
+        <ion-label position="floating">Phân quyền</ion-label>
+        <div class="input-group">
+          <ion-input placeholder="Phân quyền"></ion-input>
+          <img
+            class="icon-input"
+            src="../../../../assets/images/icon-right.svg"
+            alt=""
+          />
+        </div>
       </ion-item>
 
-      <ion-item lines="full" button detail="false">
-        <img
-          class="icon-input --start"
-          src="../../../../assets/images/icon-calendar.svg"
-          alt=""
-        />
-        <ion-label>Ghi chú</ion-label>
-        <img
-          class="icon-input --end"
-          src="../../../../assets/images/icon-plus.svg"
-          alt=""
-        />
+      <ion-item lines="full" id="note" button detail="false">
+        <ion-label position="floating">
+          <img
+            class="icon-label"
+            src="../../../../assets/images/icon-note.svg"
+            alt=""
+          />
+          Ghi chú
+        </ion-label>
+        <div class="input-group">
+          <ion-input placeholder="Ghi chú"></ion-input>
+          <img
+            class="icon-input"
+            src="../../../../assets/images/icon-plus.svg"
+            alt=""
+          />
+        </div>
       </ion-item>
 
-      <ion-item lines="full" button detail="false">
-        <img
-          class="icon-input --start"
-          src="../../../../assets/images/icon-attach.svg"
-          alt=""
-        />
-        <ion-label>Tệp đính kèm</ion-label>
-        <img
-          class="icon-input --end"
-          src="../../../../assets/images/icon-plus.svg"
-          alt=""
-        />
+      <ion-item lines="full" id="file" button detail="false">
+        <ion-label position="floating">
+          <img
+            class="icon-label"
+            src="../../../../assets/images/icon-attach.svg"
+            alt=""
+          />
+          Tệp đính kèm
+        </ion-label>
+        <div class="input-group">
+          <ion-input placeholder="Tệp đính kèm"></ion-input>
+          <img
+            class="icon-input"
+            src="../../../../assets/images/icon-plus.svg"
+            alt=""
+          />
+        </div>
       </ion-item>
     </ion-list>
   </div>
 
+  <ion-modal [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime
+        id="date-start"
+        locale="vn-VN"
+        presentation="date"
+      ></ion-datetime>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime
+        id="date-end"
+        locale="vn-VN"
+        presentation="date"
+      ></ion-datetime>
+    </ng-template>
+  </ion-modal>
+
   <ion-modal
+    #department
     trigger="department"
     [initialBreakpoint]="0.5"
     [breakpoints]="[0, 0.25, 0.5, 0.75]"
@@ -108,8 +154,8 @@
   >
     <ng-template>
       <ion-content scroll-y="false">
-        <p class="title">Chọn Phòng ban</p>
-        <div class="search-bar">
+        <p class="modal-title">Chọn Phòng ban</p>
+        <div class="modal-search search-bar">
           <ion-item class="ion-no-padding login-input">
             <img
               class="icon-input"
@@ -119,28 +165,155 @@
             <ion-input class="form-control" placeholder="Tìm kiếm "></ion-input>
           </ion-item>
         </div>
-        <div class="department-list">
-          <ion-item lines="none">
-            <ion-avatar slot="start">
-              <img
-                alt=""
-                src="https://ionicframework.com/docs/img/demos/avatar.svg"
-              />
-            </ion-avatar>
-            <ion-label>Phòng ban Nhân sự</ion-label>
-            <ion-checkbox slot="end"></ion-checkbox>
-          </ion-item>
+        <div class="modal-list department-list">
+          <ion-radio-group value="department">
+            <ion-item lines="none">
+              <ion-avatar slot="start">
+                <img
+                  alt=""
+                  src="https://ionicframework.com/docs/img/demos/avatar.svg"
+                />
+              </ion-avatar>
+              <ion-label>Phòng ban Nhân sự</ion-label>
+              <ion-radio slot="end" value="demo1"></ion-radio>
+            </ion-item>
 
-          <ion-item lines="none">
-            <ion-avatar slot="start">
-              <img
-                alt=""
-                src="https://ionicframework.com/docs/img/demos/avatar.svg"
-              />
-            </ion-avatar>
-            <ion-label>Phòng ban Hành chính</ion-label>
-            <ion-checkbox slot="end"></ion-checkbox>
-          </ion-item>
+            <ion-item lines="none">
+              <ion-avatar slot="start">
+                <img
+                  alt=""
+                  src="https://ionicframework.com/docs/img/demos/avatar.svg"
+                />
+              </ion-avatar>
+              <ion-label>Phòng ban Hành chính</ion-label>
+              <ion-radio slot="end" value="demo2"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </div>
+        <div class="modal-control">
+          <ion-button class="btn-cancel" (click)="department.dismiss()"
+            >Hủy bỏ</ion-button
+          >
+          <ion-button class="btn-accept">Xác nhận</ion-button>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal
+    #role
+    trigger="role"
+    [initialBreakpoint]="0.5"
+    [breakpoints]="[0, 0.25, 0.5, 0.75]"
+    handleBehavior="cycle"
+  >
+    <ng-template>
+      <ion-content scroll-y="false">
+        <p class="modal-title">Chọn Phân quyền</p>
+        <div class="modal-list role-list">
+          <ion-radio-group value="role">
+            <ion-item lines="none">
+              <ion-avatar slot="start">
+                <img alt="" src="../../../../assets/images/icon-tag-yl.svg" />
+              </ion-avatar>
+              <ion-label>Quản lý</ion-label>
+              <ion-radio slot="end" value="demo1"></ion-radio>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-avatar slot="start">
+                <img alt="" src="../../../../assets/images/icon-tag-bl.svg" />
+              </ion-avatar>
+              <ion-label>Nhân viên</ion-label>
+              <ion-radio slot="end" value="demo2"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </div>
+        <div class="modal-control">
+          <ion-button class="btn-cancel" (click)="role.dismiss()"
+            >Hủy bỏ</ion-button
+          >
+          <ion-button class="btn-accept">Xác nhận</ion-button>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal
+    #note
+    trigger="note"
+    [initialBreakpoint]="0.5"
+    [breakpoints]="[0, 0.25, 0.5, 0.75]"
+    handleBehavior="cycle"
+  >
+    <ng-template>
+      <ion-content scroll-y="false">
+        <p class="modal-title">Thêm ghi chú</p>
+        <ion-textarea
+          placeholder="Thêm ghi chú..."
+          [clearOnEdit]="true"
+        ></ion-textarea>
+        <div class="modal-control">
+          <ion-button class="btn-cancel" (click)="note.dismiss()"
+            >Hủy bỏ</ion-button
+          >
+          <ion-button class="btn-accept">Xác nhận</ion-button>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal
+    #file
+    trigger="file"
+    [initialBreakpoint]="0.5"
+    [breakpoints]="[0, 0.25, 0.5, 0.75]"
+    handleBehavior="cycle"
+  >
+    <ng-template>
+      <ion-content scroll-y="false">
+        <p class="modal-title">Chọn Tệp tải lên</p>
+        <div class="modal-list role-list">
+          <ion-radio-group value="role">
+            <ion-item lines="none">
+              <ion-thumbnail slot="start">
+                <img
+                  alt=""
+                  src="../../../../assets/images/icon-upload-file.svg"
+                />
+              </ion-thumbnail>
+              <ion-label>Chọn tài liệu (excel, pdf, word)</ion-label>
+              <ion-radio slot="end" value="demo1"></ion-radio>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-thumbnail slot="start">
+                <img
+                  alt=""
+                  src="../../../../assets/images/icon-upload-image.svg"
+                />
+              </ion-thumbnail>
+              <ion-label>Chọn ảnh từ thư viện</ion-label>
+              <ion-radio slot="end" value="demo2"></ion-radio>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-thumbnail slot="start">
+                <img
+                  alt=""
+                  src="../../../../assets/images/icon-upload-camera.svg"
+                />
+              </ion-thumbnail>
+              <ion-label>Chụp ảnh</ion-label>
+              <ion-radio slot="end" value="demo3"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </div>
+        <div class="modal-control">
+          <ion-button class="btn-cancel" (click)="file.dismiss()"
+            >Hủy bỏ</ion-button
+          >
+          <ion-button class="btn-accept">Xác nhận</ion-button>
         </div>
       </ion-content>
     </ng-template>

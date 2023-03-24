@@ -127,14 +127,49 @@ ion-tab-bar {
 ion-list {
   &.form-general {
     ion-item {
+      --min-height: 45px;
       --padding-start: 0;
       --inner-padding-end: 0;
       --border-color: #f1f1f1;
       margin-bottom: 16px;
+      font-size: var(--fz-body);
+
+      &:first-child {
+        --min-height: auto;
+        margin-bottom: 32px;
+
+        p {
+          color: var(--primary-bl-cl);
+        }
+      }
     }
 
     ion-label {
+      display: flex !important;
+      align-items: center;
       color: var(--text-cl-second) !important;
+
+      .icon-label {
+        margin-right: 4px;
+      }
+    }
+
+    .input-group {
+      width: 100%;
+      position: relative;
+
+      .icon-input {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+
+        &.--text {
+          font-weight: 700;
+          font-size: var(--fz-heading);
+          color: var(--text-cl-second);
+        }
+      }
     }
 
     ion-input {
@@ -142,18 +177,17 @@ ion-list {
       --padding-end: 0;
       --padding-bottom: 0;
       --padding-start: 0;
+      --color: var(--text-cl-second);
       --placeholder-color: var(--text-cl-second);
       --placeholder-opacity: 1;
     }
 
-    .icon-input {
-      &.--start {
-        margin-right: 4px;
-      }
-    }
-
     p {
       font-size: var(--fz-body);
+    }
+
+    ion-datetime-button {
+      margin-inline: 0;
     }
   }
 }
@@ -196,6 +230,8 @@ ion-list ion-item-group ion-item {
     --padding-end: 15px;
     font-size: var(--fz-small);
     z-index: 1;
+    border: 0;
+    background-color: var(--background);
   }
 
   ion-button {
@@ -221,5 +257,160 @@ ion-fab {
 
   ion-fab-button {
     --background: #ffc800;
+  }
+}
+
+ion-modal {
+  --border-radius: 18px;
+
+  ion-content {
+    --padding-top: 22px;
+    --padding-bottom: 22px;
+    --padding-start: 16px;
+    --padding-end: 16px;
+  }
+
+  .modal {
+    &-title,
+    &-search {
+      margin-bottom: 24px;
+    }
+
+    &-title {
+      font-weight: 600;
+      text-align: center;
+    }
+
+    &-search {
+      padding: 0;
+    }
+
+    &-list {
+      margin-bottom: 32px;
+
+      ion-item {
+        --min-height: auto;
+        --padding-start: 0;
+        --inner-padding-end: 0;
+        --background-activated: transparent;
+        --background-focused: transparent;
+        --background-hover: transparent;
+        --background-activated-opacity: 0;
+        --background-focused-opacity: 0;
+        --background-hover-opacity: 0;
+        margin-bottom: 18px;
+
+        &.item-radio-checked {
+          ion-label {
+            color: #3465d9;
+          }
+        }
+      }
+
+      .form-general {
+        ion-item {
+          margin-bottom: 12px;
+        }
+      }
+
+      ion-thumbnail {
+        width: 24px;
+        height: 24px;
+        margin: 0 10px 0 0;
+      }
+
+      ion-label {
+        font-weight: 500;
+      }
+
+      ion-radio {
+        --color-checked: #00a325;
+      }
+    }
+
+    &-control {
+      display: flex;
+      justify-content: space-between;
+
+      ion-button {
+        --padding-top: 10px;
+        --padding-bottom: 10px;
+        margin: 0;
+        height: auto;
+        width: calc(50% - 6px);
+        &.btn-cancel {
+          --color: var(--text-cl-second);
+          --background: var(--gray-screen-cl);
+        }
+
+        &.btn-accept {
+          --background: #3465d9;
+        }
+      }
+    }
+  }
+
+  ion-textarea {
+    --padding-top: 0;
+    --padding-bottom: 0;
+    --color: var(--text-cl-second);
+    --placeholder-color: var(--text-cl-second);
+    --placeholder-opacity: 1;
+    margin-bottom: 32px;
+  }
+}
+
+.chart-wrap {
+  --chart-size: 232px;
+
+  canvas {
+    margin: 0 auto 32px;
+  }
+
+  &__note {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 16px;
+
+    &-item {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 8px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .tag-color {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+
+      &.--green {
+        background-color: #38d29e;
+      }
+
+      &.--gray {
+        background-color: #f1f1f1;
+      }
+    }
+
+    .tag-content {
+      span {
+        display: block;
+
+        &.text {
+          font-size: 12px;
+        }
+
+        &.number {
+          font-size: var(--fz-small);
+          color: var(--primary-bl-cl);
+        }
+      }
+    }
   }
 }

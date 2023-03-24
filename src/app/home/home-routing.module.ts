@@ -66,6 +66,45 @@ const routes: Routes = [
       },
       // End page tab
 
+      // Cash plan page
+      {
+        path: 'plan-cash',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/plan-cash/plan-cash.module').then(
+                (m) => m.PlanCashPageModule
+              ),
+          },
+        ],
+      },
+      {
+        path: 'plan-cash/list',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/plan-cash/list/list.module').then(
+                (m) => m.ListPageModule
+              ),
+          },
+        ],
+      },
+      {
+        path: 'plan-cash/add',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/plan-cash/add/add.module').then(
+                (m) => m.AddPageModule
+              ),
+          },
+        ],
+      },
+      // End Cash plan page
+
       // History page
       {
         path: 'history',

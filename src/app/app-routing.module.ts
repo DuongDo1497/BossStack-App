@@ -26,12 +26,6 @@ const routes: Routes = [
     loadChildren: () =>
       import('./home/home.module').then((m) => m.HomePageModule),
   },
-  // {
-  //   path: 'add',
-  //   loadChildren: () =>
-  //     import('./pages/member/add/add.module').then((m) => m.AddPageModule),
-  // },
-
   // Main
 ];
 

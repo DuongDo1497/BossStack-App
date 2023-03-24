@@ -1,0 +1,165 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons class="button-back" slot="start">
+      <ion-back-button defaultHref="/" text="" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title><p>Kế hoạch dòng tiền</p></ion-title>
+    <ion-buttons slot="end">
+      <ion-button href="/plan-cash/add" fill="clear">
+        <img src="../../../assets/images/cashPlan-icon-2.svg" alt="" />
+      </ion-button>
+      <ion-button href="/plan-cash/list" fill="clear">
+        <img src="../../../assets/images/cashPlan-icon-1.svg" alt="" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="--gray" scroll-y="false">
+  <div class="section plan-cash manage">
+    <div class="plan-cash__wrap">
+      <div class="plan-cash__chart">
+        <p class="title">Biểu đồ</p>
+        <div class="plan-cash__chart-body">
+          <div class="filter-time">
+            <div class="filter-time__range">
+              <ion-datetime-button
+                datetime="datetime1"
+                color="dark"
+                class="custom"
+              ></ion-datetime-button>
+              <span>-</span>
+              <ion-datetime-button
+                datetime="datetime2"
+                color="dark"
+                class="custom"
+              ></ion-datetime-button>
+            </div>
+            <img
+              class="filter-time__icon"
+              src="../../../assets/images/icon-calendar.svg"
+              alt=""
+            />
+          </div>
+          <div class="chart-wrap">
+            <canvas id="cashPlan" width="232" height="232"></canvas>
+            <div class="chart-wrap__note">
+              <div class="chart-wrap__note-item">
+                <p class="tag-color --green"></p>
+                <p class="tag-content">
+                  <span class="text">Số tiền đang thực hiện</span>
+                  <span class="number">0 đ</span>
+                </p>
+              </div>
+              <div class="chart-wrap__note-item">
+                <p class="tag-color --gray"></p>
+                <p class="tag-content">
+                  <span class="text">Số tiền còn lại</span>
+                  <span class="number">0 đ</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="plan-cash__work">
+        <p class="title">Hoạt động gần nhất</p>
+        <div class="plan-cash__list">
+          <div class="plan-cash__item">
+            <p class="plan-cash__time">17/03/2023 Thứ 6</p>
+            <div class="plan-cash__box">
+              <div class="plan-cash__detail">
+                <a href="#">
+                  <div class="header">
+                    <p class="name">Tên dòng tiền kh</p>
+                    <ion-button color="light">
+                      Phân bổ
+                      <img
+                        src="../../../../assets/images/cashPlan-icon-9.svg"
+                        alt=""
+                      />
+                    </ion-button>
+                  </div>
+                  <div class="info">
+                    <div class="info-item">
+                      <span>Phân loại</span>
+                      <span>Aa</span>
+                    </div>
+                    <div class="info-item">
+                      <span>Chi tiết</span>
+                      <span>Aa</span>
+                    </div>
+                    <div class="info-item">
+                      <span>Số tiền kế hoạch</span>
+                      <span class="number --success">0đ</span>
+                    </div>
+                    <div class="info-item">
+                      <span>Số tiền đang thực hiện</span>
+                      <span class="number --success">0đ</span>
+                    </div>
+                    <div class="info-item">
+                      <span>Số tiền còn lại</span>
+                      <span class="number --success">0đ</span>
+                    </div>
+                  </div>
+                  <p class="status --success">Hoạt động</p>
+                </a>
+              </div>
+
+              <div class="plan-cash__detail">
+                <a href="#">
+                  <div class="header">
+                    <p class="name">Tên dòng tiền kh</p>
+                    <ion-button color="light">
+                      Phân bổ
+                      <img
+                        src="../../../../assets/images/cashPlan-icon-9.svg"
+                        alt=""
+                      />
+                    </ion-button>
+                  </div>
+                  <div class="info">
+                    <div class="info-item">
+                      <span>Phân loại</span>
+                      <span>Aa</span>
+                    </div>
+                    <div class="info-item">
+                      <span>Chi tiết</span>
+                      <span>Aa</span>
+                    </div>
+                    <div class="info-item">
+                      <span>Số tiền kế hoạch</span>
+                      <span class="number --success">0đ</span>
+                    </div>
+                    <div class="info-item">
+                      <span>Số tiền đang thực hiện</span>
+                      <span class="number --success">0đ</span>
+                    </div>
+                    <div class="info-item">
+                      <span>Số tiền còn lại</span>
+                      <span class="number --success">0đ</span>
+                    </div>
+                  </div>
+                  <p class="status --danger">Tất toán</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="plan-cash__link" href="/plan-cash/list">Xem thêm danh sách</a>
+      </div>
+    </div>
+  </div>
+
+  <ion-modal [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime id="datetime1" presentation="date"></ion-datetime>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime id="datetime2" presentation="date"></ion-datetime>
+    </ng-template>
+  </ion-modal>
+</ion-content>
