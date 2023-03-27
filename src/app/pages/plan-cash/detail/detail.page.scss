@@ -84,4 +84,101 @@
       bottom: -20px;
     }
   }
+
+  &__info {
+    #pills-chart {
+      margin: 0 16px;
+      padding: 22px 11px;
+      border-radius: 6px;
+      background-color: var(--white-cl);
+    }
+
+    .chart-wrap {
+      canvas {
+        width: 100% !important;
+        height: 300px !important;
+      }
+    }
+
+    #pills-plan {
+      .nav-pills {
+        gap: 14px;
+        margin: 0 16px 12px;
+
+        .nav-link {
+          font-size: var(--fz-small);
+          font-weight: 500;
+          padding: 8px 12px;
+          border-radius: 6px;
+          color: #3465d9;
+          background-color: var(--primary-bl-cl-2);
+
+          &.active {
+            color: var(--white-cl);
+            background-color: #3465d9;
+          }
+        }
+      }
+
+      .tab-content {
+        padding: 0 16px;
+        background-color: var(--white-cl);
+
+        .plan-cash {
+          &__item {
+            margin-bottom: 15px;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+
+          &__time {
+            padding: 8px 16px;
+            margin: 0 0 12px;
+            font-weight: 500;
+            border-radius: 6px;
+            font-size: var(--fz-small);
+            color: var(--primary-bl-cl);
+            background-color: var(--primary-bl-cl-1);
+          }
+
+          &__detail {
+            padding: 16px;
+            border-radius: 6px;
+            background-color: var(--white-cl);
+            margin-bottom: 6px;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+
+            .info {
+              margin-bottom: 10px;
+
+              &-item {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 8px;
+
+                &:last-child {
+                  margin-bottom: 0;
+                }
+
+                span {
+                  font-size: var(--fz-small);
+                  line-height: 18px;
+
+                  &:last-child {
+                    font-weight: 700;
+                    text-align: right;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

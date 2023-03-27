@@ -13,6 +13,7 @@ export class PlanCashPage implements OnInit {
 
   ngOnInit(): void {
     let ctx: any = document.getElementById('cashPlan');
+    ctx.height = 232;
     let cashPlan = new Chart(ctx.getContext('2d'), {
       type: 'doughnut',
       data: {

@@ -54,6 +54,7 @@ ion-label {
   line-height: calc(20 / 16) !important;
 }
 
+// Custom style navigation bar header
 ion-header {
   ion-toolbar {
     --border-width: 0 !important;
@@ -98,6 +99,7 @@ ion-content {
   }
 }
 
+// Custom style navigation bar footer
 ion-tab-bar {
   --background: var(--white-cl);
   --border: 0;
@@ -124,6 +126,7 @@ ion-tab-bar {
   }
 }
 
+// Custom style input
 ion-list {
   &.form-general {
     ion-item {
@@ -196,6 +199,7 @@ ion-list ion-item-group ion-item {
   flex: 0 0 calc(50% - 8px);
 }
 
+// Custom style search bar
 .search-bar {
   padding: 16px;
 
@@ -250,6 +254,7 @@ ion-list ion-item-group ion-item {
   }
 }
 
+// Custom style button link page add
 ion-fab {
   position: fixed;
   bottom: 10px;
@@ -260,6 +265,7 @@ ion-fab {
   }
 }
 
+// Custom style modal user add and edit input
 ion-modal {
   --border-radius: 18px;
 
@@ -360,9 +366,8 @@ ion-modal {
   }
 }
 
+// Custom style chart
 .chart-wrap {
-  --chart-size: 232px;
-
   canvas {
     margin: 0 auto 32px;
   }
@@ -396,6 +401,14 @@ ion-modal {
       &.--gray {
         background-color: #f1f1f1;
       }
+
+      &.--red {
+        background-color: #f04d64;
+      }
+
+      &.--orange {
+        background-color: #fd9f13;
+      }
     }
 
     .tag-content {
@@ -409,6 +422,72 @@ ion-modal {
         &.number {
           font-size: var(--fz-small);
           color: var(--primary-bl-cl);
+        }
+      }
+    }
+  }
+}
+
+// Filter range time
+.filter-time {
+  padding: 10px 16px;
+  border-radius: 6px;
+  margin-bottom: 32px;
+  background-color: var(--gray-cl-1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__range {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    span {
+      color: var(--primary-bl-cl);
+    }
+
+    ion-datetime-button {
+      --ion-text-color: var(--primary-bl-cl);
+      --ion-color-step-300: transparent;
+
+      &::part(native) {
+        padding-inline: 0;
+      }
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+  }
+}
+
+// Custom tab detail product
+.detail-tabs {
+  margin: 0 -15px;
+
+  .nav-pills {
+    &--parent {
+      --column: 2;
+      width: 100%;
+      background-color: var(--white-cl);
+
+      .nav-item {
+        width: calc(100% / var(--column));
+      }
+
+      .nav-link {
+        width: 100%;
+        font-size: var(--fz-small);
+        font-weight: 500;
+        padding: 16px 10px;
+        border-radius: 0;
+        color: var(--text-cl-primary);
+        background-color: var(--white-cl);
+
+        &.active {
+          color: var(--primary-bl-cl);
+          border-bottom: 1px solid var(--primary-bl-cl);
         }
       }
     }
