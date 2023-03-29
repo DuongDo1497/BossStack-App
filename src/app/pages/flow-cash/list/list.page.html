@@ -1,0 +1,369 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons class="button-back" slot="start">
+      <ion-back-button
+        defaultHref="/flow-cash"
+        text=""
+        color="light"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title><p>Bóc tách dòng tiền</p></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="--gray" scroll-y="false">
+  <div class="section flow-cash list">
+    <div class="flow-cash__wrap">
+      <div class="search-bar">
+        <ion-item class="ion-no-padding login-input">
+          <img
+            class="icon-input"
+            src="../../assets/images/icon-search.svg"
+            alt=""
+          />
+          <ion-input class="form-control" placeholder="Tìm kiếm"></ion-input>
+        </ion-item>
+      </div>
+
+      <div class="flow-cash__filter">
+        <img src="../../../../assets/images/cashPlan-icon-3.svg" alt="" />
+        <div class="flow-cash__filter-wrap">
+          <ion-button id="categories">
+            Danh mục
+            <img src="../../../../assets/images/icon-right.svg" alt="" />
+          </ion-button>
+
+          <ion-button id="status">
+            Trạng thái
+            <img src="../../../../assets/images/icon-right.svg" alt="" />
+          </ion-button>
+
+          <ion-button id="time">
+            Thời gian
+            <img src="../../../../assets/images/icon-right.svg" alt="" />
+          </ion-button>
+        </div>
+      </div>
+
+      <div class="flow-cash__list">
+        <p class="flow-cash__total">Tổng: 0đ</p>
+        <div class="flow-cash__item">
+          <p class="flow-cash__time">17/03/2023 Thứ 6</p>
+          <div class="flow-cash__box">
+            <div class="flow-cash__detail">
+              <p class="name">Giá vốn hàng bán</p>
+              <div class="info">
+                <div class="info-item">
+                  <span>Danh mục</span>
+                  <span>Aa</span>
+                </div>
+                <div class="info-item">
+                  <span>Kế hoạch</span>
+                  <span>Aa</span>
+                </div>
+                <div class="info-item">
+                  <span>Ngày bắt đầu</span>
+                  <span>mm/dd/yy</span>
+                </div>
+                <div class="info-item">
+                  <span>Ngày dự kiến hoàn thành</span>
+                  <span>mm/dd/yy</span>
+                </div>
+                <div class="info-item">
+                  <span>Số tiền kế hoạch</span>
+                  <span class="number --success">0đ</span>
+                </div>
+                <div class="info-item">
+                  <span>Số tiền đang thực hiện</span>
+                  <span class="number --success">0đ</span>
+                </div>
+                <div class="info-item">
+                  <span>Số tiền còn lại</span>
+                  <span class="number --success">0đ</span>
+                </div>
+              </div>
+              <div class="timeline --success">
+                <p class="progress-text">Tiến độ thực hiện: 75%</p>
+                <div class="progress">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    style="width: 75%"
+                    aria-valuenow="25"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-cash__item">
+          <p class="flow-cash__time">28/03/2023 Thứ 3</p>
+          <div class="flow-cash__box">
+            <div class="flow-cash__detail">
+              <p class="name">Giá vốn hàng bán</p>
+              <div class="info">
+                <div class="info-item">
+                  <span>Danh mục</span>
+                  <span>Aa</span>
+                </div>
+                <div class="info-item">
+                  <span>Kế hoạch</span>
+                  <span>Aa</span>
+                </div>
+                <div class="info-item">
+                  <span>Ngày bắt đầu</span>
+                  <span>mm/dd/yy</span>
+                </div>
+                <div class="info-item">
+                  <span>Ngày dự kiến hoàn thành</span>
+                  <span>mm/dd/yy</span>
+                </div>
+                <div class="info-item">
+                  <span>Số tiền kế hoạch</span>
+                  <span class="number --success">0đ</span>
+                </div>
+                <div class="info-item">
+                  <span>Số tiền đang thực hiện</span>
+                  <span class="number --success">0đ</span>
+                </div>
+                <div class="info-item">
+                  <span>Số tiền còn lại</span>
+                  <span class="number --success">0đ</span>
+                </div>
+              </div>
+              <div class="timeline --danger">
+                <p class="progress-text">Tiến độ thực hiện: 25%</p>
+                <div class="progress">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    style="width: 25%"
+                    aria-valuenow="25"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flow-cash__detail">
+              <p class="name">Giá vốn hàng bán</p>
+              <div class="info">
+                <div class="info-item">
+                  <span>Danh mục</span>
+                  <span>Aa</span>
+                </div>
+                <div class="info-item">
+                  <span>Kế hoạch</span>
+                  <span>Aa</span>
+                </div>
+                <div class="info-item">
+                  <span>Ngày bắt đầu</span>
+                  <span>mm/dd/yy</span>
+                </div>
+                <div class="info-item">
+                  <span>Ngày dự kiến hoàn thành</span>
+                  <span>mm/dd/yy</span>
+                </div>
+                <div class="info-item">
+                  <span>Số tiền kế hoạch</span>
+                  <span class="number --success">0đ</span>
+                </div>
+                <div class="info-item">
+                  <span>Số tiền đang thực hiện</span>
+                  <span class="number --success">0đ</span>
+                </div>
+                <div class="info-item">
+                  <span>Số tiền còn lại</span>
+                  <span class="number --success">0đ</span>
+                </div>
+              </div>
+              <div class="timeline --danger">
+                <p class="progress-text">Tiến độ thực hiện: 25%</p>
+                <div class="progress">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    style="width: 25%"
+                    aria-valuenow="25"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flow-cash__detail">
+              <p class="name">Giá vốn hàng bán</p>
+              <div class="info">
+                <div class="info-item">
+                  <span>Danh mục</span>
+                  <span>Aa</span>
+                </div>
+                <div class="info-item">
+                  <span>Kế hoạch</span>
+                  <span>Aa</span>
+                </div>
+                <div class="info-item">
+                  <span>Ngày bắt đầu</span>
+                  <span>mm/dd/yy</span>
+                </div>
+                <div class="info-item">
+                  <span>Ngày dự kiến hoàn thành</span>
+                  <span>mm/dd/yy</span>
+                </div>
+                <div class="info-item">
+                  <span>Số tiền kế hoạch</span>
+                  <span class="number --success">0đ</span>
+                </div>
+                <div class="info-item">
+                  <span>Số tiền đang thực hiện</span>
+                  <span class="number --success">0đ</span>
+                </div>
+                <div class="info-item">
+                  <span>Số tiền còn lại</span>
+                  <span class="number --success">0đ</span>
+                </div>
+              </div>
+              <div class="timeline --danger">
+                <p class="progress-text">Tiến độ thực hiện: 25%</p>
+                <div class="progress">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    style="width: 25%"
+                    aria-valuenow="25"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ion-modal
+    #categories
+    trigger="categories"
+    [initialBreakpoint]="0.5"
+    [breakpoints]="[0, 0.25, 0.5, 0.75]"
+    handleBehavior="cycle"
+  >
+    <ng-template>
+      <ion-content scroll-y="false">
+        <p class="modal-title">Lọc Phân loại</p>
+        <div class="modal-list categories-list">
+          <ion-radio-group value="categories">
+            <ion-item lines="none">
+              <ion-thumbnail slot="start">
+                <img
+                  alt=""
+                  src="../../../../assets/images/cashPlan-icon-4.svg"
+                />
+              </ion-thumbnail>
+              <ion-label>Cá nhân</ion-label>
+              <ion-radio slot="end" value="demo1"></ion-radio>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-thumbnail slot="start">
+                <img
+                  alt=""
+                  src="../../../../assets/images/cashPlan-icon-5.svg"
+                />
+              </ion-thumbnail>
+              <ion-label>Gia đình</ion-label>
+              <ion-radio slot="end" value="demo2"></ion-radio>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-thumbnail slot="start">
+                <img
+                  alt=""
+                  src="../../../../assets/images/cashPlan-icon-6.svg"
+                />
+              </ion-thumbnail>
+              <ion-label>Đầu tư</ion-label>
+              <ion-radio slot="end" value="demo3"></ion-radio>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-thumbnail slot="start">
+                <img
+                  alt=""
+                  src="../../../../assets/images/cashPlan-icon-7.svg"
+                />
+              </ion-thumbnail>
+              <ion-label>Kinh doanh</ion-label>
+              <ion-radio slot="end" value="demo4"></ion-radio>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-thumbnail slot="start">
+                <img
+                  alt=""
+                  src="../../../../assets/images/cashPlan-icon-8.svg"
+                />
+              </ion-thumbnail>
+              <ion-label>Dòng tiền khác</ion-label>
+              <ion-radio slot="end" value="demo6"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </div>
+        <div class="modal-control">
+          <ion-button class="btn-cancel">Xóa bộ lọc</ion-button>
+          <ion-button class="btn-accept">Xác nhận</ion-button>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal #time trigger="time" id="time">
+    <ng-template>
+      <ion-datetime
+        id="date-end"
+        locale="vn-VN"
+        presentation="date"
+      ></ion-datetime>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal
+    #status
+    trigger="status"
+    [initialBreakpoint]="0.5"
+    [breakpoints]="[0, 0.25, 0.5, 0.75]"
+    handleBehavior="cycle"
+  >
+    <ng-template>
+      <ion-content scroll-y="false">
+        <p class="modal-title">Lọc Phân loại</p>
+        <div class="modal-list status-list">
+          <ion-radio-group value="status">
+            <ion-item lines="none">
+              <span class="status-tag --success"></span>
+              <ion-label>Hoạt động</ion-label>
+              <ion-radio slot="end" value="demo1"></ion-radio>
+            </ion-item>
+
+            <ion-item lines="none">
+              <span class="status-tag --danger"></span>
+              <ion-label>Tất toán</ion-label>
+              <ion-radio slot="end" value="demo2"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </div>
+        <div class="modal-control">
+          <ion-button class="btn-cancel">Xóa bộ lọc</ion-button>
+          <ion-button class="btn-accept">Xác nhận</ion-button>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>

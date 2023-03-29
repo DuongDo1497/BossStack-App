@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons class="button-back" slot="start">
+      <ion-back-button defaultHref="/" text="" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title><p>Bóc tách dòng tiền</p></ion-title>
+    <ion-buttons slot="end">
+      <ion-button href="/flow-cash/list" fill="clear">
+        <img src="../../../assets/images/cashPlan-icon-1.svg" alt="" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="--gray" scroll-y="false">
+  <div class="section flow-cash manage">
+    <div class="flow-cash__wrap">
+      <div class="flow-cash__chart">
+        <p class="title">Biểu đồ</p>
+        <div class="flow-cash__chart-body">
+          <div class="filter-time">
+            <div class="filter-time__wrap">
+              <div class="filter-time__range">
+                <ion-datetime-button
+                  datetime="datetime1"
+                  color="dark"
+                  class="custom"
+                ></ion-datetime-button>
+              </div>
+              <img
+                class="filter-time__icon"
+                src="../../../assets/images/icon-calendar.svg"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div class="chart-wrap">
+            <canvas id="cashFlow" width="232" height="232"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-cash__menu">
+        <ion-item
+          class="flow-cash__menu-item"
+          lines="none"
+          detail="true"
+          href="/flow-cash/status/done"
+        >
+          <span class="status-tag --success"></span>
+          <ion-label>
+            <h3>Hoàn thành mục tiêu (60%)</h3>
+            <p>Mục tiêu đã đạt đủ số tiền</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item
+          class="flow-cash__menu-item"
+          lines="none"
+          detail="true"
+          href="/flow-cash/status/good"
+        >
+          <span class="status-tag --warning"></span>
+          <ion-label>
+            <h3>Đang thực hiện tốt (30%)</h3>
+            <p>Tiến độ thực hiện mục tiêu trên 50%</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item
+          class="flow-cash__menu-item"
+          lines="none"
+          detail="true"
+          href="#"
+        >
+          <span class="status-tag --danger"></span>
+          <ion-label>
+            <h3>Đang thực hiện chưa tốt (10%)</h3>
+            <p>Tiến độ thực hiện mục tiêu dưới 50%</p>
+          </ion-label>
+        </ion-item>
+      </div>
+    </div>
+  </div>
+
+  <ion-modal [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime id="datetime1" presentation="date"></ion-datetime>
+    </ng-template>
+  </ion-modal>
+</ion-content>

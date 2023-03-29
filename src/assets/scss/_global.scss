@@ -430,13 +430,18 @@ ion-modal {
 
 // Filter range time
 .filter-time {
-  padding: 10px 16px;
-  border-radius: 6px;
-  margin-bottom: 32px;
-  background-color: var(--gray-cl-1);
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  margin-bottom: 32px;
+
+  &__wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 6px;
+    background-color: var(--gray-cl-1);
+  }
 
   &__range {
     display: flex;
@@ -491,5 +496,22 @@ ion-modal {
         }
       }
     }
+  }
+}
+
+// Custom status tag
+.status-tag {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+  display: inline-block;
+
+  &.--success {
+    background-color: #38d29e;
+  }
+
+  &.--danger {
+    background-color: #f04d64;
   }
 }

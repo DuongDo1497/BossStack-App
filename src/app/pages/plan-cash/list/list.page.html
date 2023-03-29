@@ -33,7 +33,7 @@
       <div class="plan-cash__filter">
         <img src="../../../../assets/images/cashPlan-icon-3.svg" alt="" />
         <div class="plan-cash__filter-wrap">
-          <ion-button id="category">
+          <ion-button id="categories">
             Phân loại
             <img src="../../../../assets/images/icon-right.svg" alt="" />
           </ion-button>
@@ -215,8 +215,8 @@
   </div>
 
   <ion-modal
-    #category
-    trigger="category"
+    #categories
+    trigger="categories"
     [initialBreakpoint]="0.5"
     [breakpoints]="[0, 0.25, 0.5, 0.75]"
     handleBehavior="cycle"
@@ -224,8 +224,8 @@
     <ng-template>
       <ion-content scroll-y="false">
         <p class="modal-title">Lọc Phân loại</p>
-        <div class="modal-list category-list">
-          <ion-radio-group value="category">
+        <div class="modal-list categories-list">
+          <ion-radio-group value="categories">
             <ion-item lines="none">
               <ion-thumbnail slot="start">
                 <img

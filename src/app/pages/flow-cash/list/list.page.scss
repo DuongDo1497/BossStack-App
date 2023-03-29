@@ -1,4 +1,4 @@
-.plan-cash {
+.flow-cash {
   padding: 12px 16px;
   overflow-y: scroll;
 
@@ -43,6 +43,11 @@
     }
   }
 
+  &__total {
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
   &__item {
     margin-bottom: 15px;
 
@@ -53,8 +58,9 @@
 
   &__time {
     padding: 8px 16px;
-    margin: 0 -15px 12px;
+    margin: 0 0 12px;
     font-weight: 500;
+    border-radius: 6px;
     font-size: var(--fz-small);
     color: var(--primary-bl-cl);
     background-color: var(--primary-bl-cl-2);
@@ -75,35 +81,10 @@
       color: var(--text-cl-primary);
     }
 
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    .name {
+      font-size: var(--fz-small);
+      font-weight: 700;
       margin-bottom: 8px;
-
-      .name {
-        font-size: var(--fz-small);
-        font-weight: 700;
-      }
-
-      ion-button {
-        --border-radius: 6px;
-        --padding-top: 4px;
-        --padding-bottom: 4px;
-        --padding-start: 6px;
-        --padding-end: 6px;
-        --background: #f1f1f1;
-        --color: #3465d9;
-        --ion-color-contrast: #3465d9 !important;
-        height: auto;
-        font-size: 12px;
-        font-weight: 500;
-        margin: 0;
-
-        img {
-          margin-left: 4px;
-        }
-      }
     }
 
     .info {
@@ -134,19 +115,36 @@
       }
     }
 
-    .status {
-      display: inline-block;
-      font-size: var(--fz-small);
-      padding: 4px 8px;
-      border-radius: 6px;
-      color: var(--white-cl);
+    .timeline {
+      .progress-text {
+        font-size: 12px;
+        font-weight: 500;
+        margin-bottom: 4px;
+      }
+
+      .progress {
+        --bs-progress-height: 6px;
+        --bs-progress-bg: var(--gray-cl-1);
+      }
 
       &.--success {
-        background-color: #38d29e;
+        .progress-text {
+          color: #00a325;
+        }
+
+        .progress {
+          --bs-progress-bar-bg: #00a325;
+        }
       }
 
       &.--danger {
-        background-color: #f04d64;
+        .progress-text {
+          color: #f04d64;
+        }
+
+        .progress {
+          --bs-progress-bar-bg: #f04d64;
+        }
       }
     }
   }

@@ -129,6 +129,57 @@ const routes: Routes = [
       },
       // End Cash plan page
 
+      // Cash flow page
+      {
+        path: 'flow-cash',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/flow-cash/flow-cash.module').then(
+                (m) => m.FlowCashPageModule
+              ),
+          },
+        ],
+      },
+      {
+        path: 'flow-cash/list',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/flow-cash/list/list.module').then(
+                (m) => m.ListPageModule
+              ),
+          },
+        ],
+      },
+      {
+        path: 'flow-cash/status/done',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/flow-cash/status/done/done.module').then(
+                (m) => m.DonePageModule
+              ),
+          },
+        ],
+      },
+      {
+        path: 'flow-cash/status/good',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/flow-cash/status/good/good.module').then(
+                (m) => m.GoodPageModule
+              ),
+          },
+        ],
+      },
+      // End Cash flow page
+
       // History page
       {
         path: 'history',

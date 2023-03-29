@@ -22,24 +22,26 @@
         <p class="title">Biểu đồ</p>
         <div class="plan-cash__chart-body">
           <div class="filter-time">
-            <div class="filter-time__range">
-              <ion-datetime-button
-                datetime="datetime1"
-                color="dark"
-                class="custom"
-              ></ion-datetime-button>
-              <span>-</span>
-              <ion-datetime-button
-                datetime="datetime2"
-                color="dark"
-                class="custom"
-              ></ion-datetime-button>
+            <div class="filter-time__wrap">
+              <div class="filter-time__range">
+                <ion-datetime-button
+                  datetime="datetime1"
+                  color="dark"
+                  class="custom"
+                ></ion-datetime-button>
+                <span>-</span>
+                <ion-datetime-button
+                  datetime="datetime2"
+                  color="dark"
+                  class="custom"
+                ></ion-datetime-button>
+              </div>
+              <img
+                class="filter-time__icon"
+                src="../../../assets/images/icon-calendar.svg"
+                alt=""
+              />
             </div>
-            <img
-              class="filter-time__icon"
-              src="../../../assets/images/icon-calendar.svg"
-              alt=""
-            />
           </div>
           <div class="chart-wrap">
             <canvas id="cashPlan" width="232" height="232"></canvas>
