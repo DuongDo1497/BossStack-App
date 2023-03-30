@@ -92,7 +92,22 @@
         <ion-datetime-button slot="end" datetime="date"></ion-datetime-button>
       </ion-item>
 
-      <ion-item lines="full" id="note" button detail="false">
+      <ion-item lines="full">
+        <ion-label>
+          <img
+            class="icon-label"
+            src="../../../../assets/images/icon-waves.svg"
+            alt=""
+          />
+          Hoạt động
+        </ion-label>
+        <div class="toggle-group">
+          <p>Chi tiết</p>
+          <ion-toggle slot="end"></ion-toggle>
+        </div>
+      </ion-item>
+
+      <!-- <ion-item lines="full" id="note" button detail="false">
         <ion-label position="floating">
           <img
             class="icon-label"
@@ -109,9 +124,9 @@
             alt=""
           />
         </div>
-      </ion-item>
+      </ion-item> -->
 
-      <ion-item lines="full" id="file" button detail="false">
+      <!-- <ion-item lines="full" id="file" button detail="false">
         <ion-label position="floating">
           <img
             class="icon-label"
@@ -128,8 +143,33 @@
             alt=""
           />
         </div>
-      </ion-item>
+      </ion-item> -->
     </ion-list>
+
+    <div class="work-list">
+      <ion-item lines="none">
+        <ion-thumbnail slot="start">
+          <img alt="" src="../../../../assets/images/cashPlan-share-one.svg" />
+        </ion-thumbnail>
+        <ion-label>
+          <h2>Bạn đã giao công việc này cho AD</h2>
+          <p>Vài giây trước</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-thumbnail slot="start">
+          <img
+            alt=""
+            src="../../../../assets/images/cashPlan-plus-circle.svg"
+          />
+        </ion-thumbnail>
+        <ion-label>
+          <h2>Bạn đã tạo công việc</h2>
+          <p>10 giây trước</p>
+        </ion-label>
+      </ion-item>
+    </div>
   </div>
 
   <ion-modal
@@ -331,7 +371,7 @@
     </ng-template>
   </ion-modal>
 
-  <ion-modal
+  <!-- <ion-modal
     #note
     trigger="note"
     [initialBreakpoint]="0.5"
@@ -409,5 +449,5 @@
         </div>
       </ion-content>
     </ng-template>
-  </ion-modal>
+  </ion-modal> -->
 </ion-content>

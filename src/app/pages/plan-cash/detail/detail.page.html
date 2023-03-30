@@ -50,7 +50,22 @@
             <span>0 tuổi</span>
           </div>
         </div>
-        <p class="status --success">Hoạt động</p>
+        <!-- <p class="status --success">Hoạt động</p> -->
+      </div>
+
+      <div class="plan-cash__status">
+        <ion-item lines="none" id="timeline" button detail="false">
+          <div class="plan-cash__status-wrap">
+            <div class="plan-cash__status-left">
+              <span class="status-tag --danger"></span>
+              <p>Trạng thái</p>
+            </div>
+            <div class="plan-cash__status-right">
+              <p>Tất toán</p>
+              <img src="../../../../assets/images/icon-right.svg" alt="" />
+            </div>
+          </div>
+        </ion-item>
       </div>
 
       <div class="plan-cash__noti">
@@ -298,54 +313,69 @@
           </div>
         </div>
       </div>
-
-      <!-- <div class="plan-cash__info detail-tabs">
-        <ion-segment [(ngModel)]="segment" scrollable>
-          <ion-segment-button value="chart">
-            Biểu đồ kế hoạch
-          </ion-segment-button>
-          <ion-segment-button value="plan">
-            Kế hoạch tích lũy
-          </ion-segment-button>
-        </ion-segment>
-
-        <div #planCash class="detail-tabs__wrap" [ngSwitch]="segment">
-          <ion-card *ngSwitchCase="'chart'">
-            <ion-card-content>
-              <div class="filter-time">
-                <div class="filter-time__range">
-                  <ion-datetime-button
-                    datetime="datetime1"
-                    color="dark"
-                    class="custom"
-                  ></ion-datetime-button>
-                  <span>-</span>
-                  <ion-datetime-button
-                    datetime="datetime2"
-                    color="dark"
-                    class="custom"
-                  ></ion-datetime-button>
-                </div>
-                <img
-                  class="filter-time__icon"
-                  src="../../../assets/images/icon-calendar.svg"
-                  alt=""
-                />
-              </div>
-
-              <div class="chart-wrap">
-                <canvas id="myChart"></canvas>
-              </div>
-            </ion-card-content>
-          </ion-card>
-
-          <ion-card *ngSwitchCase="'plan'">
-            <ion-card-content> Second content here </ion-card-content>
-          </ion-card>
-        </div>
-      </div> -->
     </div>
   </div>
+
+  <ion-modal
+    #timeline
+    trigger="timeline"
+    [initialBreakpoint]="0.5"
+    [breakpoints]="[0, 0.25, 0.5, 0.75]"
+    handleBehavior="cycle"
+  >
+    <ng-template>
+      <ion-content scroll-y="false">
+        <p class="modal-title">Thông tin phân bổ</p>
+        <div class="modal-timeline">
+          <div class="modal-timeline__noti">
+            <div class="modal-timeline__noti-img">
+              <img
+                src="../../../../assets/images/cashPlan-icon-11.svg"
+                alt=""
+              />
+            </div>
+            <div class="modal-timeline__noti-content">
+              <h2 class="title">
+                Đã tất toán vào <span class="date">18/03/2023 Thứ ba</span>
+              </h2>
+              <p class="name">Ví mục tiêu A</p>
+            </div>
+          </div>
+
+          <div class="modal-timeline__list">
+            <div class="modal-timeline__item present">
+              <div class="modal-timeline__item-date">
+                <p>28 tháng 3</p>
+                <p>11:32</p>
+              </div>
+              <div class="modal-timeline__item-tick"></div>
+              <p class="modal-timeline__item-text">Đã tất toán</p>
+            </div>
+
+            <div class="modal-timeline__item">
+              <div class="modal-timeline__item-date">
+                <p>22 tháng 1</p>
+                <p>12:32</p>
+              </div>
+              <div class="modal-timeline__item-tick"></div>
+              <p class="modal-timeline__item-text">
+                Chuyển hết số tiền đến ví B số tiền 500,000đ
+              </p>
+            </div>
+
+            <div class="modal-timeline__item">
+              <div class="modal-timeline__item-date">
+                <p>22 tháng 1</p>
+                <p>12:32</p>
+              </div>
+              <div class="modal-timeline__item-tick"></div>
+              <p class="modal-timeline__item-text">Tạo ra ví mục tiêu A</p>
+            </div>
+          </div>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 
   <ion-modal [keepContentsMounted]="true">
     <ng-template>

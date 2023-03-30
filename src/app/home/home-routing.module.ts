@@ -178,6 +178,18 @@ const routes: Routes = [
           },
         ],
       },
+      {
+        path: 'flow-cash/status/not-good',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/flow-cash/status/not-good/not-good.module').then(
+                (m) => m.NotGoodPageModule
+              ),
+          },
+        ],
+      },
       // End Cash flow page
 
       // History page
