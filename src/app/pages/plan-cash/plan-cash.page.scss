@@ -1,10 +1,43 @@
 .plan-cash {
-  padding: 12px 16px;
+  padding: 0 16px 12px;
   overflow-y: scroll;
 
   .title {
     font-weight: 600;
     margin-bottom: 12px;
+  }
+
+  &__wallet {
+    margin: 0 -16px 12px;
+    padding: 24px;
+    background-image: url("../../../assets/images/cashPlan-wallet-bg.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &-name {
+      font-size: var(--fz-small);
+      font-weight: 500;
+      color: #203e87;
+      margin-bottom: 4px;
+    }
+
+    &-money {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      span {
+        font-size: 20px;
+        font-weight: 500;
+        display: inline-block;
+
+        &.icon {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
   }
 
   &__chart {

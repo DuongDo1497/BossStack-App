@@ -18,6 +18,15 @@
 <ion-content [fullscreen]="true" class="--gray" scroll-y="false">
   <div class="section plan-cash manage">
     <div class="plan-cash__wrap">
+      <div class="plan-cash__wallet">
+        <p class="plan-cash__wallet-name">Ví tổng</p>
+        <div class="plan-cash__wallet-money">
+          <span class="number">*********</span>
+          <span class="icon">
+            <ion-icon name="eye-off-outline"></ion-icon>
+          </span>
+        </div>
+      </div>
       <div class="plan-cash__chart">
         <p class="title">Biểu đồ</p>
         <div class="plan-cash__chart-body">
@@ -71,10 +80,10 @@
             <p class="plan-cash__time">17/03/2023 Thứ 6</p>
             <div class="plan-cash__box">
               <div class="plan-cash__detail">
-                <a href="#">
+                <a href="plan-cash/detail">
                   <div class="header">
                     <p class="name">Tên dòng tiền kh</p>
-                    <ion-button color="light">
+                    <ion-button href="plan-cash/transfer" color="light">
                       Phân bổ
                       <img
                         src="../../../../assets/images/cashPlan-icon-9.svg"

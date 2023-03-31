@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons class="button-back" slot="start">
+      <ion-back-button
+        defaultHref="/business-active/step1"
+        text=""
+        color="light"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title><p>Hoạt động kinh doanh</p></ion-title>
+    <ion-buttons slot="end">
+      <ion-button href="/business-active/history" fill="clear">
+        <img src="../../../assets/images/icon-history-bl.svg" alt="" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" scroll-y="false">
+  <div class="section business-active manage">
+    <div class="business-active__wrap">
+      <p class="title">Tính lợi nhuận kinh doanh</p>
+      <ion-list class="form-general business-active__form">
+        <ion-item lines="full">
+          <ion-label position="floating">Tháng</ion-label>
+          <ion-input placeholder="Tháng"></ion-input>
+        </ion-item>
+
+        <ion-item lines="full">
+          <ion-label position="floating">Năm</ion-label>
+          <ion-input placeholder="Năm"></ion-input>
+        </ion-item>
+
+        <ion-item lines="full">
+          <ion-label position="floating">Doanh thu thuần*</ion-label>
+          <div class="input-group">
+            <ion-input placeholder="Doanh thu thuần*"></ion-input>
+            <p class="icon-input --text">đ</p>
+          </div>
+        </ion-item>
+
+        <ion-item lines="full">
+          <ion-label position="floating">Doanh thu TC + TN khác*</ion-label>
+          <div class="input-group">
+            <ion-input placeholder="Doanh thu TC + TN khác*"></ion-input>
+            <p class="icon-input --text">đ</p>
+          </div>
+        </ion-item>
+
+        <ion-item lines="full">
+          <ion-label position="floating">Tỷ lệ GVHB/DT *</ion-label>
+          <div class="input-group">
+            <ion-input placeholder="Tỷ lệ GVHB/DT *"></ion-input>
+            <p class="icon-input --text">%</p>
+          </div>
+        </ion-item>
+
+        <ion-item lines="full">
+          <ion-label position="floating">Tỷ suất Lợi Nhuận kỳ vọng *</ion-label>
+          <div class="input-group">
+            <ion-input placeholder="Tỷ suất Lợi Nhuận kỳ vọng *"></ion-input>
+            <p class="icon-input --text">%</p>
+          </div>
+        </ion-item>
+      </ion-list>
+      <ion-button
+        class="btn-submit"
+        href="/business-active/result"
+        expand="full"
+        shape="round"
+        >Phân tích</ion-button
+      >
+    </div>
+  </div>
+</ion-content>

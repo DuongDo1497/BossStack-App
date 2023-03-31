@@ -127,7 +127,70 @@ const routes: Routes = [
           },
         ],
       },
+      {
+        path: 'plan-cash/transfer',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/plan-cash/transfer/transfer.module').then(
+                (m) => m.TransferPageModule
+              ),
+          },
+        ],
+      },
       // End Cash plan page
+
+      // Business Active
+      {
+        path: 'business-active/step1',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/business-active/step1/step1.module').then(
+                (m) => m.Step1PageModule
+              ),
+          },
+        ],
+      },
+      {
+        path: 'business-active/step2',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/business-active/step2/step2.module').then(
+                (m) => m.Step2PageModule
+              ),
+          },
+        ],
+      },
+      {
+        path: 'business-active/result',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/business-active/result/result.module').then(
+                (m) => m.ResultPageModule
+              ),
+          },
+        ],
+      },
+      {
+        path: 'business-active/history',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/business-active/history/history.module').then(
+                (m) => m.HistoryPageModule
+              ),
+          },
+        ],
+      },
+      // End Business Active
 
       // Cash flow page
       {

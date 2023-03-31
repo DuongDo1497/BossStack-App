@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons class="button-back" slot="start">
+      <ion-back-button defaultHref="/" text="" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title><p>Hoạt động kinh doanh</p></ion-title>
+    <ion-buttons slot="end">
+      <ion-button href="/business-active/history" fill="clear">
+        <img src="../../../assets/images/icon-history-bl.svg" alt="" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" scroll-y="false">
+  <div class="section business-active manage">
+    <div class="business-active__wrap">
+      <p class="title">Tính lợi nhuận kinh doanh</p>
+      <ion-list class="form-general business-active__form">
+        <ion-item lines="full">
+          <ion-label position="floating">Chi phí tài chính</ion-label>
+          <div class="input-group">
+            <ion-input placeholder="Chi phí tài chính"></ion-input>
+            <p class="icon-input --text">đ</p>
+          </div>
+        </ion-item>
+
+        <ion-item lines="full">
+          <ion-label position="floating">Chi phí bán hàng</ion-label>
+          <div class="input-group">
+            <ion-input placeholder="Chi phí bán hàng"></ion-input>
+            <p class="icon-input --text">đ</p>
+          </div>
+        </ion-item>
+
+        <ion-item lines="full">
+          <ion-label position="floating"
+            >Chi phí quản lý doanh nghiệp</ion-label
+          >
+          <div class="input-group">
+            <ion-input placeholder="Chi phí quản lý doanh nghiệp"></ion-input>
+            <p class="icon-input --text">đ</p>
+          </div>
+        </ion-item>
+
+        <ion-item lines="full">
+          <ion-label position="floating">Chi phí khác</ion-label>
+          <div class="input-group">
+            <ion-input placeholder="Chi phí khác"></ion-input>
+            <p class="icon-input --text">đ</p>
+          </div>
+        </ion-item>
+      </ion-list>
+      <div class="profit-total">
+        <p class="profit-total__title">Tổng</p>
+        <p class="profit-total__number"><span>0</span> đ</p>
+      </div>
+      <ion-button
+        class="btn-submit"
+        href="/business-active/step2"
+        expand="full"
+        shape="round"
+        >Tiếp theo</ion-button
+      >
+    </div>
+  </div>
+</ion-content>

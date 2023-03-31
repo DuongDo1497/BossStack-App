@@ -1,0 +1,34 @@
+.business-active {
+  padding: 24px 16px;
+  overflow-y: scroll;
+
+  .title {
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .profit-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0 34px;
+
+    &__number {
+      font-weight: 700;
+      font-size: var(--fz-heading);
+      color: var(--text-cl-second);
+    }
+
+    &__title,
+    &__number span {
+      font-weight: 600;
+      font-size: var(--fz-body);
+      color: var(--text-cl-primary);
+    }
+  }
+
+  .btn-submit {
+    margin: 0;
+    height: 48px;
+  }
+}
