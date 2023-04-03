@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { WorkPageRoutingModule } from './work-routing.module';
+import { ListPageRoutingModule } from './list-routing.module';
 
-import { WorkPage } from './work.page';
+import { ListPage } from './list.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    WorkPageRoutingModule
+    ListPageRoutingModule
   ],
-  declarations: [WorkPage]
+  declarations: [ListPage]
 })
-export class WorkPageModule {}
+export class ListPageModule {}

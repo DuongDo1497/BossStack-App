@@ -1,0 +1,240 @@
+.flow-work {
+  padding: 12px 16px;
+  overflow-y: scroll;
+
+  .search-bar {
+    padding: 0;
+    margin-bottom: 12px;
+
+    ion-input {
+      &.form-control {
+        --background: var(--white-cl);
+        border: 0;
+      }
+    }
+  }
+
+  &__filter {
+    display: flex;
+    gap: 13px;
+    margin-bottom: 12px;
+
+    &-wrap {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+
+      ion-button {
+        --padding-start: 1.5em;
+        --border-radius: 6px;
+        --padding-top: 10px;
+        --padding-bottom: 10px;
+        --background: var(--white-cl);
+        --color: var(--text-cl-primary);
+        height: auto;
+        margin: 0;
+        margin-inline: 0;
+        font-size: var(--fz-small);
+
+        img {
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+
+  &__total {
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  &__item {
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__time {
+    padding: 8px 16px;
+    margin: 0 0 12px;
+    font-weight: 500;
+    border-radius: 6px;
+    font-size: var(--fz-small);
+    color: var(--primary-bl-cl);
+    background-color: var(--primary-bl-cl-2);
+  }
+
+  &__detail {
+    padding: 16px;
+    border-radius: 6px;
+    background-color: var(--white-cl);
+    margin-bottom: 6px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      display: block;
+      color: var(--text-cl-primary);
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+
+      .name {
+        font-size: var(--fz-small);
+        font-weight: 700;
+      }
+
+      .status {
+        display: inline-block;
+        font-size: 12px;
+        padding: 4px 8px;
+        border-radius: 6px;
+        color: var(--white-cl);
+
+        &.--success {
+          background-color: #38d29e;
+        }
+
+        &.--danger {
+          background-color: #f04d64;
+        }
+      }
+    }
+
+    .info {
+      margin-bottom: 10px;
+
+      &-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 8px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        span {
+          font-size: var(--fz-small);
+          line-height: 18px;
+
+          &:last-child {
+            font-weight: 500;
+            text-align: right;
+          }
+        }
+
+        ion-avatar {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+
+    .tag {
+      display: flex;
+      gap: 12px;
+      margin: 12px 0;
+
+      &-item {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 12px;
+        font-weight: 500;
+
+        &:first-child {
+          color: #02bdd5;
+        }
+
+        &:nth-child(2) {
+          color: var(--white-cl);
+          padding: 4px 8px;
+          border-radius: 6px;
+
+          &.--danger {
+            background-color: #f04d64;
+          }
+
+          &.--warning {
+            background-color: #fd9f13;
+          }
+
+          &.--success {
+            background-color: #02bdd5;
+          }
+
+          &.--normal {
+            background-color: #aeaeae;
+          }
+        }
+
+        &:last-child {
+          padding: 4px 8px;
+          border-radius: 6px;
+
+          &.--success {
+            color: #00a325;
+            background-color: #c4f6cf;
+          }
+
+          &.--warning {
+            color: #fd9f13;
+            background-color: #fff9e9;
+          }
+        }
+      }
+    }
+
+    .timeline {
+      .progress-text {
+        font-size: 12px;
+        font-weight: 500;
+        margin-bottom: 4px;
+      }
+
+      .progress {
+        --bs-progress-height: 6px;
+        --bs-progress-bg: var(--gray-cl-1);
+      }
+
+      &.--success {
+        .progress-text {
+          color: #00a325;
+        }
+
+        .progress {
+          --bs-progress-bar-bg: #00a325;
+        }
+      }
+
+      &.--warning {
+        .progress-text {
+          color: #fd9f13;
+        }
+
+        .progress {
+          --bs-progress-bar-bg: #fd9f13;
+        }
+      }
+
+      &.--danger {
+        .progress-text {
+          color: #f04d64;
+        }
+
+        .progress {
+          --bs-progress-bar-bg: #f04d64;
+        }
+      }
+    }
+  }
+}

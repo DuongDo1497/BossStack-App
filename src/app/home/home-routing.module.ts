@@ -270,6 +270,57 @@ const routes: Routes = [
       },
       // End History page
 
+      // Workflow page
+      {
+        path: 'flow-work',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/flow-work/flow-work.module').then(
+                (m) => m.FlowWorkPageModule
+              ),
+          },
+        ],
+      },
+      {
+        path: 'flow-work/list',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/flow-work/list/list.module').then(
+                (m) => m.ListPageModule
+              ),
+          },
+        ],
+      },
+      {
+        path: 'flow-work/status/done',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/flow-work/status/done/done.module').then(
+                (m) => m.DonePageModule
+              ),
+          },
+        ],
+      },
+      {
+        path: 'flow-work/status/good',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/flow-work/status/good/good.module').then(
+                (m) => m.GoodPageModule
+              ),
+          },
+        ],
+      },
+      // End Workflow page
+
       // Member page
       {
         path: 'member',
