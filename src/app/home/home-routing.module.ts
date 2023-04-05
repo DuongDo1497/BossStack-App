@@ -284,6 +284,18 @@ const routes: Routes = [
         ],
       },
       {
+        path: 'flow-work/add',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/flow-work/add/add.module').then(
+                (m) => m.AddPageModule
+              ),
+          },
+        ],
+      },
+      {
         path: 'flow-work/list',
         children: [
           {
@@ -315,6 +327,18 @@ const routes: Routes = [
             loadChildren: () =>
               import('../pages/flow-work/status/good/good.module').then(
                 (m) => m.GoodPageModule
+              ),
+          },
+        ],
+      },
+      {
+        path: 'flow-work/status/not-good',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/flow-work/status/not-good/not-good.module').then(
+                (m) => m.NotGoodPageModule
               ),
           },
         ],

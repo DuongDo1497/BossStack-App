@@ -33,8 +33,8 @@
             <img src="../../../../assets/images/icon-right.svg" alt="" />
           </ion-button>
 
-          <ion-button id="status">
-            Trạng thái
+          <ion-button id="progress">
+            Tiến độ
             <img src="../../../../assets/images/icon-right.svg" alt="" />
           </ion-button>
 
@@ -335,26 +335,33 @@
   </ion-modal>
 
   <ion-modal
-    #status
-    trigger="status"
+    #progress
+    trigger="progress"
     [initialBreakpoint]="0.5"
     [breakpoints]="[0, 0.25, 0.5, 0.75]"
     handleBehavior="cycle"
   >
     <ng-template>
       <ion-content scroll-y="false">
-        <p class="modal-title">Lọc Phân loại</p>
-        <div class="modal-list status-list">
-          <ion-radio-group value="status">
+        <p class="modal-title">Chọn Tiến độ</p>
+        <div class="modal-list progress-list">
+          <ion-radio-group value="progress">
             <ion-item lines="none">
-              <span class="status-tag --success"></span>
-              <ion-label>Hoạt động</ion-label>
+              <ion-thumbnail slot="start">
+                <img alt="" src="../../../../assets/images/icon-waves-gr.svg" />
+              </ion-thumbnail>
+              <ion-label>Tiến độ trên 50%</ion-label>
               <ion-radio slot="end" value="demo1"></ion-radio>
             </ion-item>
 
             <ion-item lines="none">
-              <span class="status-tag --danger"></span>
-              <ion-label>Tất toán</ion-label>
+              <ion-thumbnail slot="start">
+                <img
+                  alt=""
+                  src="../../../../assets/images/icon-waves-red.svg"
+                />
+              </ion-thumbnail>
+              <ion-label>Tiến độ dưới 50%</ion-label>
               <ion-radio slot="end" value="demo2"></ion-radio>
             </ion-item>
           </ion-radio-group>

@@ -1,0 +1,128 @@
+.transfer-noti {
+  height: 100%;
+  position: relative;
+
+  &__header {
+    padding: 70px 0;
+    background-image: url("../../../../assets/images/cashPlan-noti-bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+
+    p {
+      text-align: center;
+      color: var(--white-cl);
+    }
+
+    .title {
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+
+    .text {
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
+
+  &__body {
+    padding: 0 16px;
+    margin-top: -55px;
+
+    .wallet-to,
+    .wallet-from {
+      padding: 16px;
+      border-radius: 10px;
+      background-color: var(--white-cl);
+    }
+
+    .wallet-to {
+      margin-bottom: 12px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .wallet-title {
+      font-size: var(--fz-small);
+      font-weight: 700;
+      color: #3465d9;
+      margin-bottom: 16px;
+    }
+
+    .wallet-list {
+      li {
+        padding: 16px 0;
+        border-bottom: 1px solid #f1f1f1;
+
+        &:first-child {
+          padding-top: 0;
+        }
+
+        &:last-child {
+          border-bottom: 0;
+          padding-bottom: 0;
+        }
+
+        &:not(:first-child) {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+
+      p {
+        font-weight: 500;
+        font-size: var(--fz-small);
+      }
+
+      .wallet-name {
+        font-size: var(--fz-body);
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .wallet-balances {
+        font-weight: 500;
+        color: var(--text-cl-second);
+      }
+
+      &__content {
+        &.--success {
+          color: #00a325;
+        }
+
+        &.--danger {
+          color: #f04d64;
+        }
+      }
+    }
+
+    .wallet-noti {
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 500;
+      font-size: var(--fz-small);
+      color: var(--white-cl);
+      margin-top: 12px;
+
+      &.--success {
+        background-color: #00a325;
+      }
+
+      &.--danger {
+        background-color: #f04d64;
+      }
+    }
+  }
+
+  .transfer-noti-close {
+    margin-inline: 16px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 40px;
+  }
+}
