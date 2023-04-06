@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-position.page.scss'],
 })
 export class AddPositionPage implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  isModalMemberOpen = false;
+
+  setOpenMember(isOpen: boolean) {
+    this.isModalMemberOpen = isOpen;
   }
-
 }

@@ -509,7 +509,7 @@ ion-modal {
 
 // Custom tab detail product
 .detail-tabs {
-  margin: 0 -15px;
+  margin: 0 -16px;
 
   .nav-pills {
     &--parent {
@@ -533,6 +533,25 @@ ion-modal {
         &.active {
           color: var(--primary-bl-cl);
           border-bottom: 1px solid var(--primary-bl-cl);
+        }
+      }
+    }
+
+    &--child {
+      gap: 14px;
+      margin: 0 16px 12px;
+
+      .nav-link {
+        font-size: var(--fz-small);
+        font-weight: 500;
+        padding: 8px 12px;
+        border-radius: 6px;
+        color: #3465d9;
+        background-color: var(--primary-bl-cl-2);
+
+        &.active {
+          color: var(--white-cl);
+          background-color: #3465d9;
         }
       }
     }

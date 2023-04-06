@@ -1,9 +1,705 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>approve</ion-title>
+    <ion-buttons class="button-back" slot="start">
+      <ion-back-button defaultHref="/" text="" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title><p>Phê duyệt</p></ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true" class="--gray" scroll-y="false">
+  <div class="section approve manage">
+    <div class="approve-wrap">
+      <div class="approve__info detail-tabs">
+        <ul
+          class="nav nav-pills nav-pills--parent mb-3"
+          id="pills-tab"
+          role="tablist"
+        >
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="pending-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pending"
+              type="button"
+              role="tab"
+              aria-controls="pending"
+              aria-selected="true"
+            >
+              Chờ duyệt
+              <ion-badge color="warning">70</ion-badge>
+            </button>
+          </li>
 
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="approved-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#approved"
+              type="button"
+              role="tab"
+              aria-controls="approved"
+              aria-selected="false"
+            >
+              Đã duyệt
+              <ion-badge color="success">80</ion-badge>
+            </button>
+          </li>
+
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="reject-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#reject"
+              type="button"
+              role="tab"
+              aria-controls="reject"
+              aria-selected="false"
+            >
+              Từ chối
+              <ion-badge color="danger">60</ion-badge>
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content" id="pills-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="pending"
+            role="tabpanel"
+            aria-labelledby="pending-tab"
+          >
+            <ul
+              class="nav nav-pills nav-pills nav-pills--child mb-3"
+              id="pills-tab"
+              role="tablist"
+            >
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  id="progress-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#progress"
+                  type="button"
+                  role="tab"
+                  aria-controls="progress"
+                  aria-selected="true"
+                >
+                  Tiến độ công việc
+                </button>
+              </li>
+
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="expense-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#expense"
+                  type="button"
+                  role="tab"
+                  aria-controls="expense"
+                  aria-selected="false"
+                >
+                  Chi phí
+                </button>
+              </li>
+            </ul>
+
+            <div class="tab-content" id="pills-tabContent">
+              <div
+                class="tab-pane fade show active"
+                id="progress"
+                role="tabpanel"
+                aria-labelledby="progress-tab"
+              >
+                <div class="flow-work__list">
+                  <div class="flow-work__item">
+                    <p class="flow-work__time">17/03/2023 Thứ 6</p>
+                    <div class="flow-work__box">
+                      <div class="flow-work__detail">
+                        <a href="approve/detail">
+                          <div class="header">
+                            <p class="name">Công việc abc</p>
+                            <p class="status --danger">Quá hạn</p>
+                          </div>
+                          <div class="info">
+                            <div class="info-item">
+                              <span>Dự án</span>
+                              <span>Aa</span>
+                            </div>
+                            <div class="info-item">
+                              <span>Phòng ban</span>
+                              <span>Aa</span>
+                            </div>
+                            <div class="info-item">
+                              <span>Thời gian bắt đầu</span>
+                              <span>dd/mm/yy</span>
+                            </div>
+                            <div class="info-item">
+                              <span>Ngày hoàn thành</span>
+                              <span>dd/mm/yy</span>
+                            </div>
+                            <div class="info-item">
+                              <span>Ngày hoàn thành thực tế</span>
+                              <span>dd/mm/yy</span>
+                            </div>
+                            <div class="info-item">
+                              <span>Người yêu cầu duyệt</span>
+                              <ion-avatar>
+                                <img
+                                  alt="Silhouette of a person's head"
+                                  src="https://ionicframework.com/docs/img/demos/avatar.svg"
+                                />
+                              </ion-avatar>
+                            </div>
+                            <div class="info-item">
+                              <span>Người đã phê duyệt</span>
+                              <ion-avatar>
+                                <img
+                                  alt="Silhouette of a person's head"
+                                  src="https://ionicframework.com/docs/img/demos/avatar.svg"
+                                />
+                              </ion-avatar>
+                            </div>
+                          </div>
+                          <div class="tag">
+                            <div class="tag-item">
+                              <img
+                                src="../../../assets/images/icon-tag-one.svg"
+                                alt=""
+                              />
+                              Cv giao cho tôi
+                            </div>
+                            <div class="tag-item --warning">
+                              <img
+                                src="../../../assets/images/icon-bell-noti.svg"
+                                alt=""
+                              />
+                              Khẩn cấp
+                            </div>
+                            <div class="tag-item --warning">Chờ duyệt</div>
+                          </div>
+                          <div class="timeline --success">
+                            <p class="progress-text">Tiến độ thực hiện: 70%</p>
+                            <div class="progress">
+                              <div
+                                class="progress-bar"
+                                role="progressbar"
+                                style="width: 70%"
+                                aria-valuenow="25"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                              ></div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+
+                      <div class="flow-work__detail">
+                        <a href="#">
+                          <div class="header">
+                            <p class="name">Công việc abc</p>
+                            <p class="status --success">Hoàn thành</p>
+                          </div>
+                          <div class="info">
+                            <div class="info-item">
+                              <span>Dự án</span>
+                              <span>Aa</span>
+                            </div>
+                            <div class="info-item">
+                              <span>Phòng ban</span>
+                              <span>Aa</span>
+                            </div>
+                            <div class="info-item">
+                              <span>Thời gian bắt đầu</span>
+                              <span>dd/mm/yy</span>
+                            </div>
+                            <div class="info-item">
+                              <span>Ngày hoàn thành</span>
+                              <span>dd/mm/yy</span>
+                            </div>
+                            <div class="info-item">
+                              <span>Ngày hoàn thành thực tế</span>
+                              <span>dd/mm/yy</span>
+                            </div>
+                            <div class="info-item">
+                              <span>Người yêu cầu duyệt</span>
+                              <ion-avatar>
+                                <img
+                                  alt="Silhouette of a person's head"
+                                  src="https://ionicframework.com/docs/img/demos/avatar.svg"
+                                />
+                              </ion-avatar>
+                            </div>
+                            <div class="info-item">
+                              <span>Người đã phê duyệt</span>
+                              <ion-avatar>
+                                <img
+                                  alt="Silhouette of a person's head"
+                                  src="https://ionicframework.com/docs/img/demos/avatar.svg"
+                                />
+                              </ion-avatar>
+                            </div>
+                          </div>
+                          <div class="tag">
+                            <div class="tag-item">
+                              <img
+                                src="../../../assets/images/icon-tag-one.svg"
+                                alt=""
+                              />
+                              Cv tạo bởi tôi
+                            </div>
+                            <div class="tag-item --warning">
+                              <img
+                                src="../../../assets/images/icon-bell-noti.svg"
+                                alt=""
+                              />
+                              Khẩn cấp
+                            </div>
+                            <div class="tag-item --success">Đã duyệt</div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="tab-pane fade"
+                id="expense"
+                role="tabpanel"
+                aria-labelledby="expense-tab"
+              ></div>
+            </div>
+          </div>
+
+          <div
+            class="tab-pane fade"
+            id="approved"
+            role="tabpanel"
+            aria-labelledby="approved-tab"
+          >
+            <ul
+              class="nav nav-pills nav-pills nav-pills--child mb-3"
+              id="pills-tab"
+              role="tablist"
+            >
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  id="progress-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#progress"
+                  type="button"
+                  role="tab"
+                  aria-controls="progress"
+                  aria-selected="true"
+                >
+                  Tiến độ công việc
+                </button>
+              </li>
+
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="expense-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#expense"
+                  type="button"
+                  role="tab"
+                  aria-controls="expense"
+                  aria-selected="false"
+                >
+                  Chi phí
+                </button>
+              </li>
+            </ul>
+
+            <div class="tab-content" id="pills-tabContent">
+              <div
+                class="tab-pane fade show active"
+                id="progress"
+                role="tabpanel"
+                aria-labelledby="progress-tab"
+              >
+                <div class="flow-work__list">
+                  <div class="flow-work__item">
+                    <p class="flow-work__time">17/03/2023 Thứ 6</p>
+                    <div class="flow-work__box">
+                      <div class="flow-work__detail">
+                        <a href="approve/detail">
+                          <div class="header">
+                            <p class="name">Công việc abc</p>
+                            <p class="status --danger">Quá hạn</p>
+                          </div>
+                          <div class="info">
+                            <div class="info-item">
+                              <span>Dự án</span>
+                              <span>Aa</span>
+                            </div>
+                            <div class="info-item">
+                              <span>Phòng ban</span>
+                              <span>Aa</span>
+                            </div>
+                            <div class="info-item">
+                              <span>Thời gian bắt đầu</span>
+                              <span>dd/mm/yy</span>
+                            </div>
+                            <div class="info-item">
+                              <span>Ngày hoàn thành</span>
+                              <span>dd/mm/yy</span>
+                            </div>
+                            <div class="info-item">
+                              <span>Ngày hoàn thành thực tế</span>
+                              <span>dd/mm/yy</span>
+                            </div>
+                            <div class="info-item">
+                              <span>Người yêu cầu duyệt</span>
+                              <ion-avatar>
+                                <img
+                                  alt="Silhouette of a person's head"
+                                  src="https://ionicframework.com/docs/img/demos/avatar.svg"
+                                />
+                              </ion-avatar>
+                            </div>
+                            <div class="info-item">
+                              <span>Người đã phê duyệt</span>
+                              <ion-avatar>
+                                <img
+                                  alt="Silhouette of a person's head"
+                                  src="https://ionicframework.com/docs/img/demos/avatar.svg"
+                                />
+                              </ion-avatar>
+                            </div>
+                          </div>
+                          <div class="tag">
+                            <div class="tag-item">
+                              <img
+                                src="../../../assets/images/icon-tag-one.svg"
+                                alt=""
+                              />
+                              Cv giao cho tôi
+                            </div>
+                            <div class="tag-item --warning">
+                              <img
+                                src="../../../assets/images/icon-bell-noti.svg"
+                                alt=""
+                              />
+                              Khẩn cấp
+                            </div>
+                            <div class="tag-item --warning">Chờ duyệt</div>
+                          </div>
+                          <div class="timeline --success">
+                            <p class="progress-text">Tiến độ thực hiện: 70%</p>
+                            <div class="progress">
+                              <div
+                                class="progress-bar"
+                                role="progressbar"
+                                style="width: 70%"
+                                aria-valuenow="25"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                              ></div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+
+                      <div class="flow-work__detail">
+                        <a href="#">
+                          <div class="header">
+                            <p class="name">Công việc abc</p>
+                            <p class="status --success">Hoàn thành</p>
+                          </div>
+                          <div class="info">
+                            <div class="info-item">
+                              <span>Dự án</span>
+                              <span>Aa</span>
+                            </div>
+                            <div class="info-item">
+                              <span>Phòng ban</span>
+                              <span>Aa</span>
+                            </div>
+                            <div class="info-item">
+                              <span>Thời gian bắt đầu</span>
+                              <span>dd/mm/yy</span>
+                            </div>
+                            <div class="info-item">
+                              <span>Ngày hoàn thành</span>
+                              <span>dd/mm/yy</span>
+                            </div>
+                            <div class="info-item">
+                              <span>Ngày hoàn thành thực tế</span>
+                              <span>dd/mm/yy</span>
+                            </div>
+                            <div class="info-item">
+                              <span>Người yêu cầu duyệt</span>
+                              <ion-avatar>
+                                <img
+                                  alt="Silhouette of a person's head"
+                                  src="https://ionicframework.com/docs/img/demos/avatar.svg"
+                                />
+                              </ion-avatar>
+                            </div>
+                            <div class="info-item">
+                              <span>Người đã phê duyệt</span>
+                              <ion-avatar>
+                                <img
+                                  alt="Silhouette of a person's head"
+                                  src="https://ionicframework.com/docs/img/demos/avatar.svg"
+                                />
+                              </ion-avatar>
+                            </div>
+                          </div>
+                          <div class="tag">
+                            <div class="tag-item">
+                              <img
+                                src="../../../assets/images/icon-tag-one.svg"
+                                alt=""
+                              />
+                              Cv tạo bởi tôi
+                            </div>
+                            <div class="tag-item --warning">
+                              <img
+                                src="../../../assets/images/icon-bell-noti.svg"
+                                alt=""
+                              />
+                              Khẩn cấp
+                            </div>
+                            <div class="tag-item --success">Đã duyệt</div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="tab-pane fade"
+                id="expense"
+                role="tabpanel"
+                aria-labelledby="expense-tab"
+              ></div>
+            </div>
+          </div>
+
+          <div
+            class="tab-pane fade"
+            id="reject"
+            role="tabpanel"
+            aria-labelledby="reject-tab"
+          >
+            <ul
+              class="nav nav-pills nav-pills nav-pills--child mb-3"
+              id="pills-tab"
+              role="tablist"
+            >
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  id="progress-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#progress"
+                  type="button"
+                  role="tab"
+                  aria-controls="progress"
+                  aria-selected="true"
+                >
+                  Tiến độ công việc
+                </button>
+              </li>
+
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="expense-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#expense"
+                  type="button"
+                  role="tab"
+                  aria-controls="expense"
+                  aria-selected="false"
+                >
+                  Chi phí
+                </button>
+              </li>
+            </ul>
+
+            <div class="tab-content" id="pills-tabContent">
+              <div
+                class="tab-pane fade show active"
+                id="progress"
+                role="tabpanel"
+                aria-labelledby="progress-tab"
+              >
+                <div class="flow-work__list">
+                  <div class="flow-work__item">
+                    <p class="flow-work__time">17/03/2023 Thứ 6</p>
+                    <div class="flow-work__box">
+                      <div class="flow-work__detail">
+                        <a href="approve/detail">
+                          <div class="header">
+                            <p class="name">Công việc abc</p>
+                            <p class="status --danger">Quá hạn</p>
+                          </div>
+                          <div class="info">
+                            <div class="info-item">
+                              <span>Dự án</span>
+                              <span>Aa</span>
+                            </div>
+                            <div class="info-item">
+                              <span>Phòng ban</span>
+                              <span>Aa</span>
+                            </div>
+                            <div class="info-item">
+                              <span>Thời gian bắt đầu</span>
+                              <span>dd/mm/yy</span>
+                            </div>
+                            <div class="info-item">
+                              <span>Ngày hoàn thành</span>
+                              <span>dd/mm/yy</span>
+                            </div>
+                            <div class="info-item">
+                              <span>Ngày hoàn thành thực tế</span>
+                              <span>dd/mm/yy</span>
+                            </div>
+                            <div class="info-item">
+                              <span>Người yêu cầu duyệt</span>
+                              <ion-avatar>
+                                <img
+                                  alt="Silhouette of a person's head"
+                                  src="https://ionicframework.com/docs/img/demos/avatar.svg"
+                                />
+                              </ion-avatar>
+                            </div>
+                            <div class="info-item">
+                              <span>Người đã phê duyệt</span>
+                              <ion-avatar>
+                                <img
+                                  alt="Silhouette of a person's head"
+                                  src="https://ionicframework.com/docs/img/demos/avatar.svg"
+                                />
+                              </ion-avatar>
+                            </div>
+                          </div>
+                          <div class="tag">
+                            <div class="tag-item">
+                              <img
+                                src="../../../assets/images/icon-tag-one.svg"
+                                alt=""
+                              />
+                              Cv giao cho tôi
+                            </div>
+                            <div class="tag-item --warning">
+                              <img
+                                src="../../../assets/images/icon-bell-noti.svg"
+                                alt=""
+                              />
+                              Khẩn cấp
+                            </div>
+                            <div class="tag-item --warning">Chờ duyệt</div>
+                          </div>
+                          <div class="timeline --success">
+                            <p class="progress-text">Tiến độ thực hiện: 70%</p>
+                            <div class="progress">
+                              <div
+                                class="progress-bar"
+                                role="progressbar"
+                                style="width: 70%"
+                                aria-valuenow="25"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                              ></div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+
+                      <div class="flow-work__detail">
+                        <a href="#">
+                          <div class="header">
+                            <p class="name">Công việc abc</p>
+                            <p class="status --success">Hoàn thành</p>
+                          </div>
+                          <div class="info">
+                            <div class="info-item">
+                              <span>Dự án</span>
+                              <span>Aa</span>
+                            </div>
+                            <div class="info-item">
+                              <span>Phòng ban</span>
+                              <span>Aa</span>
+                            </div>
+                            <div class="info-item">
+                              <span>Thời gian bắt đầu</span>
+                              <span>dd/mm/yy</span>
+                            </div>
+                            <div class="info-item">
+                              <span>Ngày hoàn thành</span>
+                              <span>dd/mm/yy</span>
+                            </div>
+                            <div class="info-item">
+                              <span>Ngày hoàn thành thực tế</span>
+                              <span>dd/mm/yy</span>
+                            </div>
+                            <div class="info-item">
+                              <span>Người yêu cầu duyệt</span>
+                              <ion-avatar>
+                                <img
+                                  alt="Silhouette of a person's head"
+                                  src="https://ionicframework.com/docs/img/demos/avatar.svg"
+                                />
+                              </ion-avatar>
+                            </div>
+                            <div class="info-item">
+                              <span>Người đã phê duyệt</span>
+                              <ion-avatar>
+                                <img
+                                  alt="Silhouette of a person's head"
+                                  src="https://ionicframework.com/docs/img/demos/avatar.svg"
+                                />
+                              </ion-avatar>
+                            </div>
+                          </div>
+                          <div class="tag">
+                            <div class="tag-item">
+                              <img
+                                src="../../../assets/images/icon-tag-one.svg"
+                                alt=""
+                              />
+                              Cv tạo bởi tôi
+                            </div>
+                            <div class="tag-item --warning">
+                              <img
+                                src="../../../assets/images/icon-bell-noti.svg"
+                                alt=""
+                              />
+                              Khẩn cấp
+                            </div>
+                            <div class="tag-item --success">Đã duyệt</div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="tab-pane fade"
+                id="expense"
+                role="tabpanel"
+                aria-labelledby="expense-tab"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </ion-content>

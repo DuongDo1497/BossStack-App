@@ -140,25 +140,6 @@
     }
 
     #pills-plan {
-      .nav-pills {
-        gap: 14px;
-        margin: 0 16px 12px;
-
-        .nav-link {
-          font-size: var(--fz-small);
-          font-weight: 500;
-          padding: 8px 12px;
-          border-radius: 6px;
-          color: #3465d9;
-          background-color: var(--primary-bl-cl-2);
-
-          &.active {
-            color: var(--white-cl);
-            background-color: #3465d9;
-          }
-        }
-      }
-
       .tab-content {
         padding: 0 16px;
         background-color: var(--white-cl);
