@@ -26,14 +26,6 @@ const routes: Routes = [
     loadChildren: () =>
       import('./home/home.module').then((m) => m.HomePageModule),
   },
-  {
-    path: 'plan-cash/noti',
-    loadChildren: () =>
-      import('./pages/plan-cash/noti/noti.module').then(
-        (m) => m.NotiPageModule
-      ),
-  },
-
   // Main
 ];
 

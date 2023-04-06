@@ -139,6 +139,18 @@ const routes: Routes = [
           },
         ],
       },
+      {
+        path: 'plan-cash/noti',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/plan-cash/noti/noti.module').then(
+                (m) => m.NotiPageModule
+              ),
+          },
+        ],
+      },
       // End Cash plan page
 
       // Business Active
@@ -343,6 +355,30 @@ const routes: Routes = [
           },
         ],
       },
+      {
+        path: 'flow-work/detail',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/flow-work/detail/detail.module').then(
+                (m) => m.DetailPageModule
+              ),
+          },
+        ],
+      },
+      {
+        path: 'flow-work/edit',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/flow-work/edit/edit.module').then(
+                (m) => m.EditPageModule
+              ),
+          },
+        ],
+      },
       // End Workflow page
 
       // Member page
@@ -366,6 +402,18 @@ const routes: Routes = [
             loadChildren: () =>
               import('../pages/member/add/add.module').then(
                 (m) => m.AddPageModule
+              ),
+          },
+        ],
+      },
+      {
+        path: 'member/add-position',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/member/add-position/add-position.module').then(
+                (m) => m.AddPositionPageModule
               ),
           },
         ],

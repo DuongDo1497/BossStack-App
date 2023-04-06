@@ -75,14 +75,15 @@ ion-header {
     }
   }
 
+  .button-done,
   .button-save {
-    min-height: auto;
+    min-height: 24px;
 
     ion-button {
       --color: var(--white-cl);
       font-size: var(--fz-body);
       font-weight: 600;
-      height: inherit;
+      height: 24px;
       margin: 0;
     }
   }
