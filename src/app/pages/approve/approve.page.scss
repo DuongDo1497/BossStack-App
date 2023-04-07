@@ -12,6 +12,7 @@
         .nav-link {
           display: flex;
           align-items: center;
+          justify-content: center;
           gap: 4px;
 
           ion-badge {
@@ -71,6 +72,19 @@
         .name {
           font-size: var(--fz-small);
           font-weight: 700;
+        }
+
+        .number {
+          font-weight: 700;
+          font-size: var(--fz-small);
+
+          &.--success {
+            color: #38d29e;
+          }
+
+          &.--danger {
+            color: #f04d64;
+          }
         }
 
         .status {

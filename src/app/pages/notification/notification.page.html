@@ -1,9 +1,182 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>notification</ion-title>
+    <ion-title><p>Thông báo</p></ion-title>
+    <ion-buttons class="reading-all" slot="end">
+      <ion-button>Đọc tất cả</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true" class="--gray" scroll-y="false">
+  <div class="section notification manage">
+    <div class="notification-wrap">
+      <div class="notification__info detail-tabs">
+        <ul
+          class="nav nav-pills nav-pills--parent mb-3"
+          id="pills-tab"
+          role="tablist"
+        >
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="notiAll-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#notiAll"
+              type="button"
+              role="tab"
+              aria-controls="notiAll"
+              aria-selected="true"
+            >
+              Tất cả
+              <ion-badge color="success">70</ion-badge>
+            </button>
+          </li>
 
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="notiRemind-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#notiRemind"
+              type="button"
+              role="tab"
+              aria-controls="notiRemind"
+              aria-selected="false"
+            >
+              Nhắc nhở
+              <ion-badge color="warning">80</ion-badge>
+            </button>
+          </li>
+
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="notiUnread-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#notiUnread"
+              type="button"
+              role="tab"
+              aria-controls="notiUnread"
+              aria-selected="false"
+            >
+              Chưa đọc
+              <ion-badge color="danger">60</ion-badge>
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content" id="pills-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="notiAll"
+            role="tabpanel"
+            aria-labelledby="notiAll-tab"
+          >
+            <div class="noti-list">
+              <ion-item lines="none">
+                <ion-avatar slot="start">
+                  <img
+                    alt="Silhouette of a person's head"
+                    src="https://ionicframework.com/docs/img/demos/avatar.svg"
+                  />
+                  <span class="unread-status"></span>
+                </ion-avatar>
+                <ion-label>
+                  <p class="text">Nguyễn B đã tạo dòng tiền vào.</p>
+                  <p class="time">Vài giây trước</p>
+                </ion-label>
+                <ion-button slot="end" size="small" fill="clear" id="control">
+                  <ion-icon name="ellipsis-horizontal"></ion-icon>
+                </ion-button>
+              </ion-item>
+
+              <ion-item lines="none">
+                <ion-avatar slot="start">
+                  <img
+                    alt="Silhouette of a person's head"
+                    src="https://ionicframework.com/docs/img/demos/avatar.svg"
+                  />
+                  <span class="unread-status"></span>
+                </ion-avatar>
+                <ion-label>
+                  <p class="text">Nguyễn B đã tạo dòng tiền vào.</p>
+                  <p class="time">Vài giây trước</p>
+                </ion-label>
+                <ion-button slot="end" size="small" fill="clear" id="control">
+                  <ion-icon name="ellipsis-horizontal"></ion-icon>
+                </ion-button>
+              </ion-item>
+            </div>
+          </div>
+
+          <div
+            class="tab-pane fade"
+            id="notiRemind"
+            role="tabpanel"
+            aria-labelledby="notiRemind-tab"
+          >
+            <div class="noti-empty">
+              <img src="../../../assets/images/noti-empty-img.png" alt="" />
+              <p>Chưa có thông báo nào!</p>
+            </div>
+          </div>
+
+          <div
+            class="tab-pane fade"
+            id="notiUnread"
+            role="tabpanel"
+            aria-labelledby="notiUnread-tab"
+          >
+            <div class="noti-empty">
+              <img src="../../../assets/images/noti-empty-img.png" alt="" />
+              <p>Chưa có thông báo nào!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ion-modal
+    #control
+    trigger="control"
+    [initialBreakpoint]="0.25"
+    [breakpoints]="[0, 0.25, 0.5, 0.75]"
+    handleBehavior="cycle"
+  >
+    <ng-template>
+      <ion-content scroll-y="false">
+        <div class="modal-list control-list">
+          <ion-radio-group value="control">
+            <ion-item lines="none">
+              <ion-thumbnail slot="start">
+                <img
+                  alt=""
+                  src="../../../../assets/images/icon-unread-gr.svg"
+                />
+              </ion-thumbnail>
+              <ion-label>Đánh dấu chưa đọc</ion-label>
+              <ion-radio slot="end" value="demo1"></ion-radio>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-thumbnail slot="start">
+                <img alt="" src="../../../../assets/images/icon-trash.svg" />
+              </ion-thumbnail>
+              <ion-label>Xóa thông báo</ion-label>
+              <ion-radio slot="end" value="demo2"></ion-radio>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-thumbnail slot="start">
+                <img alt="" src="../../../../assets/images/icon-close-gr.svg" />
+              </ion-thumbnail>
+              <ion-label>Hủy</ion-label>
+              <ion-radio slot="end" value="demo3"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </ion-content>

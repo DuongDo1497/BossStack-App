@@ -1,0 +1,250 @@
+.flow-work {
+  padding: 24px 16px;
+  overflow-y: scroll;
+
+  &__control {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+
+    #prioritize {
+      --background: #f0f0f0;
+      --padding-top: 4px;
+      --padding-bottom: 4px;
+      --padding-start: 8px;
+      --padding-end: 8px;
+      --color: var(--text-cl-third);
+      height: auto;
+      margin: 0;
+      font-weight: 600;
+
+      img {
+        margin-right: 4px;
+      }
+    }
+
+    &-progress {
+      display: flex;
+      gap: 16px;
+      padding: 6px 8px;
+      border-radius: 6px;
+      position: relative;
+      border: 1px solid var(--text-cl-third);
+
+      &::before {
+        content: "";
+        width: 1px;
+        height: 18px;
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 74px;
+        transform: translateY(-50%);
+        background-color: var(--text-cl-second);
+      }
+
+      .title {
+        font-weight: 600;
+      }
+
+      .progress-number {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+      }
+
+      #progressButton {
+        --background: transparent;
+        --padding-start: 0;
+        --padding-end: 0;
+        --background-activated-opacity: 0;
+        --background-focused-opacity: 0;
+        --background-hover-opacity: 0;
+        height: auto;
+        margin: 0;
+
+        img {
+          margin-left: 12px;
+        }
+      }
+    }
+  }
+
+  &.approve {
+    .waiting-approval {
+      margin: 0 -16px;
+      padding: 16px;
+      background-color: #f6faff;
+
+      .title {
+        font-weight: 600;
+        margin-bottom: 18px;
+      }
+
+      .control {
+        display: flex;
+        justify-content: space-between;
+
+        ion-button {
+          --padding-start: 16px;
+          --padding-end: 16px;
+          height: 34px;
+          margin: 0;
+
+          &.--success {
+            --background: #2cbc96;
+          }
+
+          &.--danger {
+            --background: #f04d64;
+          }
+
+          &.--outline {
+            --border-color: #4083ff;
+            --color: #4083ff;
+          }
+        }
+
+        &-left {
+          display: flex;
+          gap: 8px;
+        }
+      }
+    }
+  }
+
+  &-form {
+    margin-top: 24px;
+
+    .toggle-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      p {
+        font-size: var(--fz-small);
+      }
+
+      ion-toggle {
+        padding-inline: 0;
+      }
+    }
+  }
+
+  .work-list {
+    ion-item {
+      --min-height: auto;
+      --padding-start: 0;
+      --inner-padding-end: 0;
+      margin-bottom: 14px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      ion-thumbnail {
+        --size: 32px;
+        width: var(--size);
+        height: var(--size);
+        padding: 6px;
+        margin: 0 12px 0 0;
+        border-radius: 6px;
+        background-color: #d9e8ff;
+      }
+
+      ion-label {
+        h2 {
+          font-size: var(--fz-small);
+          font-weight: 500;
+          margin-bottom: 2px;
+        }
+
+        p {
+          font-size: 10px;
+          color: var(--text-cl-third);
+        }
+      }
+    }
+  }
+}
+
+ion-modal {
+  &#reject-modal {
+    --height: auto;
+    --background: transparent;
+    padding: 0 16px;
+
+    .wrapper {
+      padding: 0 32px;
+
+      ion-textarea {
+        --padding-top: 16px;
+        --padding-end: 16px;
+        --padding-bottom: 16px;
+        --padding-start: 16px;
+        --placeholder-opacity: 1;
+        height: 88px;
+        font-size: var(--fz-small);
+        color: var(--text-cl-second);
+        border-radius: 6px;
+        margin-bottom: 12px;
+        background: var(--white-cl);
+      }
+    }
+  }
+
+  &#task-modal {
+    --border-radius: 0;
+
+    .staff-select {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+
+      .item {
+        position: relative;
+
+        ion-avatar {
+          width: 32px;
+          height: 32px;
+        }
+
+        .close {
+          width: 16px;
+          height: 16px;
+          position: absolute;
+          top: -5px;
+          right: -6px;
+          border-radius: 50%;
+          background-color: #d9d9d9;
+
+          ion-icon {
+            color: #6e6e73;
+          }
+        }
+      }
+    }
+
+    .staff-list {
+      ion-item {
+        --min-height: 54px;
+        --border-color: #f1f1f1;
+        --border-width: 0px 0px 0.55px 0px;
+
+        ion-avatar {
+          width: 40px;
+          height: 40px;
+        }
+
+        ion-checkbox {
+          --checkmark-color: #00a325;
+          --background-checked: transparent;
+          --border-color: transparent;
+          --border-color-checked: transparent;
+        }
+      }
+    }
+  }
+}

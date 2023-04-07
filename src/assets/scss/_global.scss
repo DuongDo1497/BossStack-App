@@ -112,8 +112,16 @@ ion-tab-bar {
       color: var(--text-cl-third);
     }
 
+    .tab-icon {
+      width: 26px;
+    }
+
+    ion-icon {
+      font-size: 26px;
+    }
+
     p {
-      font-size: var(--fz-small);
+      font-size: 12px;
       font-weight: 500;
       margin-top: 8px;
     }

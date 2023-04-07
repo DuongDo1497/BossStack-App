@@ -1,0 +1,107 @@
+.reading-all {
+  ion-button {
+    font-weight: 600;
+    font-size: var(--fz-body);
+    --color: var(--white-cl);
+  }
+}
+
+.notification {
+  padding: 0 16px 16px;
+  overflow-y: scroll;
+
+  .detail-tabs {
+    margin: 0 -16px;
+
+    .nav-pills {
+      &--parent {
+        --column: 3;
+
+        .nav-link {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 4px;
+
+          ion-badge {
+            --ion-color-contrast: var(--white-cl) !important;
+            font-size: 12px;
+            font-weight: 400;
+
+            &.ion-color-success {
+              --ion-color-base: #00a5f3 !important;
+            }
+          }
+        }
+      }
+    }
+
+    .tab-pane {
+      padding: 16px;
+      margin: 0 8px;
+      border-radius: 6px;
+      background-color: var(--white-cl);
+    }
+
+    .noti-list {
+      ion-avatar {
+        position: relative;
+
+        .unread-status {
+          width: 8px;
+          height: 8px;
+          position: absolute;
+          top: 0;
+          right: 0;
+          display: inline-block;
+          border-radius: 50%;
+          background-color: #f04d64;
+          border: 0.5px solid var(--white-cl);
+        }
+      }
+
+      ion-item {
+        --min-height: auto;
+        --padding-start: 0;
+        --inner-padding-end: 0;
+        margin-bottom: 16px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      ion-label {
+        .text {
+          font-size: var(--fz-small);
+          font-weight: 500;
+          margin-bottom: 4px;
+          color: var(--text-cl-primary);
+        }
+
+        .time {
+          font-size: 10px;
+          font-weight: 500;
+          color: var(--text-cl-second);
+        }
+      }
+
+      ion-icon {
+        fill: var(--black-cl);
+      }
+    }
+
+    .noti-empty {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      row-gap: 12px;
+
+      p {
+        font-size: var(--fz-small);
+        color: var(--text-cl-second);
+      }
+    }
+  }
+}

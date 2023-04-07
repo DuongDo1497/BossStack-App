@@ -43,6 +43,18 @@ const routes: Routes = [
         ],
       },
       {
+        path: 'approve/detail-expense',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import(
+                '../pages/approve/detail-expense/detail-expense.module'
+              ).then((m) => m.DetailExpensePageModule),
+          },
+        ],
+      },
+      {
         path: 'task',
         children: [
           {
