@@ -18,6 +18,8 @@ const routes: Routes = [
           },
         ],
       },
+
+      // Approve
       {
         path: 'approve',
         children: [
@@ -54,6 +56,8 @@ const routes: Routes = [
           },
         ],
       },
+      // Approve
+
       {
         path: 'task',
         children: [
@@ -64,6 +68,8 @@ const routes: Routes = [
           },
         ],
       },
+
+      // Noti
       {
         path: 'notification',
         children: [
@@ -76,6 +82,9 @@ const routes: Routes = [
           },
         ],
       },
+      // Noti
+
+      // Personal
       {
         path: 'personal',
         children: [
@@ -88,6 +97,31 @@ const routes: Routes = [
           },
         ],
       },
+      {
+        path: 'personal/info',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/personal/info/info.module').then(
+                (m) => m.InfoPageModule
+              ),
+          },
+        ],
+      },
+      {
+        path: 'personal/change-password',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/personal/password/password.module').then(
+                (m) => m.PasswordPageModule
+              ),
+          },
+        ],
+      },
+      // Personal
       // End page tab
 
       // Cash plan page

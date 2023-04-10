@@ -1,0 +1,129 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons class="button-back" slot="start">
+      <ion-back-button
+        defaultHref="personal"
+        text=""
+        color="light"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title><p>Thông tin của tôi</p></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content
+  class="ion-padding-horizontal --gray"
+  [fullscreen]="true"
+  scroll-y="false"
+>
+  <div class="section personal info">
+    <div class="personal-wrap">
+      <div class="personal-item">
+        <div class="avatar">
+          <ion-avatar>
+            <img
+              alt="Silhouette of a person's head"
+              src="https://ionicframework.com/docs/img/demos/avatar.svg"
+            />
+          </ion-avatar>
+          <ion-button>
+            <ion-icon name="camera-outline"></ion-icon>
+          </ion-button>
+        </div>
+
+        <div class="info-base">
+          <p>Nguyễn Văn Admin</p>
+          <p>admin@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="personal-item personal-info">
+        <div class="personal-info__header">
+          <p class="title">Thông tin cá nhân</p>
+          <ion-button fill="clear">
+            Chỉnh sửa
+            <ion-img
+              src="../../../../assets/images/personalInfo-icon-edit.svg"
+              alt="t"
+            ></ion-img>
+          </ion-button>
+        </div>
+
+        <ul class="personal-info__list">
+          <li class="item">
+            <img
+              src="../../../../assets/images/personalInfo-icon-1.svg"
+              alt=""
+              class="icon"
+            />
+            <p class="content">Ngày sinh: <span>00/00/2000</span></p>
+          </li>
+
+          <li class="item">
+            <img
+              src="../../../../assets/images/personalInfo-icon-2.svg"
+              alt=""
+              class="icon"
+            />
+            <p class="content">Giới tính: <span>Nữ</span></p>
+          </li>
+
+          <li class="item">
+            <img
+              src="../../../../assets/images/personalInfo-icon-3.svg"
+              alt=""
+              class="icon"
+            />
+            <p class="content">CMND/CCCD: <span>036*******</span></p>
+          </li>
+
+          <li class="item">
+            <img
+              src="../../../../assets/images/personalInfo-icon-4.svg"
+              alt=""
+              class="icon"
+            />
+            <p class="content">Đang hoạt động</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="personal-item personal-info">
+        <div class="personal-info__header">
+          <p class="title">Thông tin liên hệ</p>
+          <ion-button fill="clear">
+            Chỉnh sửa
+            <ion-img
+              src="../../../../assets/images/personalInfo-icon-edit.svg"
+              alt="t"
+            ></ion-img>
+          </ion-button>
+        </div>
+
+        <ul class="personal-info__list">
+          <li class="item">
+            <img
+              src="../../../../assets/images/personalInfo-icon-5.svg"
+              alt=""
+              class="icon"
+            />
+            <p class="content">Email: admin@gmail.com</p>
+          </li>
+
+          <li class="item">
+            <img
+              src="../../../../assets/images/personalInfo-icon-6.svg"
+              alt=""
+              class="icon"
+            />
+            <p class="content">0962155048</p>
+          </li>
+        </ul>
+      </div>
+
+      <ion-button class="logout" fill="clear" expand="block"
+        >Đăng xuất</ion-button
+      >
+    </div>
+  </div>
+</ion-content>

@@ -11,51 +11,172 @@
 >
   <div class="section personal">
     <div class="personal-wrap">
-      <div class="personal-item">
-        <ion-item>
-          <ion-avatar slot="start">
-            <img
-              alt="Silhouette of a person's head"
-              src="https://ionicframework.com/docs/img/demos/avatar.svg"
-            />
-          </ion-avatar>
-          <ion-label>
-            <p class="name">Nguyễn Văn Admin</p>
-            <p class="mail">admin@gmail.com</p>
-          </ion-label>
-        </ion-item>
+      <div class="personal-body">
+        <div class="personal-item">
+          <ion-item href="personal/info" button detail="false">
+            <ion-avatar slot="start">
+              <img
+                alt="Silhouette of a person's head"
+                src="https://ionicframework.com/docs/img/demos/avatar.svg"
+              />
+            </ion-avatar>
+            <ion-label>
+              <p class="name">Nguyễn Văn Admin</p>
+              <p class="mail">admin@gmail.com</p>
+            </ion-label>
+          </ion-item>
+        </div>
+
+        <div class="personal-item personal-menu">
+          <ion-item button id="review">
+            <img src="../../../assets/images/personal-icon-1.svg" alt="" />
+            <ion-label>Đánh giá ứng dụng</ion-label>
+          </ion-item>
+          <ion-item href="#">
+            <img src="../../../assets/images/personal-icon-2.svg" alt="" />
+            <ion-label>Hướng dẫn</ion-label>
+          </ion-item>
+          <ion-item href="#">
+            <img src="../../../assets/images/personal-icon-3.svg" alt="" />
+            <ion-label>Báo cáo lỗi</ion-label>
+          </ion-item>
+          <ion-item href="#">
+            <img src="../../../assets/images/personal-icon-4.svg" alt="" />
+            <ion-label>Liên hệ</ion-label>
+          </ion-item>
+          <ion-item href="personal/change-password">
+            <img src="../../../assets/images/personal-icon-8.svg" alt="" />
+            <ion-label>Đổi mật khẩu</ion-label>
+          </ion-item>
+          <ion-item href="#">
+            <img src="../../../assets/images/personal-icon-5.svg" alt="" />
+            <ion-label>Chính sách bảo mật</ion-label>
+          </ion-item>
+          <ion-item href="#">
+            <img src="../../../assets/images/personal-icon-7.svg" alt="" />
+            <ion-label>Tham gia cộng đồng trên FB</ion-label>
+          </ion-item>
+        </div>
+
+        <div class="personal-item personal-noti">
+          <ion-item>
+            <ion-label>Cho phép nhận thông báo</ion-label>
+            <ion-toggle slot="end"></ion-toggle>
+          </ion-item>
+        </div>
+
+        <div class="personal-item personal-unlock">
+          <ion-item>
+            <ion-label>Mở khóa bằng Face ID/Vân tay</ion-label>
+            <ion-toggle slot="end"></ion-toggle>
+          </ion-item>
+        </div>
+
+        <ion-button class="logout" fill="clear" expand="block"
+          >Đăng xuất</ion-button
+        >
       </div>
 
-      <div class="personal-item personal-menu">
-        <ion-item href="#">
-          <img src="../../../assets/images/personal-icon-1.svg" alt="" />
-          <ion-label>Đánh giá ứng dụng</ion-label>
-        </ion-item>
-        <ion-item href="#">
-          <img src="../../../assets/images/personal-icon-2.svg" alt="" />
-          <ion-label>Hướng dẫn</ion-label>
-        </ion-item>
-        <ion-item href="#">
-          <img src="../../../assets/images/personal-icon-3.svg" alt="" />
-          <ion-label>Báo cáo lỗi</ion-label>
-        </ion-item>
-        <ion-item href="#">
-          <img src="../../../assets/images/personal-icon-4.svg" alt="" />
-          <ion-label>Liên hệ</ion-label>
-        </ion-item>
-        <ion-item href="#">
-          <img src="../../../assets/images/personal-icon-5.svg" alt="" />
-          <ion-label>Chính sách bảo mật</ion-label>
-        </ion-item>
-        <ion-item href="#">
-          <img src="../../../assets/images/personal-icon-6.svg" alt="" />
-          <ion-label>Thông tin ứng dụng</ion-label>
-        </ion-item>
+      <div class="personal-copyright">
+        <p>Phiên bản: V1.0</p>
+        <p>Phát triển bởi Công Ty TNHH Lam Minh Anh</p>
       </div>
-
-      <ion-button class="logout" fill="clear" expand="block"
-        >Đăng xuất</ion-button
-      >
     </div>
   </div>
+
+  <ion-modal
+    #review
+    class="review-modal"
+    trigger="review"
+    [initialBreakpoint]="0.95"
+    handleBehavior="cycle"
+  >
+    <ng-template>
+      <ion-content scroll-y="false">
+        <p class="modal-title">Đánh giá ứng dụng</p>
+        <div class="modal-body review-body">
+          <img src="../../../assets/images/reviewApp-img-1.png" alt="" />
+          <div class="review-wrap">
+            <div class="review-level">
+              <p class="review-level__title">
+                Mức độ hài lòng về App BossStack?
+              </p>
+              <div class="review-level__content">
+                <ul class="start-list">
+                  <li class="active">
+                    <ion-icon name="star"></ion-icon>
+                  </li>
+                  <li class="active">
+                    <ion-icon name="star"></ion-icon>
+                  </li>
+                  <li class="active">
+                    <ion-icon name="star"></ion-icon>
+                  </li>
+                  <li>
+                    <ion-icon name="star"></ion-icon>
+                  </li>
+                  <li>
+                    <ion-icon name="star"></ion-icon>
+                  </li>
+                </ul>
+                <p class="level-name">Bình thường</p>
+              </div>
+            </div>
+            <div class="review-fix">
+              <p class="review-fix__title">
+                Những điểm App BossStack cần cải thiện:
+              </p>
+              <div class="review-fix__content">
+                <ul class="fix-list">
+                  <li>
+                    <input type="checkbox" name="" id="fix-1" />
+                    <label for="fix-1">Thiết kế giao diện</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="" id="fix-2" />
+                    <label for="fix-2">Ngôn từ, nội dung biểu đạt</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="" id="fix-3" />
+                    <label for="fix-3">Tính dễ sử dụng</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="" id="fix-4" />
+                    <label for="fix-4">Tốc độ xử lý giao dịch</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="" id="fix-5" />
+                    <label for="fix-5">Vấn đề kỹ thuật</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="" id="fix-6" />
+                    <label for="fix-6">Vấn đề khác</label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="review-contribution">
+              <p class="review-contribution__title">
+                Nội dung đóng góp (nếu có)
+              </p>
+              <div class="review-contribution__content">
+                <textarea
+                  name=""
+                  id=""
+                  placeholder="Vui lòng viết đánh giá tại đây"
+                ></textarea>
+                <p class="counter">0/225</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-control">
+          <ion-button class="btn-cancel" (click)="review.dismiss()"
+            >Hủy bỏ</ion-button
+          >
+          <ion-button class="btn-accept">Xác nhận</ion-button>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </ion-content>
