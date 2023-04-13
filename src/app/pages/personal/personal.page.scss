@@ -8,7 +8,7 @@
   }
 
   &-item {
-    padding: 16px;
+    padding: 10px 16px;
     border-radius: 6px;
     background-color: var(--white-cl);
     margin-bottom: 12px;
@@ -214,6 +214,94 @@ ion-modal {
             text-align: right;
             margin-top: 6px;
             color: var(--text-cl-second);
+          }
+        }
+      }
+    }
+  }
+
+  &.report-modal,
+  &.contact-modal {
+    .modal-header {
+      margin-bottom: 16px;
+
+      .btn-cancel {
+        --border-radius: 0;
+        --padding-start: 0;
+        --padding-end: 0;
+        height: auto;
+        margin: 0;
+        font-size: var(--fz-body);
+        font-weight: 600;
+        color: #3465d9;
+      }
+    }
+
+    .modal-body {
+      margin-bottom: 16px;
+
+      .report-title,
+      .contact-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 25px;
+
+        p {
+          font-weight: 600;
+        }
+
+        ion-button {
+          --border-radius: 50%;
+          --padding-start: 0;
+          --padding-end: 0;
+          --background: #3465d9;
+          width: 35px;
+          height: 35px;
+          margin: 0;
+          color: var(--white-cl);
+        }
+      }
+
+      .report-form,
+      .contact-form {
+        ion-item {
+          --min-height: 33px;
+          --padding-start: 0;
+          --inner-padding-end: 0;
+          --border-color: #f1f1f1;
+          --border-width: 0px 0px 1px 0px;
+          margin-bottom: 24px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          ion-label {
+            --color: var(--text-cl-second);
+          }
+
+          ion-input {
+            --padding-end: 0;
+            --color: var(--text-cl-second);
+            margin-left: 5px;
+          }
+
+          ion-textarea {
+            --padding-end: 0;
+            --placeholder-color: var(--black-cl);
+            --placeholder-opacity: 1;
+            margin-bottom: 0;
+          }
+
+          &.mail-to {
+            ion-input {
+              --color: #3465d9;
+            }
+          }
+
+          &.mail-des {
+            --border-width: 0px 0px 0px 0px;
           }
         }
       }

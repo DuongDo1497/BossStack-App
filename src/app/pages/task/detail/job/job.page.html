@@ -1,0 +1,206 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button href="#" fill="clear">
+        <img src="../../../assets/images/cashPlan-icon-10.svg" alt="" />
+      </ion-button>
+    </ion-buttons>
+    <ion-title><p>Chi tiết công việc</p></ion-title>
+    <ion-buttons class="button-done" slot="end">
+      <ion-button href="task/list/job" fill="clear">Xong</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" scroll-y="false">
+  <div class="section task job-detail">
+    <div class="task__control">
+      <ion-button id="prioritize">
+        <img src="../../../../assets/images/icon-bell-gray.svg" alt="" />
+        Đặt ưu tiên
+      </ion-button>
+      <div class="task__control-progress">
+        <p class="title">Tiến độ</p>
+        <div class="progress-number">
+          0%
+          <ion-button id="progressButton">
+            <img src="../../../../assets/images/icon-down.svg" alt="" />
+          </ion-button>
+        </div>
+      </div>
+    </div>
+    <ion-list class="form-general task-form">
+      <ion-item lines="none" class="no-input">
+        <ion-label>
+          <img
+            class="icon-label"
+            src="../../../../assets/images/icon-calendar.svg"
+            alt=""
+          />
+          Ngày lập
+        </ion-label>
+        <p>17/03/2023 Thứ sáu</p>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Nhập công việc</ion-label>
+        <ion-input placeholder="Nhập công việc"></ion-input>
+      </ion-item>
+
+      <ion-item lines="full" id="project" button detail="false">
+        <ion-label position="floating">Dự án</ion-label>
+        <div class="input-group">
+          <ion-input placeholder="Dự án"></ion-input>
+          <img
+            class="icon-input"
+            src="../../../../assets/images/icon-right.svg"
+            alt=""
+          />
+        </div>
+      </ion-item>
+
+      <ion-item lines="full" button detail="false">
+        <ion-label position="floating">Thêm checklist</ion-label>
+        <div class="input-group">
+          <ion-input placeholder="Thêm checklist"></ion-input>
+          <img
+            class="icon-input"
+            src="../../../../assets/images/icon-plus.svg"
+            alt=""
+          />
+        </div>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label>Ngày bắt đầu</ion-label>
+        <ion-datetime-button
+          slot="end"
+          datetime="date-start"
+        ></ion-datetime-button>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label>Ngày hoàn thành</ion-label>
+        <ion-datetime-button
+          slot="end"
+          datetime="date-end"
+        ></ion-datetime-button>
+      </ion-item>
+
+      <ion-item lines="full" id="note" button detail="false">
+        <ion-label position="floating">
+          <img
+            class="icon-label"
+            src="../../../../assets/images/icon-note.svg"
+            alt=""
+          />
+          Ghi chú
+        </ion-label>
+        <div class="input-group">
+          <ion-input placeholder="Ghi chú"></ion-input>
+          <img
+            class="icon-input"
+            src="../../../../assets/images/icon-plus.svg"
+            alt=""
+          />
+        </div>
+      </ion-item>
+
+      <ion-item lines="full" id="file" button detail="false">
+        <ion-label position="floating">
+          <img
+            class="icon-label"
+            src="../../../../assets/images/icon-attach.svg"
+            alt=""
+          />
+          Tệp đính kèm
+        </ion-label>
+        <div class="input-group">
+          <ion-input placeholder="Tệp đính kèm"></ion-input>
+          <img
+            class="icon-input"
+            src="../../../../assets/images/icon-plus.svg"
+            alt=""
+          />
+        </div>
+      </ion-item>
+
+      <ion-item lines="full" button detail="false">
+        <ion-label position="floating">
+          <img
+            class="icon-label"
+            src="../../../../assets/images/icon-share-one.svg"
+            alt=""
+          />
+          Giao việc
+        </ion-label>
+        <div class="input-group">
+          <ion-input placeholder="Giao việc"></ion-input>
+          <img
+            class="icon-input"
+            src="../../../../assets/images/icon-plus.svg"
+            alt=""
+          />
+        </div>
+      </ion-item>
+
+      <ion-item lines="full" button detail="false">
+        <ion-label position="floating">
+          <img
+            class="icon-label"
+            src="../../../../assets/images/icon-send-one.svg"
+            alt=""
+          />
+          Gửi yêu cầu phê duyệt
+        </ion-label>
+        <div class="input-group">
+          <ion-input placeholder="Tệp đính kèm"></ion-input>
+          <img
+            class="icon-input"
+            src="../../../../assets/images/icon-plus.svg"
+            alt=""
+          />
+        </div>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label>
+          <img
+            class="icon-label"
+            src="../../../../assets/images/icon-waves.svg"
+            alt=""
+          />
+          Nhật ký hoạt động
+        </ion-label>
+        <div class="toggle-group">
+          <ion-toggle slot="end"></ion-toggle>
+        </div>
+      </ion-item>
+    </ion-list>
+
+    <div class="work-list">
+      <ion-item lines="none">
+        <ion-thumbnail slot="start">
+          <img alt="" src="../../../../assets/images/cashPlan-share-one.svg" />
+        </ion-thumbnail>
+        <ion-label>
+          <h2>Bạn đã giao công việc này cho AD</h2>
+          <p>Vài giây trước</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-thumbnail slot="start">
+          <img
+            alt=""
+            src="../../../../assets/images/cashPlan-plus-circle.svg"
+          />
+        </ion-thumbnail>
+        <ion-label>
+          <h2>Bạn đã tạo công việc</h2>
+          <p>10 giây trước</p>
+        </ion-label>
+      </ion-item>
+    </div>
+  </div>
+</ion-content>

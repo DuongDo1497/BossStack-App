@@ -36,11 +36,11 @@
             <img src="../../../assets/images/personal-icon-2.svg" alt="" />
             <ion-label>Hướng dẫn</ion-label>
           </ion-item>
-          <ion-item href="#">
+          <ion-item button id="report">
             <img src="../../../assets/images/personal-icon-3.svg" alt="" />
             <ion-label>Báo cáo lỗi</ion-label>
           </ion-item>
-          <ion-item href="#">
+          <ion-item button id="contact">
             <img src="../../../assets/images/personal-icon-4.svg" alt="" />
             <ion-label>Liên hệ</ion-label>
           </ion-item>
@@ -175,6 +175,119 @@
             >Hủy bỏ</ion-button
           >
           <ion-button class="btn-accept">Xác nhận</ion-button>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal
+    #report
+    class="report-modal"
+    trigger="report"
+    [initialBreakpoint]="0.95"
+    handleBehavior="cycle"
+  >
+    <ng-template>
+      <ion-content scroll-y="false">
+        <div class="modal-header">
+          <ion-button class="btn-cancel" fill="clear" (click)="report.dismiss()"
+            >Hủy</ion-button
+          >
+        </div>
+        <div class="modal-body report-body">
+          <div class="report-title">
+            <p>Báo cáo lỗi, ngày 29/03/2023 10:23</p>
+            <ion-button
+              ><ion-icon name="arrow-up-outline"></ion-icon
+            ></ion-button>
+          </div>
+          <div class="report-form">
+            <ion-item lines="full" button="false" class="mail-to">
+              <ion-label>Đến:</ion-label>
+              <ion-input
+                value="info@bossstack.vn"
+                [readonly]="true"
+              ></ion-input>
+            </ion-item>
+            <ion-item lines="full" button="false" class="mail-from">
+              <ion-label>Cc/Bcc, Từ:</ion-label>
+              <ion-input
+                value="khachhang@icoud.com"
+                [readonly]="true"
+              ></ion-input>
+            </ion-item>
+            <ion-item lines="full" button="false" class="mail-title">
+              <ion-label>Chủ đề:</ion-label>
+              <ion-input
+                value="Báo cáo lỗi, ngày 29/03/2023 10:23"
+                [readonly]="true"
+              ></ion-input>
+            </ion-item>
+            <ion-item lines="none" button="false" class="mail-des">
+              <ion-textarea
+                rows="10"
+                placeholder="*** Vui lòng mô tả lỗi của bạn ***"
+              ></ion-textarea>
+            </ion-item>
+          </div>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal
+    #contact
+    class="contact-modal"
+    trigger="contact"
+    [initialBreakpoint]="0.95"
+    handleBehavior="cycle"
+  >
+    <ng-template>
+      <ion-content scroll-y="false">
+        <div class="modal-header">
+          <ion-button
+            class="btn-cancel"
+            fill="clear"
+            (click)="contact.dismiss()"
+            >Hủy</ion-button
+          >
+        </div>
+        <div class="modal-body contact-body">
+          <div class="contact-title">
+            <p>Hỗ trợ, ngày 29/03/2023 10:23</p>
+            <ion-button
+              ><ion-icon name="arrow-up-outline"></ion-icon
+            ></ion-button>
+          </div>
+          <div class="contact-form">
+            <ion-item lines="full" button="false" class="mail-to">
+              <ion-label>Đến:</ion-label>
+              <ion-input
+                value="info@bossstack.vn"
+                [readonly]="true"
+              ></ion-input>
+            </ion-item>
+            <ion-item lines="full" button="false" class="mail-from">
+              <ion-label>Cc/Bcc, Từ:</ion-label>
+              <ion-input
+                value="khachhang@icoud.com"
+                [readonly]="true"
+              ></ion-input>
+            </ion-item>
+            <ion-item lines="full" button="false" class="mail-title">
+              <ion-label>Chủ đề:</ion-label>
+              <ion-input
+                value="Hỗ trợ, ngày 29/03/2023 10:23"
+                [readonly]="true"
+              ></ion-input>
+            </ion-item>
+            <ion-item lines="none" button="false" class="mail-des">
+              <ion-textarea
+                rows="10"
+                placeholder="Bạn cần chúng tôi giúp gì?"
+              ></ion-textarea>
+            </ion-item>
+          </div>
         </div>
       </ion-content>
     </ng-template>

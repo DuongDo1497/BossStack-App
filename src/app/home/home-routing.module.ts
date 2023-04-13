@@ -58,6 +58,7 @@ const routes: Routes = [
       },
       // Approve
 
+      // Task
       {
         path: 'task',
         children: [
@@ -68,6 +69,55 @@ const routes: Routes = [
           },
         ],
       },
+      {
+        path: 'task/add',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/task/add/add.module').then(
+                (m) => m.AddPageModule
+              ),
+          },
+        ],
+      },
+      {
+        path: 'task/list/job',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/task/list/job/job.module').then(
+                (m) => m.JobPageModule
+              ),
+          },
+        ],
+      },
+      {
+        path: 'task/detail/project',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/task/detail/project/project.module').then(
+                (m) => m.ProjectPageModule
+              ),
+          },
+        ],
+      },
+      {
+        path: 'task/detail/job',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/task/detail/job/job.module').then(
+                (m) => m.JobPageModule
+              ),
+          },
+        ],
+      },
+      // End Task
 
       // Noti
       {

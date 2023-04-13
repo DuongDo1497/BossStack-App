@@ -1,0 +1,222 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons class="button-back" slot="start">
+      <ion-back-button
+        defaultHref="/task"
+        text=""
+        color="light"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title><p>Tạo dự án</p></ion-title>
+    <ion-buttons class="button-save" slot="end">
+      <ion-button>Lưu</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" scroll-y="false">
+  <div class="section task add">
+    <ion-list class="form-general task-form">
+      <ion-item lines="none" class="no-input">
+        <ion-label> Trạng thái </ion-label>
+        <div class="toggle-group">
+          <p>Đang hoạt động</p>
+          <ion-toggle slot="end"></ion-toggle>
+        </div>
+      </ion-item>
+
+      <ion-item lines="none" class="no-input">
+        <ion-label>
+          <img
+            class="icon-label"
+            src="../../../../assets/images/icon-calendar.svg"
+            alt=""
+          />
+          Ngày lập
+        </ion-label>
+        <p>17/03/2023 Thứ sáu</p>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Tên dự án</ion-label>
+        <ion-input placeholder="Tên dự án"></ion-input>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label>Ngày bắt đầu</ion-label>
+        <ion-datetime-button
+          slot="end"
+          datetime="date-start"
+        ></ion-datetime-button>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label>Ngày hoàn thành</ion-label>
+        <ion-datetime-button
+          slot="end"
+          datetime="date-end"
+        ></ion-datetime-button>
+      </ion-item>
+
+      <ion-item lines="full" id="note" button detail="false">
+        <ion-label position="floating">
+          <img
+            class="icon-label"
+            src="../../../../assets/images/icon-note.svg"
+            alt=""
+          />
+          Ghi chú
+        </ion-label>
+        <div class="input-group">
+          <ion-input placeholder="Ghi chú"></ion-input>
+          <img
+            class="icon-input"
+            src="../../../../assets/images/icon-plus.svg"
+            alt=""
+          />
+        </div>
+      </ion-item>
+
+      <ion-item
+        lines="full"
+        (click)="setOpenModalTask(true)"
+        button
+        detail="false"
+      >
+        <ion-label position="floating">
+          <img
+            class="icon-label"
+            src="../../../../assets/images/icon-share-one.svg"
+            alt=""
+          />
+          Người tham gia
+        </ion-label>
+        <div class="input-group">
+          <ion-input placeholder="Người tham gia"></ion-input>
+          <img
+            class="icon-input"
+            src="../../../../assets/images/icon-plus.svg"
+            alt=""
+          />
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <ion-modal [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime
+        id="date-start"
+        locale="vn-VN"
+        presentation="date"
+      ></ion-datetime>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime
+        id="date-end"
+        locale="vn-VN"
+        presentation="date"
+      ></ion-datetime>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal
+    #note
+    trigger="note"
+    [initialBreakpoint]="0.5"
+    [breakpoints]="[0, 0.25, 0.5, 0.75]"
+    handleBehavior="cycle"
+  >
+    <ng-template>
+      <ion-content scroll-y="false">
+        <p class="modal-title">Thêm ghi chú</p>
+        <ion-textarea
+          placeholder="Thêm ghi chú..."
+          [clearOnEdit]="true"
+        ></ion-textarea>
+        <div class="modal-control">
+          <ion-button class="btn-cancel" (click)="note.dismiss()"
+            >Hủy bỏ</ion-button
+          >
+          <ion-button class="btn-accept">Xác nhận</ion-button>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal id="task-modal" [isOpen]="isModalTaskOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title><p>Chọn người thực hiện</p></ion-title>
+          <ion-buttons class="button-save" slot="end">
+            <ion-button (click)="setOpenModalTask(false)">Lưu</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content>
+        <div class="modal-search search-bar">
+          <ion-item class="ion-no-padding login-input">
+            <img
+              class="icon-input"
+              src="../../assets/images/icon-search.svg"
+              alt=""
+            />
+            <ion-input class="form-control" placeholder="Tìm kiếm"></ion-input>
+          </ion-item>
+        </div>
+        <div class="staff-select">
+          <div class="item">
+            <ion-avatar>
+              <img
+                alt="Silhouette of a person's head"
+                src="https://ionicframework.com/docs/img/demos/avatar.svg"
+              />
+            </ion-avatar>
+            <button class="close">
+              <ion-icon name="close"></ion-icon>
+            </button>
+          </div>
+        </div>
+        <div class="modal-list staff-list">
+          <ion-item lines="full">
+            <ion-avatar slot="start">
+              <img
+                alt="Silhouette of a person's head"
+                src="https://ionicframework.com/docs/img/demos/avatar.svg"
+              />
+            </ion-avatar>
+            <ion-label>Admin</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+
+          <ion-item lines="full">
+            <ion-avatar slot="start">
+              <img
+                alt="Silhouette of a person's head"
+                src="https://ionicframework.com/docs/img/demos/avatar.svg"
+              />
+            </ion-avatar>
+            <ion-label>Admin</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+
+          <ion-item lines="full">
+            <ion-avatar slot="start">
+              <img
+                alt="Silhouette of a person's head"
+                src="https://ionicframework.com/docs/img/demos/avatar.svg"
+              />
+            </ion-avatar>
+            <ion-label>Admin</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>
