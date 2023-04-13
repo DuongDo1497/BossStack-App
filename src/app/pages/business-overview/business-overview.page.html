@@ -1,0 +1,373 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons class="button-back" slot="start">
+      <ion-back-button defaultHref="/" text="" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title><p>Tổng quan kinh doanh</p></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="--gray" scroll-y="false">
+  <div class="section business-overview manage">
+    <div class="business-overview__wrap">
+      <div class="business-overview__wallet">
+        <p class="business-overview__wallet-name">Ví tổng</p>
+        <div class="business-overview__wallet-money">
+          <span class="number">*********</span>
+          <span class="icon">
+            <ion-icon name="eye-off-outline"></ion-icon>
+          </span>
+        </div>
+      </div>
+
+      <div class="business-overview__chart">
+        <p class="title">Tổng quan dự án</p>
+        <p class="sub-title">Thống kê dự án</p>
+        <div class="business-overview__chart-body">
+          <div class="filter-time">
+            <div class="filter-time__wrap">
+              <div class="filter-time__range">
+                <ion-datetime-button
+                  datetime="datetime1"
+                  color="dark"
+                  class="custom"
+                ></ion-datetime-button>
+              </div>
+              <img
+                class="filter-time__icon"
+                src="../../../assets/images/icon-calendar.svg"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div class="chart-wrap">
+            <canvas id="projectChart" width="232" height="232"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="business-overview__menu">
+        <ion-item
+          class="business-overview__menu-item"
+          lines="none"
+          detail="true"
+          href="task/detail/project"
+        >
+          <span class="status-tag --success"></span>
+          <ion-label>
+            <h3>Dự án hoàn thành (20%)</h3>
+            <p>0 dự án</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item
+          class="business-overview__menu-item"
+          lines="none"
+          detail="true"
+          href="task/detail/project"
+        >
+          <span class="status-tag --warning"></span>
+          <ion-label>
+            <h3>Dự án đang thực hiện (60%)</h3>
+            <p>0 dự án</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item
+          class="business-overview__menu-item"
+          lines="none"
+          detail="true"
+          href="task/detail/project"
+        >
+          <span class="status-tag --danger"></span>
+          <ion-label>
+            <h3>Dự án tạm ngưng (20%)</h3>
+            <p>0 dự án</p>
+          </ion-label>
+        </ion-item>
+      </div>
+
+      <div class="business-overview__cash">
+        <p class="title">Quản lý tiền mặt</p>
+        <div class="business-overview__cash-index">
+          <div class="item">
+            <p class="text">Tổng thu</p>
+            <p class="price --success">5.000.000đ</p>
+          </div>
+          <div class="item">
+            <p class="text">Tổng chi</p>
+            <p class="price --danger">5.000.000đ</p>
+          </div>
+        </div>
+        <p class="sub-title">Thống kê thu chi</p>
+        <div class="business-overview__cash-statistical">
+          <div class="statistical-note">
+            <p class="date">Năm 2023</p>
+            <div class="note">
+              <div class="item">
+                <span class="status --success"></span>
+                <span class="text">Thu</span>
+              </div>
+              <div class="item">
+                <span class="status --danger"></span>
+                <span class="text">Chi</span>
+              </div>
+            </div>
+          </div>
+          <div class="statistical-chart">
+            <canvas id="statistical"></canvas>
+          </div>
+        </div>
+        <p class="sub-title">Chi tiết thu chi</p>
+        <div class="business-overview__cash-detail">
+          <div class="detail-item">
+            <div class="business-overview__chart">
+              <div class="business-overview__chart-body">
+                <div class="filter-time">
+                  <div class="filter-time__wrap">
+                    <div class="filter-time__range">
+                      <ion-datetime-button
+                        datetime="datetime2"
+                        color="dark"
+                        class="custom"
+                      ></ion-datetime-button>
+                    </div>
+                    <img
+                      class="filter-time__icon"
+                      src="../../../assets/images/icon-calendar.svg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+
+                <div class="chart-wrap">
+                  <canvas id="collectChart" width="232" height="232"></canvas>
+                </div>
+              </div>
+            </div>
+
+            <div class="business-overview__menu">
+              <ion-item
+                class="business-overview__menu-item"
+                lines="none"
+                detail="true"
+                href="#"
+              >
+                <span class="status-tag --success"></span>
+                <ion-label>
+                  <h3>Thu nhập Lương/ Tiết kiệm (40%)</h3>
+                  <p>0đ</p>
+                </ion-label>
+              </ion-item>
+
+              <ion-item
+                class="business-overview__menu-item"
+                lines="none"
+                detail="true"
+                href="#"
+              >
+                <span class="status-tag --blue"></span>
+                <ion-label>
+                  <h3>Thu nhập Đầu tư (20%)</h3>
+                  <p>0đ</p>
+                </ion-label>
+              </ion-item>
+
+              <ion-item
+                class="business-overview__menu-item"
+                lines="none"
+                detail="true"
+                href="#"
+              >
+                <span class="status-tag --warning"></span>
+                <ion-label>
+                  <h3>Thu nhập Kinh doanh (30%)</h3>
+                  <p>0đ</p>
+                </ion-label>
+              </ion-item>
+
+              <ion-item
+                class="business-overview__menu-item"
+                lines="none"
+                detail="true"
+                href="#"
+              >
+                <span class="status-tag --blue-light"></span>
+                <ion-label>
+                  <h3>Thu nhập khác (10%)</h3>
+                  <p>0đ</p>
+                </ion-label>
+              </ion-item>
+            </div>
+          </div>
+
+          <div class="detail-item">
+            <div class="business-overview__chart">
+              <div class="business-overview__chart-body">
+                <div class="filter-time">
+                  <div class="filter-time__wrap">
+                    <div class="filter-time__range">
+                      <ion-datetime-button
+                        datetime="datetime3"
+                        color="dark"
+                        class="custom"
+                      ></ion-datetime-button>
+                    </div>
+                    <img
+                      class="filter-time__icon"
+                      src="../../../assets/images/icon-calendar.svg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+
+                <div class="chart-wrap">
+                  <canvas id="spendChart" width="232" height="232"></canvas>
+                </div>
+              </div>
+            </div>
+
+            <div class="business-overview__menu">
+              <ion-item
+                class="business-overview__menu-item"
+                lines="none"
+                detail="true"
+                href="#"
+              >
+                <span class="status-tag --danger"></span>
+                <ion-label>
+                  <h3>Thu nhập Lương/ Tiết kiệm (40%)</h3>
+                  <p>0đ</p>
+                </ion-label>
+              </ion-item>
+
+              <ion-item
+                class="business-overview__menu-item"
+                lines="none"
+                detail="true"
+                href="#"
+              >
+                <span class="status-tag --blue"></span>
+                <ion-label>
+                  <h3>Thu nhập Đầu tư (20%)</h3>
+                  <p>0đ</p>
+                </ion-label>
+              </ion-item>
+
+              <ion-item
+                class="business-overview__menu-item"
+                lines="none"
+                detail="true"
+                href="#"
+              >
+                <span class="status-tag --warning"></span>
+                <ion-label>
+                  <h3>Thu nhập Kinh doanh (30%)</h3>
+                  <p>0đ</p>
+                </ion-label>
+              </ion-item>
+
+              <ion-item
+                class="business-overview__menu-item"
+                lines="none"
+                detail="true"
+                href="#"
+              >
+                <span class="status-tag --blue-light"></span>
+                <ion-label>
+                  <h3>Thu nhập khác (10%)</h3>
+                  <p>0đ</p>
+                </ion-label>
+              </ion-item>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="business-overview__transfer">
+        <p class="title">Lưu chuyển tiền tệ</p>
+        <div class="business-overview__transfer-statistical">
+          <div class="statistical-note">
+            <p class="date">Năm 2023</p>
+            <div class="note">
+              <div class="item">
+                <span class="status --success"></span>
+                <span class="text">DT vào</span>
+              </div>
+              <div class="item">
+                <span class="status --danger"></span>
+                <span class="text">DT ra</span>
+              </div>
+              <div class="item">
+                <span class="status --warning"></span>
+                <span class="text">DT ròng</span>
+              </div>
+            </div>
+          </div>
+          <div class="statistical-chart">
+            <canvas id="statistical1"></canvas>
+          </div>
+        </div>
+        <div class="business-overview__menu">
+          <ion-item
+            class="business-overview__menu-item"
+            lines="none"
+            detail="true"
+            href="#"
+          >
+            <span class="status-tag --success"></span>
+            <ion-label>
+              <h3>Dòng tiền vào</h3>
+              <p>0đ</p>
+            </ion-label>
+          </ion-item>
+
+          <ion-item
+            class="business-overview__menu-item"
+            lines="none"
+            detail="true"
+            href="#"
+          >
+            <span class="status-tag --danger"></span>
+            <ion-label>
+              <h3>Dòng tiền ra</h3>
+              <p>0đ</p>
+            </ion-label>
+          </ion-item>
+
+          <ion-item
+            class="business-overview__menu-item"
+            lines="none"
+            detail="true"
+            href="#"
+          >
+            <span class="status-tag --warning"></span>
+            <ion-label>
+              <h3>Dòng tiền ròng</h3>
+              <p>0đ</p>
+            </ion-label>
+          </ion-item>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ion-modal [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime id="datetime1" presentation="date"></ion-datetime>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime id="datetime2" presentation="date"></ion-datetime>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime id="datetime3" presentation="date"></ion-datetime>
+    </ng-template>
+  </ion-modal>
+</ion-content>

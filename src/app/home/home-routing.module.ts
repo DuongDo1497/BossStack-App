@@ -174,6 +174,21 @@ const routes: Routes = [
       // Personal
       // End page tab
 
+      // Business overview page
+      {
+        path: 'business-overview',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import(
+                '../pages/business-overview/business-overview.module'
+              ).then((m) => m.BusinessOverviewPageModule),
+          },
+        ],
+      },
+      // End Business overview page
+
       // Cash plan page
       {
         path: 'plan-cash',
@@ -260,6 +275,33 @@ const routes: Routes = [
         ],
       },
       // End Cash plan page
+
+      // Cash manage page
+      {
+        path: 'cash-manage',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/manage-cash/manage-cash.module').then(
+                (m) => m.ManageCashPageModule
+              ),
+          },
+        ],
+      },
+      {
+        path: 'cash-manage/add',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/manage-cash/add/add.module').then(
+                (m) => m.AddPageModule
+              ),
+          },
+        ],
+      },
+      // End Cash manage page
 
       // Business Active
       {

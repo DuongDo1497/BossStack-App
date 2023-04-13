@@ -1,0 +1,428 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons class="button-back" slot="start">
+      <ion-back-button defaultHref="/" text="" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title><p>Quản lý tiền mặt</p></ion-title>
+    <ion-buttons slot="end">
+      <ion-button href="cash-manage/add" fill="clear">
+        <img src="../../../assets/images/cashPlan-icon-2.svg" alt="" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="--gray" scroll-y="false">
+  <div class="section cash-manage manage">
+    <div class="cash-manage__wrap">
+      <div class="cash-manage__wallet">
+        <p class="cash-manage__wallet-name">Ví tổng</p>
+        <div class="cash-manage__wallet-money">
+          <span class="number">*********</span>
+          <span class="icon">
+            <ion-icon name="eye-off-outline"></ion-icon>
+          </span>
+        </div>
+      </div>
+
+      <div class="cash-manage__transfer">
+        <ion-button fill="outline" shape="round">
+          Phân bổ dòng tiền
+          <img src="../../../assets/images/icon-right-up.svg" alt="" />
+        </ion-button>
+      </div>
+
+      <div class="cash-manage__cash-index">
+        <div class="item">
+          <p class="text">Tổng thu</p>
+          <p class="price --success">5.000.000đ</p>
+        </div>
+        <div class="item">
+          <p class="text">Tổng chi</p>
+          <p class="price --danger">5.000.000đ</p>
+        </div>
+      </div>
+
+      <p class="sub-title">Thống kê thu chi</p>
+      <div class="cash-manage__cash-statistical">
+        <div class="statistical-note">
+          <p class="date">Năm 2023</p>
+          <div class="note">
+            <div class="item">
+              <span class="status --success"></span>
+              <span class="text">Thu</span>
+            </div>
+            <div class="item">
+              <span class="status --danger"></span>
+              <span class="text">Chi</span>
+            </div>
+          </div>
+        </div>
+        <div class="statistical-chart">
+          <canvas id="statistical"></canvas>
+        </div>
+      </div>
+
+      <div class="cash-manage__info detail-tabs">
+        <ul
+          class="nav nav-pills nav-pills--parent mb-3"
+          id="pills-tab"
+          role="tablist"
+        >
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="searchCash-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#searchCash"
+              type="button"
+              role="tab"
+              aria-controls="searchCash"
+              aria-selected="true"
+            >
+              Tra cứu DT
+            </button>
+          </li>
+
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="collect-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#collect"
+              type="button"
+              role="tab"
+              aria-controls="collect"
+              aria-selected="false"
+            >
+              Dòng tiền thu
+            </button>
+          </li>
+
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="spend-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#spend"
+              type="button"
+              role="tab"
+              aria-controls="spend"
+              aria-selected="false"
+            >
+              Dòng tiền chi
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content" id="pills-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="searchCash"
+            role="tabpanel"
+            aria-labelledby="searchCash-tab"
+          >
+            <div class="search-bar">
+              <ion-item class="ion-no-padding login-input">
+                <img
+                  class="icon-input"
+                  src="../../assets/images/icon-search.svg"
+                  alt=""
+                />
+                <ion-input
+                  class="form-control"
+                  placeholder="Tìm kiếm"
+                ></ion-input>
+              </ion-item>
+            </div>
+
+            <div class="cash-manage__filter">
+              <img src="../../../../assets/images/cashPlan-icon-3.svg" alt="" />
+              <div class="cash-manage__filter-wrap">
+                <ion-button id="categories">
+                  Danh mục
+                  <img src="../../../../assets/images/icon-right.svg" alt="" />
+                </ion-button>
+
+                <ion-button id="categories">
+                  Phân loại
+                  <img src="../../../../assets/images/icon-right.svg" alt="" />
+                </ion-button>
+
+                <ion-button id="prioritize">
+                  Ưu tiên
+                  <img src="../../../../assets/images/icon-right.svg" alt="" />
+                </ion-button>
+              </div>
+            </div>
+
+            <div class="cash-manage__list">
+              <div class="cash-manage__item">
+                <p class="cash-manage__time">17/03/2023 Thứ 6</p>
+                <div class="cash-manage__box">
+                  <div class="cash-manage__detail">
+                    <a href="#">
+                      <div class="header">
+                        <p class="name">Thu nhập từ lương...</p>
+                        <p class="number --success">0đ</p>
+                      </div>
+                      <div class="info">
+                        <div class="info-item">
+                          <span>Danh mục</span>
+                          <span>Thu Nhập Lương/Tiết Kiệm</span>
+                        </div>
+                        <div class="info-item">
+                          <span>Chi tiết</span>
+                          <span>Aa</span>
+                        </div>
+                        <div class="info-item">
+                          <span>Người yêu cầu duyệt</span>
+                          <ion-avatar>
+                            <img
+                              alt="Silhouette of a person's head"
+                              src="https://ionicframework.com/docs/img/demos/avatar.svg"
+                            />
+                          </ion-avatar>
+                        </div>
+                        <div class="info-item">
+                          <span>Người đã phê duyệt</span>
+                          <ion-avatar>
+                            <img
+                              alt="Silhouette of a person's head"
+                              src="https://ionicframework.com/docs/img/demos/avatar.svg"
+                            />
+                          </ion-avatar>
+                        </div>
+                      </div>
+                      <div class="tag">
+                        <div class="tag-item">
+                          <img
+                            src="../../../assets/images/icon-tag-one.svg"
+                            alt=""
+                          />
+                          Chi
+                        </div>
+                        <div class="tag-item --warning">
+                          <img
+                            src="../../../assets/images/icon-bell-noti.svg"
+                            alt=""
+                          />
+                          Khẩn cấp
+                        </div>
+                        <div class="tag-item --warning">Chờ duyệt</div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="tab-pane fade"
+            id="collect"
+            role="tabpanel"
+            aria-labelledby="collect-tab"
+          >
+            <div class="search-bar">
+              <ion-item class="ion-no-padding login-input">
+                <img
+                  class="icon-input"
+                  src="../../assets/images/icon-search.svg"
+                  alt=""
+                />
+                <ion-input
+                  class="form-control"
+                  placeholder="Tìm kiếm"
+                ></ion-input>
+              </ion-item>
+            </div>
+
+            <div class="cash-manage__filter">
+              <img src="../../../../assets/images/cashPlan-icon-3.svg" alt="" />
+              <div class="cash-manage__filter-wrap">
+                <ion-button id="categories">
+                  Danh mục
+                  <img src="../../../../assets/images/icon-right.svg" alt="" />
+                </ion-button>
+
+                <ion-button id="categories">
+                  Phân loại
+                  <img src="../../../../assets/images/icon-right.svg" alt="" />
+                </ion-button>
+
+                <ion-button id="prioritize">
+                  Ưu tiên
+                  <img src="../../../../assets/images/icon-right.svg" alt="" />
+                </ion-button>
+              </div>
+            </div>
+
+            <div class="cash-manage__list">
+              <div class="cash-manage__item">
+                <p class="cash-manage__time">17/03/2023 Thứ 6</p>
+                <div class="cash-manage__box">
+                  <div class="cash-manage__detail">
+                    <a href="#">
+                      <div class="header">
+                        <p class="name">Thu nhập từ lương...</p>
+                        <p class="number --success">0đ</p>
+                      </div>
+                      <div class="info">
+                        <div class="info-item">
+                          <span>Danh mục</span>
+                          <span>Thu Nhập Lương/Tiết Kiệm</span>
+                        </div>
+                        <div class="info-item">
+                          <span>Chi tiết</span>
+                          <span>Aa</span>
+                        </div>
+                        <div class="info-item">
+                          <span>Người yêu cầu duyệt</span>
+                          <ion-avatar>
+                            <img
+                              alt="Silhouette of a person's head"
+                              src="https://ionicframework.com/docs/img/demos/avatar.svg"
+                            />
+                          </ion-avatar>
+                        </div>
+                        <div class="info-item">
+                          <span>Người đã phê duyệt</span>
+                          <ion-avatar>
+                            <img
+                              alt="Silhouette of a person's head"
+                              src="https://ionicframework.com/docs/img/demos/avatar.svg"
+                            />
+                          </ion-avatar>
+                        </div>
+                      </div>
+                      <div class="tag">
+                        <div class="tag-item">
+                          <img
+                            src="../../../assets/images/icon-tag-one.svg"
+                            alt=""
+                          />
+                          Chi
+                        </div>
+                        <div class="tag-item --warning">
+                          <img
+                            src="../../../assets/images/icon-bell-noti.svg"
+                            alt=""
+                          />
+                          Khẩn cấp
+                        </div>
+                        <div class="tag-item --warning">Chờ duyệt</div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="tab-pane fade"
+            id="spend"
+            role="tabpanel"
+            aria-labelledby="spend-tab"
+          >
+            <div class="search-bar">
+              <ion-item class="ion-no-padding login-input">
+                <img
+                  class="icon-input"
+                  src="../../assets/images/icon-search.svg"
+                  alt=""
+                />
+                <ion-input
+                  class="form-control"
+                  placeholder="Tìm kiếm"
+                ></ion-input>
+              </ion-item>
+            </div>
+
+            <div class="cash-manage__filter">
+              <img src="../../../../assets/images/cashPlan-icon-3.svg" alt="" />
+              <div class="cash-manage__filter-wrap">
+                <ion-button id="categories">
+                  Danh mục
+                  <img src="../../../../assets/images/icon-right.svg" alt="" />
+                </ion-button>
+
+                <ion-button id="categories">
+                  Phân loại
+                  <img src="../../../../assets/images/icon-right.svg" alt="" />
+                </ion-button>
+
+                <ion-button id="prioritize">
+                  Ưu tiên
+                  <img src="../../../../assets/images/icon-right.svg" alt="" />
+                </ion-button>
+              </div>
+            </div>
+
+            <div class="cash-manage__list">
+              <div class="cash-manage__item">
+                <p class="cash-manage__time">17/03/2023 Thứ 6</p>
+                <div class="cash-manage__box">
+                  <div class="cash-manage__detail">
+                    <a href="#">
+                      <div class="header">
+                        <p class="name">Thu nhập từ lương...</p>
+                        <p class="number --success">0đ</p>
+                      </div>
+                      <div class="info">
+                        <div class="info-item">
+                          <span>Danh mục</span>
+                          <span>Thu Nhập Lương/Tiết Kiệm</span>
+                        </div>
+                        <div class="info-item">
+                          <span>Chi tiết</span>
+                          <span>Aa</span>
+                        </div>
+                        <div class="info-item">
+                          <span>Người yêu cầu duyệt</span>
+                          <ion-avatar>
+                            <img
+                              alt="Silhouette of a person's head"
+                              src="https://ionicframework.com/docs/img/demos/avatar.svg"
+                            />
+                          </ion-avatar>
+                        </div>
+                        <div class="info-item">
+                          <span>Người đã phê duyệt</span>
+                          <ion-avatar>
+                            <img
+                              alt="Silhouette of a person's head"
+                              src="https://ionicframework.com/docs/img/demos/avatar.svg"
+                            />
+                          </ion-avatar>
+                        </div>
+                      </div>
+                      <div class="tag">
+                        <div class="tag-item">
+                          <img
+                            src="../../../assets/images/icon-tag-one.svg"
+                            alt=""
+                          />
+                          Chi
+                        </div>
+                        <div class="tag-item --warning">
+                          <img
+                            src="../../../assets/images/icon-bell-noti.svg"
+                            alt=""
+                          />
+                          Khẩn cấp
+                        </div>
+                        <div class="tag-item --warning">Chờ duyệt</div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

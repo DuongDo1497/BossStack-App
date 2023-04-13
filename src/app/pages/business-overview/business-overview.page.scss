@@ -1,0 +1,261 @@
+.business-overview {
+  padding: 0 16px 12px;
+  overflow-y: scroll;
+
+  .title {
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text-cl-primary);
+  }
+
+  .sub-title {
+    font-size: var(--fz-small);
+    font-weight: 500;
+    color: var(--text-cl-second);
+    margin-bottom: 12px;
+  }
+
+  &__wallet {
+    margin: 0 -16px 12px;
+    padding: 24px;
+    background-image: url("../../../assets/images/cashPlan-wallet-bg.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &-name {
+      font-size: var(--fz-small);
+      font-weight: 500;
+      color: #203e87;
+      margin-bottom: 4px;
+    }
+
+    &-money {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      span {
+        font-size: 20px;
+        font-weight: 500;
+        display: inline-block;
+
+        &.icon {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+
+  &__chart {
+    margin-bottom: 12px;
+
+    .sub-title {
+      margin-top: 12px;
+    }
+  }
+
+  &__chart-body {
+    border-radius: 6px;
+    padding: 15px;
+    background-color: var(--white-cl);
+
+    .chart-wrap {
+      canvas {
+        width: 232px !important;
+        height: 232px !important;
+      }
+    }
+  }
+
+  &__menu {
+    margin-bottom: 24px;
+
+    &-item {
+      --min-height: auto;
+      --padding-start: 0;
+      --inner-padding-end: 0;
+      display: flex;
+      align-items: baseline;
+      border-radius: 6px;
+      margin-bottom: 6px;
+
+      &::part(native) {
+        padding: 8px 16px;
+      }
+
+      &::part(detail-icon) {
+        --detail-icon-opacity: 1;
+        --detail-icon-color: var(--primary-bl-cl);
+        align-self: center;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .status-tag {
+        &.--success {
+          background-color: #2db290;
+        }
+
+        &.--warning {
+          background-color: #ffc800;
+        }
+
+        &.--danger {
+          background-color: #f04d64;
+        }
+      }
+
+      ion-label {
+        h3 {
+          font-size: 12px;
+        }
+
+        p {
+          font-weight: 500;
+          font-size: var(--fz-small);
+          color: var(--primary-bl-cl);
+        }
+      }
+    }
+  }
+
+  &__cash,
+  &__transfer {
+    &-statistical {
+      padding: 10px 8px;
+      border-radius: 6px;
+      background-color: var(--white-cl);
+      margin-bottom: 12px;
+
+      .statistical-note {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
+
+        .date {
+          font-size: 12px;
+          font-weight: 500;
+          color: var(--text-cl-second);
+        }
+
+        .note {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+
+          .item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+          }
+
+          .status {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+
+            &.--success {
+              background-color: #2cbc96;
+            }
+
+            &.--warning {
+              background-color: #ffc800;
+            }
+
+            &.--danger {
+              background-color: #f04d64;
+            }
+          }
+
+          .text {
+            font-size: 10px;
+            font-weight: 500;
+            color: var(--text-cl-primary);
+          }
+        }
+      }
+    }
+  }
+
+  &__cash {
+    margin-bottom: 24px;
+
+    &-index {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+
+      .item {
+        width: calc(50% - 6px);
+        padding: 12px;
+        border-radius: 6px;
+        background-color: var(--white-cl);
+
+        .text {
+          font-size: 12px;
+          font-weight: 500;
+          color: var(--text-cl-primary);
+          margin-bottom: 4px;
+        }
+
+        .price {
+          font-weight: 700;
+
+          &.--success {
+            color: #2cbc96;
+          }
+
+          &.--danger {
+            color: #f04d64;
+          }
+        }
+      }
+    }
+
+    &-detail {
+      overflow-x: auto;
+      display: flex;
+      gap: 12px;
+
+      .detail-item {
+        width: 304px;
+        flex-shrink: 0;
+
+        .business-overview {
+          &__menu {
+            margin-bottom: 0;
+            &-item {
+              .status-tag {
+                &.--success {
+                  background-color: #1bcd91;
+                }
+
+                &.--warning {
+                  background-color: #ffc231;
+                }
+
+                &.--danger {
+                  background-color: #f04d64;
+                }
+
+                &.--blue {
+                  background-color: #00a5f3;
+                }
+
+                &.--blue-light {
+                  background-color: #d9f4ff;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

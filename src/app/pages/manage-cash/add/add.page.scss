@@ -1,0 +1,65 @@
+.cash-import {
+  height: 100%;
+  position: relative;
+
+  &__header {
+    padding: 70px 0;
+    background-image: url("../../../../assets/images/cashPlan-noti-bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+
+    p {
+      text-align: center;
+      color: var(--white-cl);
+    }
+
+    .title {
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+
+    .text {
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .price {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+
+      p {
+        font-size: 20px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &__body {
+    padding: 0 16px;
+    margin-top: -55px;
+  }
+
+  &__control {
+    padding: 16px;
+    border-radius: 6px;
+    background-color: var(--white-cl);
+
+    ion-item {
+      --min-height: 50px;
+      --color: var(--text-cl-primary);
+      --padding-start: 0;
+      --inner-padding-end: 0;
+      --border-width: 0px 0px 1px 0px;
+      --border-color: #f1f1f1;
+      font-size: var(--fz-body);
+
+      ion-thumbnail {
+        width: 34px;
+        height: 34px;
+      }
+    }
+  }
+}

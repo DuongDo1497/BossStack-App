@@ -1,0 +1,358 @@
+.cash-manage {
+  padding: 0 16px 12px;
+  overflow-y: scroll;
+
+  .title {
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text-cl-primary);
+  }
+
+  .sub-title {
+    font-size: var(--fz-small);
+    font-weight: 500;
+    color: var(--text-cl-second);
+    margin-bottom: 12px;
+  }
+
+  &__wallet {
+    margin: 0 -16px 12px;
+    padding: 24px;
+    background-image: url("../../../assets/images/cashPlan-wallet-bg.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &-name {
+      font-size: var(--fz-small);
+      font-weight: 500;
+      color: #203e87;
+      margin-bottom: 4px;
+    }
+
+    &-money {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      span {
+        font-size: 20px;
+        font-weight: 500;
+        display: inline-block;
+
+        &.icon {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+
+  &__transfer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+
+    ion-button {
+      --border-color: #3465d9;
+      --color: #3465d9;
+      margin: 0;
+      height: 40px;
+
+      img {
+        margin-left: 4px;
+      }
+    }
+  }
+
+  &__cash {
+    &-index {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+
+      .item {
+        width: calc(50% - 6px);
+        padding: 12px;
+        border-radius: 6px;
+        background-color: var(--white-cl);
+
+        .text {
+          font-size: 12px;
+          font-weight: 500;
+          color: var(--text-cl-primary);
+          margin-bottom: 4px;
+        }
+
+        .price {
+          font-weight: 700;
+
+          &.--success {
+            color: #2cbc96;
+          }
+
+          &.--danger {
+            color: #f04d64;
+          }
+        }
+      }
+    }
+
+    &-statistical {
+      padding: 10px 8px;
+      border-radius: 6px;
+      background-color: var(--white-cl);
+      margin-bottom: 12px;
+
+      .statistical-note {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
+
+        .date {
+          font-size: 12px;
+          font-weight: 500;
+          color: var(--text-cl-second);
+        }
+
+        .note {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+
+          .item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+          }
+
+          .status {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+
+            &.--success {
+              background-color: #2cbc96;
+            }
+
+            &.--warning {
+              background-color: #ffc800;
+            }
+
+            &.--danger {
+              background-color: #f04d64;
+            }
+          }
+
+          .text {
+            font-size: 10px;
+            font-weight: 500;
+            color: var(--text-cl-primary);
+          }
+        }
+      }
+    }
+  }
+
+  .detail-tabs {
+    margin: 0 -16px;
+
+    .nav-pills {
+      &--parent {
+        --column: 3;
+      }
+    }
+
+    .tab-content {
+      padding: 0 16px;
+
+      .search-bar {
+        padding: 0;
+        margin-bottom: 12px;
+
+        ion-input {
+          &.form-control {
+            --background: var(--white-cl);
+            border: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &__filter {
+    display: flex;
+    gap: 13px;
+    margin-bottom: 12px;
+
+    &-wrap {
+      display: flex;
+      gap: 8px;
+
+      ion-button {
+        --border-radius: 6px;
+        --padding-top: 10px;
+        --padding-bottom: 10px;
+        --padding-start: 8px;
+        --padding-end: 8px;
+        --background: var(--white-cl);
+        --color: var(--text-cl-primary);
+        height: auto;
+        margin: 0;
+        margin-inline: 0;
+        font-size: var(--fz-small);
+
+        img {
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+
+  &__item {
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__time {
+    padding: 8px 16px;
+    margin: 0 0 12px;
+    font-weight: 500;
+    border-radius: 6px;
+    font-size: var(--fz-small);
+    color: var(--primary-bl-cl);
+    background-color: var(--primary-bl-cl-2);
+  }
+
+  &__detail {
+    padding: 16px;
+    border-radius: 6px;
+    background-color: var(--white-cl);
+    margin-bottom: 6px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      display: block;
+      color: var(--text-cl-primary);
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+
+      .name {
+        font-size: var(--fz-small);
+        font-weight: 700;
+      }
+
+      .number {
+        font-weight: 700;
+        font-size: var(--fz-small);
+
+        &.--success {
+          color: #38d29e;
+        }
+
+        &.--danger {
+          color: #f04d64;
+        }
+      }
+    }
+
+    .info {
+      margin-bottom: 10px;
+
+      &-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 8px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        span {
+          font-size: var(--fz-small);
+          line-height: 18px;
+
+          &:last-child {
+            font-weight: 500;
+            text-align: right;
+          }
+        }
+
+        ion-avatar {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+
+    .tag {
+      display: flex;
+      gap: 12px;
+      margin: 12px 0;
+
+      &-item {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 12px;
+        font-weight: 500;
+
+        &:first-child {
+          color: #02bdd5;
+        }
+
+        &:nth-child(2) {
+          color: var(--white-cl);
+          padding: 4px 8px;
+          border-radius: 6px;
+
+          &.--danger {
+            background-color: #f04d64;
+          }
+
+          &.--warning {
+            background-color: #fd9f13;
+          }
+
+          &.--success {
+            background-color: #02bdd5;
+          }
+
+          &.--normal {
+            background-color: #aeaeae;
+          }
+        }
+
+        &:last-child {
+          padding: 4px 8px;
+          border-radius: 6px;
+
+          &.--success {
+            color: #00a325;
+            background-color: #c4f6cf;
+          }
+
+          &.--warning {
+            color: #fd9f13;
+            background-color: #fff9e9;
+          }
+        }
+      }
+    }
+  }
+}

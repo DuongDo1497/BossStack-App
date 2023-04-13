@@ -1,0 +1,37 @@
+<ion-content [fullscreen]="true" class="--gray" scroll-y="false">
+  <div class="cash-import">
+    <div class="cash-import__wrap">
+      <div class="cash-import__header">
+        <p class="title">Nhập dòng tiền thu/chi</p>
+        <p class="text">Ví tổng</p>
+        <div class="price">
+          <p class="price-num">********</p>
+          <img
+            class="price-control"
+            src="../../../../assets/images/icon-eye-hide-w.svg"
+          />
+        </div>
+      </div>
+      <div class="cash-import__body">
+        <div class="cash-import__control">
+          <ion-item lines="full" href="#">
+            <ion-thumbnail slot="start">
+              <img
+                alt=""
+                src="../../../../assets/images/icon-cash-collect.svg"
+              />
+            </ion-thumbnail>
+            <ion-label>Nhập dòng tiền thu</ion-label>
+          </ion-item>
+
+          <ion-item lines="full" href="#">
+            <ion-thumbnail slot="start">
+              <img alt="" src="../../../../assets/images/icon-cash-spend.svg" />
+            </ion-thumbnail>
+            <ion-label>Nhập dòng tiền chi</ion-label>
+          </ion-item>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
