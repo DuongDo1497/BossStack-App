@@ -1,0 +1,463 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons class="button-back" slot="start">
+      <ion-back-button
+        defaultHref="/cash-manage"
+        text=""
+        color="light"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title><p>Phân bổ dòng tiền</p></ion-title>
+    <ion-buttons class="button-save" slot="end">
+      <ion-button>Phân bổ</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" scroll-y="false">
+  <div class="section cash-manage transfer">
+    <ion-list class="form-general cash-manage-form">
+      <ion-item lines="none" class="no-input">
+        <ion-label>
+          <img
+            class="icon-label"
+            src="../../../../assets/images/icon-calendar.svg"
+            alt=""
+          />
+          Ngày giao dịch
+        </ion-label>
+        <p>17/03/2023 Thứ sáu</p>
+      </ion-item>
+
+      <ion-item lines="full" id="source" button detail="false">
+        <ion-label position="floating">Nguồn ví</ion-label>
+        <div class="input-group">
+          <ion-input placeholder="Nguồn ví"></ion-input>
+          <img
+            class="icon-input"
+            src="../../../../assets/images/icon-right.svg"
+            alt=""
+          />
+        </div>
+      </ion-item>
+
+      <ion-item lines="full" id="transfer" button detail="false">
+        <ion-label position="floating">Phân bổ</ion-label>
+        <div class="input-group">
+          <ion-input placeholder="Phân bổ"></ion-input>
+          <img
+            class="icon-input"
+            src="../../../../assets/images/icon-right.svg"
+            alt=""
+          />
+        </div>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Số tiền</ion-label>
+        <div class="input-group">
+          <ion-input placeholder="Số tiền"></ion-input>
+          <p class="icon-input --text">đ</p>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <ion-modal
+    #source
+    trigger="source"
+    [initialBreakpoint]="0.75"
+    [breakpoints]="[0, 0.25, 0.5, 0.75]"
+    handleBehavior="cycle"
+  >
+    <ng-template>
+      <ion-content scroll-y="false">
+        <p class="modal-title">Chọn Phân bổ</p>
+        <div class="modal-list source-list">
+          <ion-accordion-group>
+            <ion-accordion value="walletPersonal">
+              <ion-item slot="header" lines="none">
+                <ion-thumbnail slot="start">
+                  <img
+                    alt=""
+                    src="../../../../assets/images/cashPlan-icon-4.svg"
+                  />
+                </ion-thumbnail>
+                <ion-label>Cá nhân</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content" class="wallet">
+                <ion-radio-group value="wallet">
+                  <ion-item lines="none">
+                    <ion-label>
+                      <p class="wallet-name">Mục tiêu nghỉ hưu</p>
+                      <p class="wallet-info">
+                        Kế hoạch: <span>0đ</span>, số dư: <span>0đ</span>
+                      </p>
+                    </ion-label>
+                    <ion-radio slot="end" value="demo1"></ion-radio>
+                  </ion-item>
+
+                  <ion-item lines="none">
+                    <ion-label>
+                      <p class="wallet-name">Mục tiêu nghỉ hưu</p>
+                      <p class="wallet-info">
+                        Kế hoạch: <span>0đ</span>, số dư: <span>0đ</span>
+                      </p>
+                    </ion-label>
+                    <ion-radio slot="end" value="demo2"></ion-radio>
+                  </ion-item>
+                </ion-radio-group>
+              </div>
+            </ion-accordion>
+
+            <ion-accordion value="walletFamily">
+              <ion-item slot="header" lines="none">
+                <ion-thumbnail slot="start">
+                  <img
+                    alt=""
+                    src="../../../../assets/images/cashPlan-icon-5.svg"
+                  />
+                </ion-thumbnail>
+                <ion-label>Gia đình</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content" class="wallet">
+                <ion-radio-group value="wallet">
+                  <ion-item lines="none">
+                    <ion-label>
+                      <p class="wallet-name">Mục tiêu nghỉ hưu</p>
+                      <p class="wallet-info">
+                        Kế hoạch: <span>0đ</span>, số dư: <span>0đ</span>
+                      </p>
+                    </ion-label>
+                    <ion-radio slot="end" value="demo3"></ion-radio>
+                  </ion-item>
+
+                  <ion-item lines="none">
+                    <ion-label>
+                      <p class="wallet-name">Mục tiêu nghỉ hưu</p>
+                      <p class="wallet-info">
+                        Kế hoạch: <span>0đ</span>, số dư: <span>0đ</span>
+                      </p>
+                    </ion-label>
+                    <ion-radio slot="end" value="demo4"></ion-radio>
+                  </ion-item>
+                </ion-radio-group>
+              </div>
+            </ion-accordion>
+
+            <ion-accordion value="walletInvest">
+              <ion-item slot="header" lines="none">
+                <ion-thumbnail slot="start">
+                  <img
+                    alt=""
+                    src="../../../../assets/images/cashPlan-icon-6.svg"
+                  />
+                </ion-thumbnail>
+                <ion-label>Đầu tư</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content" class="wallet">
+                <ion-radio-group value="wallet">
+                  <ion-item lines="none">
+                    <ion-label>
+                      <p class="wallet-name">Mục tiêu nghỉ hưu</p>
+                      <p class="wallet-info">
+                        Kế hoạch: <span>0đ</span>, số dư: <span>0đ</span>
+                      </p>
+                    </ion-label>
+                    <ion-radio slot="end" value="demo5"></ion-radio>
+                  </ion-item>
+
+                  <ion-item lines="none">
+                    <ion-label>
+                      <p class="wallet-name">Mục tiêu nghỉ hưu</p>
+                      <p class="wallet-info">
+                        Kế hoạch: <span>0đ</span>, số dư: <span>0đ</span>
+                      </p>
+                    </ion-label>
+                    <ion-radio slot="end" value="demo6"></ion-radio>
+                  </ion-item>
+                </ion-radio-group>
+              </div>
+            </ion-accordion>
+
+            <ion-accordion value="walletBusiness">
+              <ion-item slot="header" lines="none">
+                <ion-thumbnail slot="start">
+                  <img
+                    alt=""
+                    src="../../../../assets/images/cashPlan-icon-7.svg"
+                  />
+                </ion-thumbnail>
+                <ion-label>Kinh doanh</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content" class="wallet">
+                <ion-radio-group value="wallet">
+                  <ion-item lines="none">
+                    <ion-label>
+                      <p class="wallet-name">Mục tiêu nghỉ hưu</p>
+                      <p class="wallet-info">
+                        Kế hoạch: <span>0đ</span>, số dư: <span>0đ</span>
+                      </p>
+                    </ion-label>
+                    <ion-radio slot="end" value="demo7"></ion-radio>
+                  </ion-item>
+
+                  <ion-item lines="none">
+                    <ion-label>
+                      <p class="wallet-name">Mục tiêu nghỉ hưu</p>
+                      <p class="wallet-info">
+                        Kế hoạch: <span>0đ</span>, số dư: <span>0đ</span>
+                      </p>
+                    </ion-label>
+                    <ion-radio slot="end" value="demo8"></ion-radio>
+                  </ion-item>
+                </ion-radio-group>
+              </div>
+            </ion-accordion>
+
+            <ion-accordion value="walletOther">
+              <ion-item slot="header" lines="none">
+                <ion-thumbnail slot="start">
+                  <img
+                    alt=""
+                    src="../../../../assets/images/cashPlan-icon-8.svg"
+                  />
+                </ion-thumbnail>
+                <ion-label>Dòng tiền khác</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content" class="wallet">
+                <ion-radio-group value="wallet">
+                  <ion-item lines="none">
+                    <ion-label>
+                      <p class="wallet-name">Mục tiêu nghỉ hưu</p>
+                      <p class="wallet-info">
+                        Kế hoạch: <span>0đ</span>, số dư: <span>0đ</span>
+                      </p>
+                    </ion-label>
+                    <ion-radio slot="end" value="demo9"></ion-radio>
+                  </ion-item>
+
+                  <ion-item lines="none">
+                    <ion-label>
+                      <p class="wallet-name">Mục tiêu nghỉ hưu</p>
+                      <p class="wallet-info">
+                        Kế hoạch: <span>0đ</span>, số dư: <span>0đ</span>
+                      </p>
+                    </ion-label>
+                    <ion-radio slot="end" value="demo10"></ion-radio>
+                  </ion-item>
+                </ion-radio-group>
+              </div>
+            </ion-accordion>
+          </ion-accordion-group>
+        </div>
+
+        <div class="modal-control">
+          <ion-button class="btn-cancel" (click)="source.dismiss()"
+            >Hủy bỏ</ion-button
+          >
+          <ion-button class="btn-accept">Xác nhận</ion-button>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal
+    #transfer
+    trigger="transfer"
+    [initialBreakpoint]="0.75"
+    [breakpoints]="[0, 0.25, 0.5, 0.75]"
+    handleBehavior="cycle"
+  >
+    <ng-template>
+      <ion-content scroll-y="false">
+        <p class="modal-title">Chọn Phân bổ</p>
+        <div class="modal-list transfer-list">
+          <ion-accordion-group>
+            <ion-accordion value="walletPersonal">
+              <ion-item slot="header" lines="none">
+                <ion-thumbnail slot="start">
+                  <img
+                    alt=""
+                    src="../../../../assets/images/cashPlan-icon-4.svg"
+                  />
+                </ion-thumbnail>
+                <ion-label>Cá nhân</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content" class="wallet">
+                <ion-radio-group value="wallet">
+                  <ion-item lines="none">
+                    <ion-label>
+                      <p class="wallet-name">Mục tiêu nghỉ hưu</p>
+                      <p class="wallet-info">
+                        Kế hoạch: <span>0đ</span>, số dư: <span>0đ</span>
+                      </p>
+                    </ion-label>
+                    <ion-radio slot="end" value="demo1"></ion-radio>
+                  </ion-item>
+
+                  <ion-item lines="none">
+                    <ion-label>
+                      <p class="wallet-name">Mục tiêu nghỉ hưu</p>
+                      <p class="wallet-info">
+                        Kế hoạch: <span>0đ</span>, số dư: <span>0đ</span>
+                      </p>
+                    </ion-label>
+                    <ion-radio slot="end" value="demo2"></ion-radio>
+                  </ion-item>
+                </ion-radio-group>
+              </div>
+            </ion-accordion>
+
+            <ion-accordion value="walletFamily">
+              <ion-item slot="header" lines="none">
+                <ion-thumbnail slot="start">
+                  <img
+                    alt=""
+                    src="../../../../assets/images/cashPlan-icon-5.svg"
+                  />
+                </ion-thumbnail>
+                <ion-label>Gia đình</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content" class="wallet">
+                <ion-radio-group value="wallet">
+                  <ion-item lines="none">
+                    <ion-label>
+                      <p class="wallet-name">Mục tiêu nghỉ hưu</p>
+                      <p class="wallet-info">
+                        Kế hoạch: <span>0đ</span>, số dư: <span>0đ</span>
+                      </p>
+                    </ion-label>
+                    <ion-radio slot="end" value="demo3"></ion-radio>
+                  </ion-item>
+
+                  <ion-item lines="none">
+                    <ion-label>
+                      <p class="wallet-name">Mục tiêu nghỉ hưu</p>
+                      <p class="wallet-info">
+                        Kế hoạch: <span>0đ</span>, số dư: <span>0đ</span>
+                      </p>
+                    </ion-label>
+                    <ion-radio slot="end" value="demo4"></ion-radio>
+                  </ion-item>
+                </ion-radio-group>
+              </div>
+            </ion-accordion>
+
+            <ion-accordion value="walletInvest">
+              <ion-item slot="header" lines="none">
+                <ion-thumbnail slot="start">
+                  <img
+                    alt=""
+                    src="../../../../assets/images/cashPlan-icon-6.svg"
+                  />
+                </ion-thumbnail>
+                <ion-label>Đầu tư</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content" class="wallet">
+                <ion-radio-group value="wallet">
+                  <ion-item lines="none">
+                    <ion-label>
+                      <p class="wallet-name">Mục tiêu nghỉ hưu</p>
+                      <p class="wallet-info">
+                        Kế hoạch: <span>0đ</span>, số dư: <span>0đ</span>
+                      </p>
+                    </ion-label>
+                    <ion-radio slot="end" value="demo5"></ion-radio>
+                  </ion-item>
+
+                  <ion-item lines="none">
+                    <ion-label>
+                      <p class="wallet-name">Mục tiêu nghỉ hưu</p>
+                      <p class="wallet-info">
+                        Kế hoạch: <span>0đ</span>, số dư: <span>0đ</span>
+                      </p>
+                    </ion-label>
+                    <ion-radio slot="end" value="demo6"></ion-radio>
+                  </ion-item>
+                </ion-radio-group>
+              </div>
+            </ion-accordion>
+
+            <ion-accordion value="walletBusiness">
+              <ion-item slot="header" lines="none">
+                <ion-thumbnail slot="start">
+                  <img
+                    alt=""
+                    src="../../../../assets/images/cashPlan-icon-7.svg"
+                  />
+                </ion-thumbnail>
+                <ion-label>Kinh doanh</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content" class="wallet">
+                <ion-radio-group value="wallet">
+                  <ion-item lines="none">
+                    <ion-label>
+                      <p class="wallet-name">Mục tiêu nghỉ hưu</p>
+                      <p class="wallet-info">
+                        Kế hoạch: <span>0đ</span>, số dư: <span>0đ</span>
+                      </p>
+                    </ion-label>
+                    <ion-radio slot="end" value="demo7"></ion-radio>
+                  </ion-item>
+
+                  <ion-item lines="none">
+                    <ion-label>
+                      <p class="wallet-name">Mục tiêu nghỉ hưu</p>
+                      <p class="wallet-info">
+                        Kế hoạch: <span>0đ</span>, số dư: <span>0đ</span>
+                      </p>
+                    </ion-label>
+                    <ion-radio slot="end" value="demo8"></ion-radio>
+                  </ion-item>
+                </ion-radio-group>
+              </div>
+            </ion-accordion>
+
+            <ion-accordion value="walletOther">
+              <ion-item slot="header" lines="none">
+                <ion-thumbnail slot="start">
+                  <img
+                    alt=""
+                    src="../../../../assets/images/cashPlan-icon-8.svg"
+                  />
+                </ion-thumbnail>
+                <ion-label>Dòng tiền khác</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content" class="wallet">
+                <ion-radio-group value="wallet">
+                  <ion-item lines="none">
+                    <ion-label>
+                      <p class="wallet-name">Mục tiêu nghỉ hưu</p>
+                      <p class="wallet-info">
+                        Kế hoạch: <span>0đ</span>, số dư: <span>0đ</span>
+                      </p>
+                    </ion-label>
+                    <ion-radio slot="end" value="demo9"></ion-radio>
+                  </ion-item>
+
+                  <ion-item lines="none">
+                    <ion-label>
+                      <p class="wallet-name">Mục tiêu nghỉ hưu</p>
+                      <p class="wallet-info">
+                        Kế hoạch: <span>0đ</span>, số dư: <span>0đ</span>
+                      </p>
+                    </ion-label>
+                    <ion-radio slot="end" value="demo10"></ion-radio>
+                  </ion-item>
+                </ion-radio-group>
+              </div>
+            </ion-accordion>
+          </ion-accordion-group>
+        </div>
+
+        <div class="modal-control">
+          <ion-button class="btn-cancel" (click)="transfer.dismiss()"
+            >Hủy bỏ</ion-button
+          >
+          <ion-button class="btn-accept">Xác nhận</ion-button>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>

@@ -301,6 +301,42 @@ const routes: Routes = [
           },
         ],
       },
+      {
+        path: 'cash-manage/add/collect',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/manage-cash/add/collect/collect.module').then(
+                (m) => m.CollectPageModule
+              ),
+          },
+        ],
+      },
+      {
+        path: 'cash-manage/add/spend',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/manage-cash/add/spend/spend.module').then(
+                (m) => m.SpendPageModule
+              ),
+          },
+        ],
+      },
+      {
+        path: 'cash-manage/transfer',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/manage-cash/transfer/transfer.module').then(
+                (m) => m.TransferPageModule
+              ),
+          },
+        ],
+      },
       // End Cash manage page
 
       // Business Active
