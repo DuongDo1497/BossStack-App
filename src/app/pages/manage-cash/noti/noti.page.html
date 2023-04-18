@@ -1,0 +1,45 @@
+<ion-content [fullscreen]="true" class="--gray" scroll-y="false">
+  <div class="transfer-noti">
+    <div class="transfer-noti__wrap">
+      <div class="transfer-noti__header">
+        <p class="title">Chi tiết phân bổ</p>
+        <p class="text">Bạn đã phân bổ thành công</p>
+        <p class="price">0đ</p>
+      </div>
+      <div class="transfer-noti__body">
+        <div class="wallet-to">
+          <p class="wallet-title">Đến nguồn ví</p>
+          <ul class="wallet-list">
+            <li>
+              <p class="wallet-name">Ví kinh doanh - Giảm trừ...</p>
+              <p class="wallet-balances">Số dư khả dụng: 0đ</p>
+            </li>
+          </ul>
+        </div>
+        <div class="wallet-from">
+          <p class="wallet-title">Từ nguồn ví</p>
+          <ul class="wallet-list">
+            <li>
+              <p class="wallet-name">Ví kinh doanh - Giảm trừ...</p>
+              <p class="wallet-balances">Số dư khả dụng: 0đ</p>
+            </li>
+            <li>
+              <p class="wallet-list__title">Thời gian</p>
+              <p class="wallet-list__content">3:15 23/03/2023 Thứ 5</p>
+            </li>
+            <li>
+              <p class="wallet-list__title">Trạng thái</p>
+              <p class="wallet-list__content status --danger">Tất toán</p>
+            </li>
+          </ul>
+        </div>
+        <p class="wallet-noti --danger">
+          Bạn còn thiếu 0đ để đạt mục tiêu Ví ...
+        </p>
+      </div>
+      <ion-button class="transfer-noti-close" href="/cash-manage" expand="block"
+        >Đóng</ion-button
+      >
+    </div>
+  </div>
+</ion-content>

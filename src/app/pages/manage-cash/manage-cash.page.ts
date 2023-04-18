@@ -48,5 +48,59 @@ export class ManageCashPage implements OnInit {
         },
       },
     });
+
+    let ctx2: any = document.getElementById('collectChart');
+    ctx2.height = 232;
+    let collectChart = new Chart(ctx2.getContext('2d'), {
+      type: 'doughnut',
+      data: {
+        datasets: [
+          {
+            label: 'Chi tiết thu',
+            data: [300, 50, 100, 200],
+            backgroundColor: ['#78D6FC', '#00A5F3', '#1BCD91', '#FFC231'],
+          },
+        ],
+      },
+      options: {
+        cutout: '75%',
+      },
+    });
+
+    let ctx3: any = document.getElementById('spendChart');
+    ctx3.height = 232;
+    let spendChart = new Chart(ctx3.getContext('2d'), {
+      type: 'doughnut',
+      data: {
+        datasets: [
+          {
+            label: 'Chi tiết chi',
+            data: [300, 50, 100, 200],
+            backgroundColor: ['#78D6FC', '#00A5F3', '#f04d64', '#FFC231'],
+          },
+        ],
+      },
+      options: {
+        cutout: '75%',
+      },
+    });
+
+    // let ctx4: any = document.getElementById('detailCashChart');
+    // ctx4.height = 232;
+    // let detailCashChart = new Chart(ctx4.getContext('2d'), {
+    //   type: 'doughnut',
+    //   data: {
+    //     datasets: [
+    //       {
+    //         label: 'Chi tiết dòng tiền',
+    //         data: [300, 50, 100, 200],
+    //         backgroundColor: ['#ffc231', '#fff3d7', '#96dcfb', '#d9f4ff'],
+    //       },
+    //     ],
+    //   },
+    //   options: {
+    //     cutout: '75%',
+    //   },
+    // });
   }
 }

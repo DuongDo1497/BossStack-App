@@ -337,7 +337,46 @@ const routes: Routes = [
           },
         ],
       },
+      {
+        path: 'cash-manage/transfer/noti',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/manage-cash/noti/noti.module').then(
+                (m) => m.NotiPageModule
+              ),
+          },
+        ],
+      },
       // End Cash manage page
+
+      // Cash transfer page
+      {
+        path: 'cash-transfer',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/transfer-cash/transfer-cash.module').then(
+                (m) => m.TransferCashPageModule
+              ),
+          },
+        ],
+      },
+      {
+        path: 'cash-transfer/add',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/transfer-cash/add/add.module').then(
+                (m) => m.AddPageModule
+              ),
+          },
+        ],
+      },
+      // End Cash transfer page
 
       // Business Active
       {

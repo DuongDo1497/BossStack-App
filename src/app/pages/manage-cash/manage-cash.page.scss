@@ -355,4 +355,157 @@
       }
     }
   }
+
+  &__chart {
+    margin-bottom: 12px;
+
+    .sub-title {
+      margin-top: 12px;
+    }
+  }
+
+  &__chart-body {
+    border-radius: 6px;
+    padding: 15px;
+    background-color: var(--white-cl);
+
+    .chart-wrap {
+      canvas {
+        width: 232px !important;
+        height: 232px !important;
+      }
+    }
+  }
+
+  &__menu {
+    margin-bottom: 24px;
+
+    &-item {
+      --min-height: auto;
+      --padding-start: 0;
+      --inner-padding-end: 0;
+      display: flex;
+      align-items: baseline;
+      border-radius: 6px;
+      margin-bottom: 6px;
+
+      &::part(native) {
+        padding: 8px 16px;
+      }
+
+      &::part(detail-icon) {
+        --detail-icon-opacity: 1;
+        --detail-icon-color: var(--primary-bl-cl);
+        align-self: center;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .status-tag {
+        &.--success {
+          background-color: #1bcd91;
+        }
+
+        &.--warning {
+          background-color: #ffc231;
+        }
+
+        &.--danger {
+          background-color: #f04d64;
+        }
+
+        &.--blue {
+          background-color: #00a5f3;
+        }
+
+        &.--blue-light {
+          background-color: #d9f4ff;
+        }
+      }
+
+      ion-label {
+        h3 {
+          font-size: 12px;
+        }
+
+        p {
+          font-weight: 500;
+          font-size: var(--fz-small);
+          color: var(--primary-bl-cl);
+        }
+      }
+    }
+  }
+}
+
+ion-modal {
+  &.detailCash-wrap {
+    .modal-body {
+      margin-bottom: 30px;
+
+      .detailCash-list {
+        li {
+          display: flex;
+          align-items: baseline;
+          margin-bottom: 10px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          .status-tag {
+            &.--success {
+              background-color: #1bcd91;
+            }
+
+            &.--warning {
+              background-color: #ffc231;
+            }
+
+            &.--warning-light {
+              background-color: #fff3d7;
+            }
+
+            &.--danger {
+              background-color: #f04d64;
+            }
+
+            &.--blue-dark {
+              background-color: #00a5f3;
+            }
+
+            &.--blue {
+              background-color: #96dcfb;
+            }
+
+            &.--blue-light {
+              background-color: #d9f4ff;
+            }
+          }
+
+          ion-label {
+            h3 {
+              font-size: 12px;
+            }
+
+            p {
+              font-weight: 500;
+              font-size: var(--fz-small);
+              color: var(--primary-bl-cl);
+            }
+          }
+        }
+      }
+    }
+
+    .modal-control {
+      ion-button {
+        --background: #3465d9;
+        --color: var(--white-cl);
+        width: 100%;
+      }
+    }
+  }
 }
