@@ -195,6 +195,10 @@ ion-list {
       --color: var(--text-cl-second);
       --placeholder-color: var(--text-cl-second);
       --placeholder-opacity: 1;
+
+      &[value] {
+        --color: var(--text-cl-primary);
+      }
     }
 
     p {

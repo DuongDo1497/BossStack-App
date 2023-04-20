@@ -376,6 +376,66 @@ const routes: Routes = [
           },
         ],
       },
+      {
+        path: 'cash-transfer/add/collect',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/transfer-cash/add/collect/collect.module').then(
+                (m) => m.CollectPageModule
+              ),
+          },
+        ],
+      },
+      {
+        path: 'cash-transfer/add/spend',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/transfer-cash/add/spend/spend.module').then(
+                (m) => m.SpendPageModule
+              ),
+          },
+        ],
+      },
+      {
+        path: 'cash-transfer/list',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/transfer-cash/list/list.module').then(
+                (m) => m.ListPageModule
+              ),
+          },
+        ],
+      },
+      {
+        path: 'cash-transfer/detail',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/transfer-cash/detail/detail.module').then(
+                (m) => m.DetailPageModule
+              ),
+          },
+        ],
+      },
+      {
+        path: 'cash-transfer/edit',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/transfer-cash/edit/edit.module').then(
+                (m) => m.EditPageModule
+              ),
+          },
+        ],
+      },
       // End Cash transfer page
 
       // Business Active

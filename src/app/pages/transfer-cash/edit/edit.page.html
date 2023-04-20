@@ -1,0 +1,523 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons class="button-back" slot="start">
+      <ion-back-button
+        defaultHref="/cash-transfer"
+        text=""
+        color="light"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title><p>Chỉnh sửa</p></ion-title>
+    <ion-buttons class="button-save" slot="end">
+      <ion-button>Lưu</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" scroll-y="false">
+  <div class="section cash-transfer edit">
+    <div class="tag">
+      <div class="tag-item --warning">
+        <img src="../../../assets/images/icon-bell-noti.svg" alt="" />
+        Khẩn cấp
+      </div>
+      <div class="tag-item --warning">Chờ duyệt</div>
+    </div>
+
+    <ion-list class="form-general cash-transfer-form">
+      <ion-item lines="none" class="no-input">
+        <ion-label>
+          <img
+            class="icon-label"
+            src="../../../../assets/images/icon-calendar.svg"
+            alt=""
+          />
+          Ngày lập
+        </ion-label>
+        <p>17/03/2023 Thứ sáu</p>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Tên dòng tiền</ion-label>
+        <ion-input placeholder="Tên dòng tiền" value="Aa"></ion-input>
+      </ion-item>
+
+      <ion-item lines="full" id="project" button detail="false">
+        <ion-label position="floating">Dự án</ion-label>
+        <div class="input-group">
+          <ion-input placeholder="Dự án" value="Dự án B"></ion-input>
+          <img
+            class="icon-input"
+            src="../../../../assets/images/icon-right.svg"
+            alt=""
+          />
+        </div>
+      </ion-item>
+
+      <ion-item lines="full" id="category" button detail="false">
+        <ion-label position="floating">Danh mục</ion-label>
+        <div class="input-group">
+          <ion-input
+            placeholder="Danh mục"
+            value="Chi Kinh doanh"
+            readonly="true"
+          ></ion-input>
+          <img
+            class="icon-input"
+            src="../../../../assets/images/icon-right.svg"
+            alt=""
+          />
+        </div>
+      </ion-item>
+
+      <ion-item lines="full" id="detail" button detail="false">
+        <ion-label position="floating">Chi tiết</ion-label>
+        <div class="input-group">
+          <ion-input
+            placeholder="Chi tiết"
+            value="Chi phí nhân sự"
+            readonly="true"
+          ></ion-input>
+          <img
+            class="icon-input"
+            src="../../../../assets/images/icon-right.svg"
+            alt=""
+          />
+        </div>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Số tiền</ion-label>
+        <div class="input-group">
+          <ion-input placeholder="Số tiền" value="1.000.000"></ion-input>
+          <p class="icon-input --text">đ</p>
+        </div>
+      </ion-item>
+
+      <ion-item lines="full" id="note" button detail="false">
+        <ion-label>
+          <img
+            class="icon-label"
+            src="../../../../assets/images/icon-note.svg"
+            alt=""
+          />
+          Ghi chú
+        </ion-label>
+        <img
+          class="icon-input"
+          src="../../../../assets/images/icon-plus.svg"
+          alt=""
+        />
+      </ion-item>
+
+      <p class="note-detail">
+        Tách bạch dòng tiền để không sử dụng dòng vốn ngắn hạn cho trung dài hạn
+      </p>
+
+      <ion-item lines="full" id="file" button detail="false">
+        <ion-label>
+          <img
+            class="icon-label"
+            src="../../../../assets/images/icon-attach.svg"
+            alt=""
+          />
+          Tệp đính kèm
+        </ion-label>
+        <img
+          class="icon-input"
+          src="../../../../assets/images/icon-plus.svg"
+          alt=""
+        />
+      </ion-item>
+
+      <div class="file-select">
+        <div class="item">
+          <ion-thumbnail>
+            <img alt="" src="../../../../assets/images/icon-file-pdf.svg" />
+          </ion-thumbnail>
+          <button class="close">
+            <ion-icon name="close"></ion-icon>
+          </button>
+        </div>
+      </div>
+
+      <ion-item
+        lines="full"
+        (click)="setOpenModalRequire(true)"
+        button
+        detail="false"
+      >
+        <ion-label>
+          <img
+            class="icon-label"
+            src="../../../../assets/images/icon-send-one.svg"
+            alt=""
+          />
+          Gửi yêu cầu phê duyệt
+        </ion-label>
+        <img
+          class="icon-input"
+          src="../../../../assets/images/icon-plus.svg"
+          alt=""
+        />
+      </ion-item>
+
+      <div class="staff-select">
+        <div class="item">
+          <ion-avatar>
+            <img
+              alt="Silhouette of a person's head"
+              src="https://ionicframework.com/docs/img/demos/avatar.svg"
+            />
+          </ion-avatar>
+          <button class="close">
+            <ion-icon name="close"></ion-icon>
+          </button>
+        </div>
+      </div>
+
+      <ion-item lines="full">
+        <ion-label>
+          <img
+            class="icon-label"
+            src="../../../../assets/images/icon-waves.svg"
+            alt=""
+          />
+          Nhật ký hoạt động
+        </ion-label>
+        <div class="toggle-group">
+          <ion-toggle slot="end"></ion-toggle>
+        </div>
+      </ion-item>
+    </ion-list>
+
+    <div class="work-list">
+      <ion-item lines="none">
+        <ion-thumbnail slot="start">
+          <img alt="" src="../../../../assets/images/cashPlan-share-one.svg" />
+        </ion-thumbnail>
+        <ion-label>
+          <h2>Bạn đã giao công việc này cho AD</h2>
+          <p>Vài giây trước</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-thumbnail slot="start">
+          <img
+            alt=""
+            src="../../../../assets/images/cashPlan-plus-circle.svg"
+          />
+        </ion-thumbnail>
+        <ion-label>
+          <h2>Bạn đã tạo công việc</h2>
+          <p>10 giây trước</p>
+        </ion-label>
+      </ion-item>
+    </div>
+  </div>
+
+  <ion-modal
+    #project
+    trigger="project"
+    [initialBreakpoint]="0.5"
+    [breakpoints]="[0, 0.25, 0.5, 0.75]"
+    handleBehavior="cycle"
+  >
+    <ng-template>
+      <ion-content scroll-y="false">
+        <p class="modal-title">Chọn Dự án</p>
+        <div class="modal-search search-bar">
+          <ion-item class="ion-no-padding login-input">
+            <img
+              class="icon-input"
+              src="../../assets/images/icon-search.svg"
+              alt=""
+            />
+            <ion-input class="form-control" placeholder="Tìm kiếm"></ion-input>
+          </ion-item>
+        </div>
+        <div class="modal-list project-list">
+          <ion-radio-group value="project">
+            <ion-item lines="none">
+              <ion-avatar slot="start">
+                <img alt="" src="../../../../assets/images/cashPlan-pj-1.svg" />
+              </ion-avatar>
+              <ion-label>Dự án A</ion-label>
+              <ion-radio slot="end" value="demo1"></ion-radio>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-avatar slot="start">
+                <img alt="" src="../../../../assets/images/cashPlan-pj-2.svg" />
+              </ion-avatar>
+              <ion-label>Dự án B</ion-label>
+              <ion-radio slot="end" value="demo2"></ion-radio>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-avatar slot="start">
+                <img alt="" src="../../../../assets/images/cashPlan-pj-3.svg" />
+              </ion-avatar>
+              <ion-label>Dự án C</ion-label>
+              <ion-radio slot="end" value="demo"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </div>
+        <div class="modal-control">
+          <ion-button class="btn-cancel" (click)="project.dismiss()"
+            >Hủy bỏ</ion-button
+          >
+          <ion-button class="btn-accept">Xác nhận</ion-button>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal
+    #category
+    trigger="category"
+    [initialBreakpoint]="0.5"
+    [breakpoints]="[0, 0.25, 0.5, 0.75]"
+    handleBehavior="cycle"
+  >
+    <ng-template>
+      <ion-content scroll-y="false">
+        <p class="modal-title">Chọn Danh mục</p>
+        <div class="modal-list category-list">
+          <ion-radio-group value="category">
+            <ion-item lines="none">
+              <ion-thumbnail slot="start">
+                <img
+                  alt=""
+                  src="../../../../assets/images/cashTrans-icon-1.svg"
+                />
+              </ion-thumbnail>
+              <ion-label>Kinh doanh</ion-label>
+              <ion-radio slot="end" value="demo1"></ion-radio>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-thumbnail slot="start">
+                <img
+                  alt=""
+                  src="../../../../assets/images/cashTrans-icon-2.svg"
+                />
+              </ion-thumbnail>
+              <ion-label>Đầu tư</ion-label>
+              <ion-radio slot="end" value="demo2"></ion-radio>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-thumbnail slot="start">
+                <img
+                  alt=""
+                  src="../../../../assets/images/cashTrans-icon-3.svg"
+                />
+              </ion-thumbnail>
+              <ion-label>Tài chính</ion-label>
+              <ion-radio slot="end" value="demo3"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </div>
+        <div class="modal-control">
+          <ion-button class="btn-cancel" (click)="category.dismiss()"
+            >Hủy bỏ</ion-button
+          >
+          <ion-button class="btn-accept">Xác nhận</ion-button>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal
+    #detail
+    trigger="detail"
+    [initialBreakpoint]="0.5"
+    [breakpoints]="[0, 0.25, 0.5, 0.75]"
+    handleBehavior="cycle"
+  >
+    <ng-template>
+      <ion-content scroll-y="false">
+        <p class="modal-title">Chọn Chi tiết</p>
+        <div class="modal-list detail-list">
+          <ion-radio-group value="detail">
+            <ion-item lines="none">
+              <ion-label>Doanh thu bán hàng dịch vụ </ion-label>
+              <ion-radio slot="end" value="demo1"></ion-radio>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-label>Doanh thu khác</ion-label>
+              <ion-radio slot="end" value="demo2"></ion-radio>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-label>Tiền thu kinh doanh khác</ion-label>
+              <ion-radio slot="end" value="demo3"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </div>
+        <div class="modal-control">
+          <ion-button class="btn-cancel" (click)="detail.dismiss()"
+            >Hủy bỏ</ion-button
+          >
+          <ion-button class="btn-accept">Xác nhận</ion-button>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal
+    #note
+    trigger="note"
+    [initialBreakpoint]="0.5"
+    [breakpoints]="[0, 0.25, 0.5, 0.75]"
+    handleBehavior="cycle"
+  >
+    <ng-template>
+      <ion-content scroll-y="false">
+        <p class="modal-title">Thêm ghi chú</p>
+        <ion-textarea
+          placeholder="Thêm ghi chú..."
+          [clearOnEdit]="true"
+        ></ion-textarea>
+        <div class="modal-control">
+          <ion-button class="btn-cancel" (click)="note.dismiss()"
+            >Hủy bỏ</ion-button
+          >
+          <ion-button class="btn-accept">Xác nhận</ion-button>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal
+    #file
+    trigger="file"
+    [initialBreakpoint]="0.5"
+    [breakpoints]="[0, 0.25, 0.5, 0.75]"
+    handleBehavior="cycle"
+  >
+    <ng-template>
+      <ion-content scroll-y="false">
+        <p class="modal-title">Chọn Tệp tải lên</p>
+        <div class="modal-list role-list">
+          <ion-radio-group value="role">
+            <ion-item lines="none">
+              <ion-thumbnail slot="start">
+                <img
+                  alt=""
+                  src="../../../../assets/images/icon-upload-file.svg"
+                />
+              </ion-thumbnail>
+              <ion-label>Chọn tài liệu (excel, pdf, word)</ion-label>
+              <ion-radio slot="end" value="demo1"></ion-radio>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-thumbnail slot="start">
+                <img
+                  alt=""
+                  src="../../../../assets/images/icon-upload-image.svg"
+                />
+              </ion-thumbnail>
+              <ion-label>Chọn ảnh từ thư viện</ion-label>
+              <ion-radio slot="end" value="demo2"></ion-radio>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-thumbnail slot="start">
+                <img
+                  alt=""
+                  src="../../../../assets/images/icon-upload-camera.svg"
+                />
+              </ion-thumbnail>
+              <ion-label>Chụp ảnh</ion-label>
+              <ion-radio slot="end" value="demo3"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </div>
+        <div class="modal-control">
+          <ion-button class="btn-cancel" (click)="file.dismiss()"
+            >Hủy bỏ</ion-button
+          >
+          <ion-button class="btn-accept">Xác nhận</ion-button>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal id="task-modal" [isOpen]="isModalRequireOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title><p>Chọn người duyệt</p></ion-title>
+          <ion-buttons class="button-save" slot="end">
+            <ion-button (click)="setOpenModalRequire(false)">Lưu</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content>
+        <div class="modal-search search-bar">
+          <ion-item class="ion-no-padding login-input">
+            <img
+              class="icon-input"
+              src="../../assets/images/icon-search.svg"
+              alt=""
+            />
+            <ion-input class="form-control" placeholder="Tìm kiếm"></ion-input>
+          </ion-item>
+        </div>
+        <div class="staff-select">
+          <div class="item">
+            <ion-avatar>
+              <img
+                alt="Silhouette of a person's head"
+                src="https://ionicframework.com/docs/img/demos/avatar.svg"
+              />
+            </ion-avatar>
+            <button class="close">
+              <ion-icon name="close"></ion-icon>
+            </button>
+          </div>
+        </div>
+        <div class="modal-list staff-list">
+          <ion-item lines="full">
+            <ion-avatar slot="start">
+              <img
+                alt="Silhouette of a person's head"
+                src="https://ionicframework.com/docs/img/demos/avatar.svg"
+              />
+            </ion-avatar>
+            <ion-label>Admin</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+
+          <ion-item lines="full">
+            <ion-avatar slot="start">
+              <img
+                alt="Silhouette of a person's head"
+                src="https://ionicframework.com/docs/img/demos/avatar.svg"
+              />
+            </ion-avatar>
+            <ion-label>Admin</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+
+          <ion-item lines="full">
+            <ion-avatar slot="start">
+              <img
+                alt="Silhouette of a person's head"
+                src="https://ionicframework.com/docs/img/demos/avatar.svg"
+              />
+            </ion-avatar>
+            <ion-label>Admin</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>
