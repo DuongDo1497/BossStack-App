@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-spend',
@@ -6,9 +7,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./spend.page.scss'],
 })
 export class SpendPage implements OnInit {
-  constructor() {}
+  constructor(public alertController: AlertController) {}
 
   ngOnInit() {}
+
+  async saveDraftAlert() {
+    const alert = await this.alertController.create({
+      header: 'Lưu bản nhập này dưới dạng bản nháp?',
+      message: 'Nếu bỏ bây giờ, bạn sẽ mất bản nhập này.',
+      cssClass: 'save-alert__draft',
+      buttons: [
+        {
+          text: 'Hủy bỏ',
+          cssClass: 'alert-button-cancel',
+        },
+        {
+          text: 'Lưu bản nháp',
+          cssClass: 'alert-button-confirm',
+        },
+      ],
+    });
+
+    await alert.present();
+  }
 
   isModalRequireOpen = false;
 

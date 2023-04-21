@@ -68,8 +68,9 @@
 
   &__time {
     padding: 8px 16px;
-    margin: 0 -15px 12px;
+    margin: 0 0 12px;
     font-weight: 500;
+    border-radius: 6px;
     font-size: var(--fz-small);
     color: var(--primary-bl-cl);
     background-color: var(--primary-bl-cl-2);
@@ -80,6 +81,10 @@
     border-radius: 6px;
     background-color: var(--white-cl);
     margin-bottom: 6px;
+
+    &:focus {
+      border: 1px solid #3465d9;
+    }
 
     &:last-child {
       margin-bottom: 0;

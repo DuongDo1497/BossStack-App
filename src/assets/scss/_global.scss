@@ -588,3 +588,58 @@ ion-modal {
     background-color: #f04d64;
   }
 }
+
+ion-alert {
+  &.save-alert__draft {
+    --max-width: 300px;
+    .alert-wrapper {
+      padding: 16px;
+      border-radius: 10px;
+      background-color: var(--white-cl);
+    }
+
+    .alert-head {
+      padding-top: 0;
+      padding-bottom: 0;
+      margin-bottom: 8px;
+      h2 {
+        margin-top: 0;
+        font-size: var(--fz-body);
+        color: var(--text-cl-primary);
+      }
+    }
+
+    .alert-message {
+      padding-bottom: 0;
+      padding-inline-start: 36px;
+      padding-inline-end: 36px;
+      margin-bottom: 24px;
+      color: var(--text-cl-second);
+      font-size: var(--fz-small);
+    }
+
+    .alert-button-group {
+      gap: 12px;
+
+      button {
+        border-top: 0;
+        border-right: 0;
+        border-radius: 6px;
+        font-size: var(--fz-small);
+        min-width: calc(50% - 6px);
+        height: 34px;
+
+        &.alert-button-cancel {
+          color: var(--text-cl-second);
+          background-color: #f4f6f8;
+        }
+
+        &.alert-button-confirm {
+          font-weight: 400;
+          color: var(--white-cl);
+          background-color: #3465d9;
+        }
+      }
+    }
+  }
+}

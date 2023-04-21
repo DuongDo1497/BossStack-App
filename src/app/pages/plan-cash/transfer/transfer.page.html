@@ -29,40 +29,26 @@
         <p>17/03/2023 Thứ sáu</p>
       </ion-item>
 
-      <ion-item lines="none" class="no-input">
+      <ion-item lines="full" id="sourceWallet" button detail="false">
+        <ion-label position="floating">Nguồn ví</ion-label>
+        <div class="input-group">
+          <ion-input placeholder="Nguồn ví"></ion-input>
+          <img
+            class="icon-input"
+            src="../../../../assets/images/icon-right.svg"
+            alt=""
+          />
+        </div>
+      </ion-item>
+
+      <ion-item lines="full" id="transferWallet" button="false" detail="false">
         <ion-label>
-          <img
-            class="icon-label"
-            src="../../../../assets/images/icon-wallet-bl.svg"
-            alt=""
-          />
-          Ví nợ ngắn hạn
+          <p class="title">Phân bổ</p>
+          <p class="wallet-name">Mục tiêu nghỉ hưu</p>
+          <p class="wallet-info">
+            Kế hoạch: <span>0đ</span>, số dư: <span>0đ</span>
+          </p>
         </ion-label>
-        <p>0đ</p>
-      </ion-item>
-
-      <ion-item lines="full" id="transfer" button detail="false">
-        <ion-label position="floating">Phân bổ</ion-label>
-        <div class="input-group">
-          <ion-input placeholder="Phân bổ"></ion-input>
-          <img
-            class="icon-input"
-            src="../../../../assets/images/icon-right.svg"
-            alt=""
-          />
-        </div>
-      </ion-item>
-
-      <ion-item lines="full" id="project" button detail="false">
-        <ion-label position="floating">Dự án</ion-label>
-        <div class="input-group">
-          <ion-input placeholder="Dự án"></ion-input>
-          <img
-            class="icon-input"
-            src="../../../../assets/images/icon-right.svg"
-            alt=""
-          />
-        </div>
       </ion-item>
 
       <ion-item lines="full">
@@ -76,73 +62,16 @@
   </div>
 
   <ion-modal
-    #project
-    trigger="project"
-    [initialBreakpoint]="0.5"
-    [breakpoints]="[0, 0.25, 0.5, 0.75]"
-    handleBehavior="cycle"
-  >
-    <ng-template>
-      <ion-content scroll-y="false">
-        <p class="modal-title">Chọn Dự án</p>
-        <div class="modal-search search-bar">
-          <ion-item class="ion-no-padding login-input">
-            <img
-              class="icon-input"
-              src="../../assets/images/icon-search.svg"
-              alt=""
-            />
-            <ion-input class="form-control" placeholder="Tìm kiếm"></ion-input>
-          </ion-item>
-        </div>
-        <div class="modal-list project-list">
-          <ion-radio-group value="project">
-            <ion-item lines="none">
-              <ion-avatar slot="start">
-                <img alt="" src="../../../../assets/images/cashPlan-pj-1.svg" />
-              </ion-avatar>
-              <ion-label>Dự án A</ion-label>
-              <ion-radio slot="end" value="demo1"></ion-radio>
-            </ion-item>
-
-            <ion-item lines="none">
-              <ion-avatar slot="start">
-                <img alt="" src="../../../../assets/images/cashPlan-pj-2.svg" />
-              </ion-avatar>
-              <ion-label>Dự án B</ion-label>
-              <ion-radio slot="end" value="demo2"></ion-radio>
-            </ion-item>
-
-            <ion-item lines="none">
-              <ion-avatar slot="start">
-                <img alt="" src="../../../../assets/images/cashPlan-pj-3.svg" />
-              </ion-avatar>
-              <ion-label>Dự án C</ion-label>
-              <ion-radio slot="end" value="demo"></ion-radio>
-            </ion-item>
-          </ion-radio-group>
-        </div>
-        <div class="modal-control">
-          <ion-button class="btn-cancel" (click)="project.dismiss()"
-            >Hủy bỏ</ion-button
-          >
-          <ion-button class="btn-accept">Xác nhận</ion-button>
-        </div>
-      </ion-content>
-    </ng-template>
-  </ion-modal>
-
-  <ion-modal
-    #transfer
-    trigger="transfer"
+    #sourceWallet
+    trigger="sourceWallet"
     [initialBreakpoint]="0.75"
     [breakpoints]="[0, 0.25, 0.5, 0.75]"
     handleBehavior="cycle"
   >
     <ng-template>
       <ion-content scroll-y="false">
-        <p class="modal-title">Chọn Phân bổ</p>
-        <div class="modal-list transfer-list">
+        <p class="modal-title">Chọn Nguồn ví</p>
+        <div class="modal-list sourceWallet-list">
           <ion-accordion-group>
             <ion-accordion value="walletPersonal">
               <ion-item slot="header" lines="none">
@@ -322,7 +251,7 @@
         </div>
 
         <div class="modal-control">
-          <ion-button class="btn-cancel" (click)="transfer.dismiss()"
+          <ion-button class="btn-cancel" (click)="sourceWallet.dismiss()"
             >Hủy bỏ</ion-button
           >
           <ion-button class="btn-accept">Xác nhận</ion-button>

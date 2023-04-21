@@ -110,6 +110,12 @@ export class BusinessOverviewPage implements OnInit {
         labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
         datasets: [
           {
+            type: 'line',
+            label: '',
+            data: [5, 25, 35, 45, -20, -30, -40, -10, 5, 25, 35, 45],
+            borderColor: ['#FFC800'],
+          },
+          {
             type: 'bar',
             label: '',
             data: [10, 20, 30, 40, 10, 20, 30, 40, 10, 20, 30, 40],
@@ -120,12 +126,6 @@ export class BusinessOverviewPage implements OnInit {
             label: '',
             data: [-10, -20, -30, -40, -10, -20, -30, -40, -10, -20, -30, -40],
             backgroundColor: ['#F04D64'],
-          },
-          {
-            type: 'line',
-            label: '',
-            data: [5, 25, 35, 45, -20, -30, -40, -10, 5, 25, 35, 45],
-            borderColor: ['#FFC800'],
           },
         ],
       },

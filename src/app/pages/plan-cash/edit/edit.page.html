@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-buttons class="button-back" slot="start">
       <ion-back-button
-        defaultHref="/plan-cash/list"
+        defaultHref="/plan-cash/detail"
         text=""
         color="light"
       ></ion-back-button>
@@ -31,25 +31,24 @@
 
       <ion-item lines="full">
         <ion-label position="floating">Tên dòng tiền</ion-label>
-        <ion-input placeholder="Tên dòng tiền"></ion-input>
+        <ion-input placeholder="Tên dòng tiền" value="Aa"></ion-input>
       </ion-item>
 
-      <ion-item lines="full" id="project" button detail="false">
-        <ion-label position="floating">Dự án</ion-label>
+      <ion-item lines="full">
+        <ion-label position="floating">Số tiền kế hoạch</ion-label>
         <div class="input-group">
-          <ion-input placeholder="Dự án"></ion-input>
-          <img
-            class="icon-input"
-            src="../../../../assets/images/icon-right.svg"
-            alt=""
-          />
+          <ion-input
+            placeholder="Số tiền kế hoạch"
+            value="1.000.000"
+          ></ion-input>
+          <p class="icon-input --text">đ</p>
         </div>
       </ion-item>
 
       <ion-item lines="full" id="category" button detail="false">
         <ion-label position="floating">Phân loại</ion-label>
         <div class="input-group">
-          <ion-input placeholder="Phân loại"></ion-input>
+          <ion-input placeholder="Phân loại" value="Ví tống"></ion-input>
           <img
             class="icon-input"
             src="../../../../assets/images/icon-right.svg"
@@ -58,23 +57,15 @@
         </div>
       </ion-item>
 
-      <ion-item lines="full" id="plan" button detail="false">
-        <ion-label position="floating">Kế hoạch</ion-label>
+      <ion-item lines="full" id="detail" button detail="false">
+        <ion-label position="floating">Chi tiết</ion-label>
         <div class="input-group">
-          <ion-input placeholder="Kế hoạch"></ion-input>
+          <ion-input placeholder="Chi tiết" value="Ví tống"></ion-input>
           <img
             class="icon-input"
             src="../../../../assets/images/icon-right.svg"
             alt=""
           />
-        </div>
-      </ion-item>
-
-      <ion-item lines="full">
-        <ion-label position="floating">Số tiền kế hoạch</ion-label>
-        <div class="input-group">
-          <ion-input placeholder="Số tiền kế hoạch"></ion-input>
-          <p class="icon-input --text">đ</p>
         </div>
       </ion-item>
 
@@ -84,6 +75,7 @@
         >
         <ion-input
           placeholder="Thời gian hoàn thành kế hoạch (Tháng)"
+          value="0 tháng"
         ></ion-input>
       </ion-item>
 
@@ -102,48 +94,9 @@
           Hoạt động
         </ion-label>
         <div class="toggle-group">
-          <p>Chi tiết</p>
           <ion-toggle slot="end"></ion-toggle>
         </div>
       </ion-item>
-
-      <!-- <ion-item lines="full" id="note" button detail="false">
-        <ion-label position="floating">
-          <img
-            class="icon-label"
-            src="../../../../assets/images/icon-note.svg"
-            alt=""
-          />
-          Ghi chú
-        </ion-label>
-        <div class="input-group">
-          <ion-input placeholder="Ghi chú"></ion-input>
-          <img
-            class="icon-input"
-            src="../../../../assets/images/icon-plus.svg"
-            alt=""
-          />
-        </div>
-      </ion-item> -->
-
-      <!-- <ion-item lines="full" id="file" button detail="false">
-        <ion-label position="floating">
-          <img
-            class="icon-label"
-            src="../../../../assets/images/icon-attach.svg"
-            alt=""
-          />
-          Tệp đính kèm
-        </ion-label>
-        <div class="input-group">
-          <ion-input placeholder="Tệp đính kèm"></ion-input>
-          <img
-            class="icon-input"
-            src="../../../../assets/images/icon-plus.svg"
-            alt=""
-          />
-        </div>
-      </ion-item> -->
     </ion-list>
 
     <div class="work-list">
@@ -173,66 +126,9 @@
   </div>
 
   <ion-modal
-    #project
-    trigger="project"
-    [initialBreakpoint]="0.5"
-    [breakpoints]="[0, 0.25, 0.5, 0.75]"
-    handleBehavior="cycle"
-  >
-    <ng-template>
-      <ion-content scroll-y="false">
-        <p class="modal-title">Chọn Dự án</p>
-        <div class="modal-search search-bar">
-          <ion-item class="ion-no-padding login-input">
-            <img
-              class="icon-input"
-              src="../../assets/images/icon-search.svg"
-              alt=""
-            />
-            <ion-input class="form-control" placeholder="Tìm kiếm"></ion-input>
-          </ion-item>
-        </div>
-        <div class="modal-list project-list">
-          <ion-radio-group value="project">
-            <ion-item lines="none">
-              <ion-avatar slot="start">
-                <img alt="" src="../../../../assets/images/cashPlan-pj-1.svg" />
-              </ion-avatar>
-              <ion-label>Dự án A</ion-label>
-              <ion-radio slot="end" value="demo1"></ion-radio>
-            </ion-item>
-
-            <ion-item lines="none">
-              <ion-avatar slot="start">
-                <img alt="" src="../../../../assets/images/cashPlan-pj-2.svg" />
-              </ion-avatar>
-              <ion-label>Dự án B</ion-label>
-              <ion-radio slot="end" value="demo2"></ion-radio>
-            </ion-item>
-
-            <ion-item lines="none">
-              <ion-avatar slot="start">
-                <img alt="" src="../../../../assets/images/cashPlan-pj-3.svg" />
-              </ion-avatar>
-              <ion-label>Dự án C</ion-label>
-              <ion-radio slot="end" value="demo"></ion-radio>
-            </ion-item>
-          </ion-radio-group>
-        </div>
-        <div class="modal-control">
-          <ion-button class="btn-cancel" (click)="project.dismiss()"
-            >Hủy bỏ</ion-button
-          >
-          <ion-button class="btn-accept">Xác nhận</ion-button>
-        </div>
-      </ion-content>
-    </ng-template>
-  </ion-modal>
-
-  <ion-modal
     #category
     trigger="category"
-    [initialBreakpoint]="0.5"
+    [initialBreakpoint]="0.65"
     [breakpoints]="[0, 0.25, 0.5, 0.75]"
     handleBehavior="cycle"
   >
@@ -308,8 +204,8 @@
   </ion-modal>
 
   <ion-modal
-    #plan
-    trigger="plan"
+    #detail
+    trigger="detail"
     [initialBreakpoint]="0.75"
     [breakpoints]="[0, 0.25, 0.5, 0.75]"
     handleBehavior="cycle"
@@ -327,8 +223,8 @@
             <ion-input class="form-control" placeholder="Tìm kiếm"></ion-input>
           </ion-item>
         </div>
-        <div class="modal-list plan-list">
-          <ion-radio-group value="plan">
+        <div class="modal-list detail-list">
+          <ion-radio-group value="detail">
             <ion-item lines="none">
               <ion-label>Mục tiêu nghỉ hưu</ion-label>
               <ion-radio slot="end" value="demo1"></ion-radio>
@@ -356,7 +252,7 @@
           </ion-radio-group>
         </div>
         <div class="modal-control">
-          <ion-button class="btn-cancel" (click)="plan.dismiss()"
+          <ion-button class="btn-cancel" (click)="detail.dismiss()"
             >Hủy bỏ</ion-button
           >
           <ion-button class="btn-accept">Xác nhận</ion-button>
@@ -370,84 +266,4 @@
       <ion-datetime id="date" locale="vn-VN" presentation="date"></ion-datetime>
     </ng-template>
   </ion-modal>
-
-  <!-- <ion-modal
-    #note
-    trigger="note"
-    [initialBreakpoint]="0.5"
-    [breakpoints]="[0, 0.25, 0.5, 0.75]"
-    handleBehavior="cycle"
-  >
-    <ng-template>
-      <ion-content scroll-y="false">
-        <p class="modal-title">Thêm ghi chú</p>
-        <ion-textarea
-          placeholder="Thêm ghi chú..."
-          [clearOnEdit]="true"
-        ></ion-textarea>
-        <div class="modal-control">
-          <ion-button class="btn-cancel" (click)="note.dismiss()"
-            >Hủy bỏ</ion-button
-          >
-          <ion-button class="btn-accept">Xác nhận</ion-button>
-        </div>
-      </ion-content>
-    </ng-template>
-  </ion-modal>
-
-  <ion-modal
-    #file
-    trigger="file"
-    [initialBreakpoint]="0.5"
-    [breakpoints]="[0, 0.25, 0.5, 0.75]"
-    handleBehavior="cycle"
-  >
-    <ng-template>
-      <ion-content scroll-y="false">
-        <p class="modal-title">Chọn Tệp tải lên</p>
-        <div class="modal-list role-list">
-          <ion-radio-group value="role">
-            <ion-item lines="none">
-              <ion-thumbnail slot="start">
-                <img
-                  alt=""
-                  src="../../../../assets/images/icon-upload-file.svg"
-                />
-              </ion-thumbnail>
-              <ion-label>Chọn tài liệu (excel, pdf, word)</ion-label>
-              <ion-radio slot="end" value="demo1"></ion-radio>
-            </ion-item>
-
-            <ion-item lines="none">
-              <ion-thumbnail slot="start">
-                <img
-                  alt=""
-                  src="../../../../assets/images/icon-upload-image.svg"
-                />
-              </ion-thumbnail>
-              <ion-label>Chọn ảnh từ thư viện</ion-label>
-              <ion-radio slot="end" value="demo2"></ion-radio>
-            </ion-item>
-
-            <ion-item lines="none">
-              <ion-thumbnail slot="start">
-                <img
-                  alt=""
-                  src="../../../../assets/images/icon-upload-camera.svg"
-                />
-              </ion-thumbnail>
-              <ion-label>Chụp ảnh</ion-label>
-              <ion-radio slot="end" value="demo3"></ion-radio>
-            </ion-item>
-          </ion-radio-group>
-        </div>
-        <div class="modal-control">
-          <ion-button class="btn-cancel" (click)="file.dismiss()"
-            >Hủy bỏ</ion-button
-          >
-          <ion-button class="btn-accept">Xác nhận</ion-button>
-        </div>
-      </ion-content>
-    </ng-template>
-  </ion-modal> -->
 </ion-content>

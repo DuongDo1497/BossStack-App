@@ -2,9 +2,10 @@
   <ion-toolbar>
     <ion-buttons class="button-back" slot="start">
       <ion-back-button
-        defaultHref="/cash-manage/add"
+        defaultHref="/cash-manage"
         text=""
         color="light"
+        (click)="saveDraftAlert()"
       ></ion-back-button>
     </ion-buttons>
     <ion-title><p>Nhập dòng tiền thu</p></ion-title>
@@ -48,11 +49,6 @@
         <p>0đ</p>
       </ion-item>
 
-      <ion-item lines="full">
-        <ion-label position="floating">Nhập công việc</ion-label>
-        <ion-input placeholder="Nhập công việc"></ion-input>
-      </ion-item>
-
       <ion-item lines="full" id="project" button detail="false">
         <ion-label position="floating">Dự án</ion-label>
         <div class="input-group">
@@ -66,9 +62,9 @@
       </ion-item>
 
       <ion-item lines="full" id="category" button detail="false">
-        <ion-label position="floating">Phân loại</ion-label>
+        <ion-label position="floating">Danh mục</ion-label>
         <div class="input-group">
-          <ion-input placeholder="Phân loại"></ion-input>
+          <ion-input placeholder="Danh mục"></ion-input>
           <img
             class="icon-input"
             src="../../../../assets/images/icon-right.svg"
@@ -333,7 +329,7 @@
   >
     <ng-template>
       <ion-content scroll-y="false">
-        <p class="modal-title">Chọn Phân loại</p>
+        <p class="modal-title">Chọn Danh mục</p>
         <div class="modal-list category-list">
           <ion-radio-group value="category">
             <ion-item lines="none">
@@ -411,7 +407,7 @@
   >
     <ng-template>
       <ion-content scroll-y="false">
-        <p class="modal-title">Chọn Phân loại</p>
+        <p class="modal-title">Chọn Chi tiết</p>
         <div class="modal-list detail-list">
           <ion-radio-group value="detail">
             <ion-item lines="none">

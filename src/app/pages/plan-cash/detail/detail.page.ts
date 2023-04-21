@@ -20,6 +20,12 @@ export class DetailPage implements OnInit {
         labels: [1, 2, 3, 4],
         datasets: [
           {
+            type: 'line',
+            label: '',
+            data: [5, 25, 35, 45],
+            borderColor: ['#FD9F13'],
+          },
+          {
             type: 'bar',
             label: '',
             data: [10, 20, 30, 40],
@@ -30,12 +36,6 @@ export class DetailPage implements OnInit {
             label: '',
             data: [10, 20, 30, 40],
             backgroundColor: ['#F04D64'],
-          },
-          {
-            type: 'line',
-            label: '',
-            data: [5, 25, 35, 45],
-            borderColor: ['#FD9F13'],
           },
         ],
       },
