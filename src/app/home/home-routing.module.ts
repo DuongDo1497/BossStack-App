@@ -436,6 +436,18 @@ const routes: Routes = [
           },
         ],
       },
+      {
+        path: 'cash-transfer/history',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/transfer-cash/history/history.module').then(
+                (m) => m.HistoryPageModule
+              ),
+          },
+        ],
+      },
       // End Cash transfer page
 
       // Business Active

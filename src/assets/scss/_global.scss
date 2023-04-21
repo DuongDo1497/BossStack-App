@@ -127,6 +127,8 @@ ion-tab-bar {
     }
 
     &.tab-selected {
+      border-top: 2px solid #3465d9;
+
       ion-icon,
       p {
         color: var(--primary-bl-cl);
